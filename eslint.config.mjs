@@ -36,6 +36,14 @@ const eslintConfig = defineConfig([
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...prettierConfig.rules,
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+      '@typescript-eslint/no-explicit-any': 'warn',
       'prettier/prettier': 'error',
       'react/jsx-uses-react': 'off', // Không cần với React 17+
       'react/react-in-jsx-scope': 'off',
