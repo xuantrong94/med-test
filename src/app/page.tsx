@@ -1,65 +1,121 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className='bg-gray pt-10 pb-10 md:pt-14 md:pb-14 lg:pt-20 lg:pb-18'>
+      <div className='mx-auto flex max-w-[1200px] flex-col items-center justify-center gap-y-5 text-sm lg:flex-row lg:gap-6'>
+        <div className='flex flex-col gap-5 lg:flex-row lg:items-end lg:gap-6'>
+          <div className='flex flex-col justify-center lg:items-start lg:justify-start'>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={`/logo.svg`}
+              alt='logo'
+              className='mb-2 h-12 w-auto lg:mb-4'
+              width={154}
+              height={90}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className='flex flex-col gap-y-2 text-center text-sm lg:text-start'>
+              <p className='text-center lg:text-start'>
+                Địa chỉ: 280 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, TP.HCM
+              </p>
+              <p>Website: https://benhvienmat.com/</p>
+              <p>Email: hcmceyehospital@gmail.com</p>
+              <p>Điện thoại: (028).3932.5364</p>
+            </div>
+          </div>
+          <div className='hidden flex-col gap-y-2.5 text-sm lg:flex'>
+            <Link
+              href={'#'}
+              className='whitespace-nowrap'
+            >
+              Liên hệ
+            </Link>
+            <Link
+              href={'#'}
+              className='whitespace-nowrap'
+            >
+              Điều khoản dịch vụ
+            </Link>
+            <Link
+              href={'#'}
+              className='whitespace-nowrap'
+            >
+              Chính sách bảo mật
+            </Link>
+            <Link
+              href={'#'}
+              className='whitespace-nowrap'
+            >
+              Quy định sử dụng
+            </Link>
+          </div>
+          <div className='grid grid-cols-2 gap-3'>
+            <Link
+              href={'#'}
+              className='flex items-center justify-center'
+            >
+              <Image
+                src={`/dangkybocongthuong.svg`}
+                alt='dangkybocongthuong'
+                className=''
+                width={134}
+                height={50}
+              />
+            </Link>
+            <Link
+              href={'#'}
+              className='flex items-center justify-center'
+            >
+              <Image
+                src={`/thongbaobocongthuong.svg`}
+                alt='thongbaobocongthuong'
+                className=''
+                width={134}
+                height={50}
+              />
+            </Link>
+            <Link
+              href={'#'}
+              className='flex items-center justify-center'
+            >
+              <Image
+                src={`/appstore.svg`}
+                alt='appstore'
+                className=''
+                width={134}
+                height={50}
+              />
+            </Link>
+            <Link
+              href={'#'}
+              className='flex items-center justify-center'
+            >
+              <Image
+                src={`/googleplay.svg`}
+                alt='googleplay'
+                className=''
+                width={134}
+                height={50}
+              />
+            </Link>
+          </div>
         </div>
-      </main>
+        <div className='flex flex-col gap-y-2 text-center lg:ml-auto lg:text-start'>
+          <Image
+            src={'/footer_logo.svg'}
+            alt='footer logo'
+            className='h-10 w-auto'
+            width={80}
+            height={41}
+          />
+          <div className='flex flex-col gap-y-2 text-sm'>
+            <Link href={'#'}>ĐƯỢC PHÁT TRIỂN BỞI MEDPRO</Link>
+            <Link href={'#'}>Website: medpro.vn</Link>
+            <Link href={'#'}>Email: cskh@medpro.vn</Link>
+            <Link href={'#'}>Điện thoại: 1900 2115</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
