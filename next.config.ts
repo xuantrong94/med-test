@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         hostname: 'resource.medpro.com.vn',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cms.medpro.com.vn',
+        pathname: '/**',
+      },
     ],
   },
 };

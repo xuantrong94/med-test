@@ -6,6 +6,7 @@ import StoreProvider from '@/libs/redux/StoreProvider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getPartnerConfig } from '@/shared/endpoints/partner-domain.endpoint';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,6 +17,14 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
+export async function generateMetadata() {
+  const partnerConfig = await getPartnerConfig();
+  return {
+    title: partnerConfig.seo_title,
+    description: partnerConfig.seo_description,
+  };
+}
 
 export default function RootLayout({
   children,
