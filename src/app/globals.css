@@ -1,5 +1,38 @@
 @import 'tailwindcss';
 
+/* Averta Font Family with font-display: swap for optimal performance */
+@font-face {
+  font-family: 'Averta';
+  src: url('/src/assets/fonts/Averta-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('/src/assets/fonts/Averta-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('/src/assets/fonts/Averta-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('/src/assets/fonts/Averta-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-background: #ffffff;
   --color-foreground: #171717;
@@ -71,4 +104,8 @@
   --font-mono:
     'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
     monospace;
+}
+
+body {
+  font-family: var(--font-averta);
 }
