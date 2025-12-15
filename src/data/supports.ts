@@ -3,7 +3,7 @@ import FanpageFb from '@/assets/images/home/fanpage-fb.svg';
 import Hotline from '@/assets/images/home/hotline.svg';
 import ChatZalo from '@/assets/images/home/chat-zalo.jpg';
 
-export const data = [
+const supports = [
   {
     img: Hotline,
     title: 'Tổng đài đặt lịch khám',
@@ -31,4 +31,4 @@ export const data = [
   },
 ];
 
-export type SupportCardProps = (typeof data)[number];
+export default supports;

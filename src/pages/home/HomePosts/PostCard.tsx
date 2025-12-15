@@ -18,11 +18,11 @@ interface PostCardProps {
   formattedDate: string;
 }
 
-function PostCard({ post, imageUrl, formattedDate }: PostCardProps) {
+function PostCard({ post, imageUrl, formattedDate }: Readonly<PostCardProps>) {
   return (
     <Link
       className='hover:shadow-custom group block overflow-hidden rounded-lg border border-gray-200 text-inherit no-underline transition-all duration-200 hover:-translate-y-0.5'
-      href={`/tin-tuc/${post.slug}`}
+      href={`/tin-tuc/${post?.slug}`}
     >
       <div className='relative h-[140px] w-full overflow-hidden rounded-t-lg md:h-[160px] lg:h-[192px]'>
         <Image

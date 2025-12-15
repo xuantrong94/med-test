@@ -1,13 +1,18 @@
 import Image from 'next/image';
-import { SupportCardProps } from './data';
 import Link from 'next/link';
 
-export function SupportCard({
+export type SupportCardProps = {
+  img: string;
+  title: string;
+  ctaLabel: string;
+  ctaUrl: string;
+};
+export default function SupportCard({
   img,
   title,
   ctaLabel,
   ctaUrl,
-}: SupportCardProps) {
+}: Readonly<SupportCardProps>) {
   return (
     <Link
       href={ctaUrl}
@@ -21,12 +26,7 @@ export function SupportCard({
         height={100}
       />
       <h3 className='text-center text-lg font-semibold'>{title}</h3>
-      <Link
-        href={ctaUrl}
-        className='text-center text-lg'
-      >
-        {ctaLabel}
-      </Link>
+      <p className='text-center text-lg'>{ctaLabel}</p>
     </Link>
   );
 }
