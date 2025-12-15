@@ -24,7 +24,7 @@ function Header() {
   };
 
   return (
-    <header className='fixed top-0 right-0 left-0 z-50 h-[80px] w-full bg-white lg:h-[120px]'>
+    <header className='fixed top-0 right-0 left-0 z-50 h-[80px] w-full border-b border-[--color-border] bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
         <div className='mr-auto ml-0'>
           <Image

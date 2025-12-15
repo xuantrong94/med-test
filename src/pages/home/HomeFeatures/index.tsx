@@ -4,7 +4,7 @@ import React from 'react';
 
 const HomeFeatures = React.memo(() => {
   return (
-    <div className='container mx-auto mt-10 flex max-w-[1200px] flex-col gap-6 py-10 md:flex-row md:py-14 lg:py-20'>
+    <div className='container mx-auto mt-10 grid grid-cols-1 gap-6 py-10 md:flex-row md:py-14 lg:grid-cols-2 lg:py-20'>
       <div className='flex items-start gap-4 rounded-[3px] border border-[#d9d9d9] p-5 transition-shadow duration-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.1)]'>
         <div className='flex items-start gap-4'>
           <Image

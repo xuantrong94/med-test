@@ -6,7 +6,7 @@ import HomeHero from '@/pages/home/HomeHero';
 import HomeFeatures from '@/pages/home/HomeFeatures';
 export default async function Home() {
   return (
-    <div className='lg:pt-40'>
+    <div className='lg:pt-30'>
       <HomeHero />
       <HomeFeatures />
       <HomeInfo />
