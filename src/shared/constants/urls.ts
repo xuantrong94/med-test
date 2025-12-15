@@ -29,6 +29,11 @@ const URLS = [
     label: 'Liên hệ',
     url: '/lien-he',
   },
+  {
+    key: 'news',
+    label: 'Tin tức',
+    url: '/tin-tuc',
+  },
 ];
 
 const getUrlsByKey = (keys: string[]) => {
@@ -42,6 +47,11 @@ const getUrlsByKey = (keys: string[]) => {
   return result;
 };
 
+const getUrlByKey = (key: string) => {
+  const found = URLS.find(item => item.key === key);
+  return found?.url || '/';
+};
+
 const HEADER_URLS = getUrlsByKey([
   'home',
   'about',
@@ -51,4 +61,4 @@ const HEADER_URLS = getUrlsByKey([
   'contact',
 ]);
 
-export { URLS, HEADER_URLS };
+export { URLS, HEADER_URLS, getUrlByKey };

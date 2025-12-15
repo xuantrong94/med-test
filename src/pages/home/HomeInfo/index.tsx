@@ -1,106 +1,85 @@
-'use client';
 import Image from 'next/image';
+import HomeLine from '@/assets/images/home/line.png';
+import InfoItem from './InfoItem';
+
+const leftInfoItems = [
+  {
+    id: 1,
+    icon: 'home-info-1.svg',
+    text: 'Chủ động đặt lịch khám trong vòng 1 phút',
+  },
+  {
+    id: 2,
+    icon: 'home-info-1.svg',
+    text: 'Thay đổi & cập nhật lịch khám bệnh',
+  },
+  {
+    id: 3,
+    icon: 'home-info-3.svg',
+    text: 'Đặt lịch nhắc nhở uống thuốc',
+  },
+];
+
+const rightInfoItems = [
+  {
+    id: 4,
+    icon: 'home-info-4.svg',
+    text: 'Giao diện thân thiện dễ sử dụng',
+  },
+  {
+    id: 5,
+    icon: 'home-info-5.svg',
+    text: 'Thanh toán nhanh chóng và tiện lợi',
+  },
+  {
+    id: 6,
+    icon: 'home-info-6.svg',
+    text: 'Lưu trữ và theo dõi hồ sơ sức khỏe của chính bạn',
+  },
+];
+
+const CENTER_IMAGE_URL =
+  'https://resource.medpro.com.vn/static/images/bvmathcm/web/slide.png?t=21084.808919858144';
 
 function HomeInfo() {
   return (
-    <section className='container mx-auto flex max-w-[1200px] flex-col justify-center gap-6 px-4 pb-10 md:flex-row md:items-center md:pb-14 lg:pb-20'>
+    <section className='relative container mx-auto flex max-w-[1200px] flex-col justify-center gap-6 px-4 pb-10 md:flex-row md:items-center md:pb-14 lg:pb-20'>
+      <Image
+        src={HomeLine}
+        alt='home-line'
+        width={792}
+        height={433}
+        className='absolute top-1/2 left-1/2 z-[-1] -translate-x-1/2 -translate-y-1/2'
+      />
+
       {/* list 1 */}
-      <div className='flex flex-col gap-4 md:items-end'>
-        <div className='flex items-center gap-2 md:flex-row-reverse'>
-          <Image
-            src={'home-info-1.svg'}
-            alt='info-1'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-1.svg'}
+      <div className='flex flex-1 flex-col gap-4 md:items-end'>
+        {leftInfoItems.map(item => (
+          <InfoItem
+            key={item.id}
+            {...item}
+            reverse
           />
-          <h3 className='text-primary text-base leading-relaxed font-medium md:text-right'>
-            Chủ động đặt lịch khám trong vòng 1 phút{' '}
-          </h3>
-        </div>
-        <div className='flex items-center gap-2 md:flex-row-reverse'>
-          <Image
-            src={'home-info-1.svg'}
-            alt='info-1'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-1.svg'}
-          />
-          <h3 className='text-primary text-base leading-relaxed font-medium md:text-right'>
-            Thay đổi & cập nhật lịch khám bệnh{' '}
-          </h3>
-        </div>
-        <div className='flex items-center gap-2 md:flex-row-reverse'>
-          <Image
-            src={'home-info-3.svg'}
-            alt='info-3'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-3.svg'}
-          />
-          <h3 className='text-primary text-base leading-relaxed font-medium md:text-right'>
-            Đặt lịch nhắc nhở uống thuốc{' '}
-          </h3>
-        </div>
+        ))}
       </div>
 
       <Image
-        src={
-          'https://resource.medpro.com.vn/static/images/bvmathcm/web/slide.png?t=21084.808919858144'
-        }
+        src={CENTER_IMAGE_URL}
         alt='info-center'
         width={512}
         height={876}
-        className='hidden h-auto w-auto md:block md:w-[250px] lg:w-[350px]'
-        overrideSrc={
-          'https://resource.medpro.com.vn/static/images/bvmathcm/web/slide.png?t=21084.808919858144'
-        }
+        className='hidden h-auto w-auto shrink-0 md:block md:w-[250px] lg:w-[350px]'
+        overrideSrc={CENTER_IMAGE_URL}
       />
 
       {/* list 2 */}
-      <div className='flex flex-col gap-4'>
-        <div className='flex items-center gap-2'>
-          <Image
-            src={'home-info-4.svg'}
-            alt='info-1'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-4.svg'}
+      <div className='flex flex-1 flex-col gap-4'>
+        {rightInfoItems.map(item => (
+          <InfoItem
+            key={item.id}
+            {...item}
           />
-          <h3 className='text-primary text-base leading-relaxed font-medium'>
-            Giao diện thân thiện dễ sử dụng
-          </h3>
-        </div>
-        <div className='flex items-center gap-2'>
-          <Image
-            src={'home-info-5.svg'}
-            alt='info-5'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-5.svg'}
-          />
-          <h3 className='text-primary text-base leading-relaxed font-medium'>
-            Thanh toán nhanh chóng và tiện lợi{' '}
-          </h3>
-        </div>
-        <div className='flex items-center gap-2'>
-          <Image
-            src={'home-info-6.svg'}
-            alt='info-6'
-            width={40}
-            height={40}
-            className='aspect-square shrink-0'
-            overrideSrc={'home-info-6.svg'}
-          />
-          <h3 className='text-primary text-base leading-relaxed font-medium'>
-            Lưu trữ và theo dõi hồ sơ sức khỏe của chính bạn{' '}
-          </h3>
-        </div>
+        ))}
       </div>
     </section>
   );

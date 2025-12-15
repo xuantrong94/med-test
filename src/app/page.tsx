@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Loading from './loading';
 import HomeHero from '@/pages/home/HomeHero';
 import HomeFeatures from '@/pages/home/HomeFeatures';
+import HomeSupports from '@/pages/home/HomeSupports';
 export default async function Home() {
   return (
     <div className='lg:pt-30'>
@@ -13,6 +14,7 @@ export default async function Home() {
       <Suspense fallback={<Loading />}>
         <HomePosts />
       </Suspense>
+      <HomeSupports />
     </div>
   );
 }
