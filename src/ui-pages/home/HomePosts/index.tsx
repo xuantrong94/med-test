@@ -37,7 +37,6 @@ const getImageUrl = (item: Post) => {
 
 async function HomePosts() {
   const posts = await getPosts();
-  console.log('Fetched posts:', posts);
   const postsToRender = Array.isArray(posts) ? posts : [];
 
   return (
