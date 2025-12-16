@@ -38,3 +38,21 @@ export const getGuides = async (): Promise<PatientGuideResponse> => {
   const data: PatientGuideResponse = await response.json();
   return data;
 };
+
+export const getGuide = async (slug: string): Promise<PatientGuide> => {
+  const response = await fetch(
+    `https://api-v2.medpro.com.vn/guide-patient/find-by-condition?slug=${slug}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        partnerid: 'bvmathcm',
+      },
+    }
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch patient guide detail');
+  }
+  const data: PatientGuide = await response.json();
+  return data;
+};

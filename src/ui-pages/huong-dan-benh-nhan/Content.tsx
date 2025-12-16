@@ -1,17 +1,21 @@
 import { getGuides } from '@/shared/endpoints/patient-guide.endpint';
 import GuideItem from './GuideItem';
+import { Suspense } from 'react';
+import Loading from '@/app/loading';
 
 const HuongDanBenhNhanContent = async () => {
   const { rows: guides } = await getGuides();
   return (
     <main>
-      <ul className=''>
-        {guides.map(guide => (
-          <li key={guide.id}>
-            <GuideItem {...guide} />
-          </li>
-        ))}
-      </ul>
+      <Suspense fallback={<Loading />}>
+        <ul className=''>
+          {guides.map(guide => (
+            <li key={guide.id}>
+              <GuideItem {...guide} />
+            </li>
+          ))}
+        </ul>
+      </Suspense>
     </main>
   );
 };
