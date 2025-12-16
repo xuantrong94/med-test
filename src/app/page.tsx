@@ -1,13 +1,23 @@
-import HomeInfo from '@/ui-pages/home/HomeInfo';
-import HomePosts from '@/ui-pages/home/HomePosts';
 import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import Loading from './loading';
 import HomeHero from '@/ui-pages/home/HomeHero';
-import HomeFeatures from '@/ui-pages/home/HomeFeatures';
-import HomeSupports from '@/ui-pages/home/HomeSupports';
+
+const HomeFeatures = dynamic(() => import('@/ui-pages/home/HomeFeatures'), {
+  loading: () => <Loading />,
+});
+const HomeInfo = dynamic(() => import('@/ui-pages/home/HomeInfo'), {
+  loading: () => <Loading />,
+});
+const HomePosts = dynamic(() => import('@/ui-pages/home/HomePosts'), {
+  loading: () => <Loading />,
+});
+const HomeSupports = dynamic(() => import('@/ui-pages/home/HomeSupports'), {
+  loading: () => <Loading />,
+});
 export default async function Home() {
   return (
-    <div className='lg:pt-30'>
+    <div className=''>
       <HomeHero />
       <HomeFeatures />
       <HomeInfo />
