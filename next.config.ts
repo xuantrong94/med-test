@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         hostname: 'cms.medpro.com.vn',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn-pkh.longvan.net',
+        pathname: '/**',
+      },
     ],
   },
 };
