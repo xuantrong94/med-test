@@ -1,12 +1,23 @@
+import Hero from '@/components/layouts/static-page/Hero';
 import Layout from '@/components/layouts/static-page/Layout';
-import Content from '@/ui-pages/gioi-thieu/Content';
-import Hero from '@/ui-pages/gioi-thieu/Hero';
+import GioiThieuHeroImg from '@/assets/images/gioi-thieu/hero.jpg';
+import Content from '@/components/layouts/static-page/Content';
+import GioiThieuContent from '@/ui-pages/gioi-thieu/Content';
 
 export default function GioiThieu() {
   return (
     <Layout
-      hero={<Hero />}
-      content={<Content />}
+      hero={
+        <Hero
+          title='Giới thiệu'
+          img={GioiThieuHeroImg}
+        />
+      }
+      content={
+        <Content>
+          <GioiThieuContent />
+        </Content>
+      }
     />
   );
 }
