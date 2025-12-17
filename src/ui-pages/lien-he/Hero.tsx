@@ -4,7 +4,7 @@ import { officeInfo } from './data';
 import Link from 'next/link';
 export default function LienHeHero() {
   return (
-    <div className='relative mt-15 hidden flex-col items-center py-10 md:py-12 lg:mt-30 lg:flex lg:pb-25'>
+    <div className='relative mt-15 hidden flex-col items-center py-10 md:py-12 lg:mt-30 lg:flex lg:pb-32'>
       <div className='relative z-2 flex flex-col items-center justify-center text-white'>
         <h1 className='relative text-center text-4xl font-bold uppercase after:absolute after:-bottom-2 after:left-0 after:h-0.75 after:w-full after:bg-green-400 after:content-[""] lg:block'>
           Liên hệ với chúng tôi

@@ -69,20 +69,21 @@ export const officeInfo = [
 ];
 export const contactInfo = [
   {
-    img: <Hospital />,
+    img: <Hospital size={28} />,
     title: 'Bệnh viện Mắt®',
     info: '280 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, TP.HCM',
   },
   {
-    img: <Stethoscope />,
+    img: <Stethoscope size={28} />,
     title: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
     info: '(028).3932.5364',
     url: 'tel:02839325364',
   },
   {
-    img: <Settings />,
+    img: <Settings size={28} />,
     title: 'HỖ TRỢ ĐẶT KHÁM',
     info: '1900.2115',
     url: 'tel:19002115',
   },
 ];
+export type ContactInfo = (typeof contactInfo)[number];
