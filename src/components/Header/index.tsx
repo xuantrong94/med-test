@@ -1,5 +1,6 @@
 'use client';
 import { HEADER_URLS } from '@/shared/constants/urls';
+import { phones } from '@/shared/constants/contact';
 import Link from 'next/link';
 import Image from 'next/image';
 import { LogIn, Menu } from 'lucide-react';
@@ -86,12 +87,12 @@ function Header() {
             overrideSrc='/logo_medpro.svg'
           />
           <div className='flex flex-col items-center'>
-            <span className='flex text-[13px]'>Tổng đài đặt lịch khám</span>
+            <span className='flex text-[13px]'>{phones.booking.label}</span>
             <Link
-              href='tel:19002115'
+              href={phones.booking.tel}
               className='border-gray hover:text-primary border-b border-dotted pb-0.5 text-[15px] font-bold tracking-wider text-[#ff4d4f] no-underline'
             >
-              1900-2115
+              {phones.booking.display}
             </Link>
           </div>
         </div>

@@ -3,6 +3,7 @@ import IconZalo from '@/assets/icons/zalo.svg';
 import IconTime from '@/assets/icons/time.svg';
 import IconMsg from '@/assets/icons/message.svg';
 import IconPhone from '@/assets/icons/phone.svg';
+import { address, hospital, phones, social } from '@/shared/constants/contact';
 import Image from 'next/image';
 import { Hospital, Settings, Stethoscope } from 'lucide-react';
 export const officeInfo = [
@@ -34,7 +35,7 @@ export const officeInfo = [
             className='h-7 w-auto'
           />
         ),
-        url: 'https://www.facebook.com/www.medpro.vn',
+        url: social.facebook.url,
       },
       {
         icon: (
@@ -44,7 +45,7 @@ export const officeInfo = [
             className='h-7 w-auto'
           />
         ),
-        url: 'https://zalo.me/4018184502979486994',
+        url: social.zalo.url,
       },
     ],
   },
@@ -60,7 +61,7 @@ export const officeInfo = [
             className='h-10 w-auto'
           />
         ),
-        url: 'tel:19002115',
+        url: phones.booking.tel,
       },
     ],
     time: '7:30 - 16:30',
@@ -70,20 +71,20 @@ export const officeInfo = [
 export const contactInfo = [
   {
     img: <Hospital size={28} />,
-    title: 'Bệnh viện Mắt®',
-    info: '280 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, TP.HCM',
+    title: hospital.name,
+    info: address.full,
   },
   {
     img: <Stethoscope size={28} />,
-    title: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
-    info: '(028).3932.5364',
-    url: 'tel:02839325364',
+    title: phones.medical.label,
+    info: phones.medical.display,
+    url: phones.medical.tel,
   },
   {
     img: <Settings size={28} />,
     title: 'HỖ TRỢ ĐẶT KHÁM',
-    info: '1900.2115',
-    url: 'tel:19002115',
+    info: phones.booking.display,
+    url: phones.booking.tel,
   },
 ];
 export type ContactInfo = (typeof contactInfo)[number];

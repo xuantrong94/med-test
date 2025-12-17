@@ -1,5 +1,6 @@
 'use client';
 import { HEADER_URLS } from '@/shared/constants/urls';
+import { phones } from '@/shared/constants/contact';
 import Link from 'next/link';
 import Image from 'next/image';
 import { LogIn, X } from 'lucide-react';
@@ -97,13 +98,13 @@ function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
           />
           <div className='flex flex-col items-center gap-1'>
             <span className='text-text-secondary text-[13px]'>
-              Tổng đài đặt lịch khám
+              {phones.booking.label}
             </span>
             <Link
-              href='tel:19002115'
+              href={phones.booking.tel}
               className='border-gray hover:text-primary border-b border-dotted py-1 text-lg font-bold tracking-wider text-[#ff4d4f] no-underline transition-colors duration-300'
             >
-              1900-2115
+              {phones.booking.display}
             </Link>
           </div>
         </div>

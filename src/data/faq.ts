@@ -1,3 +1,5 @@
+import { phones, website } from '@/shared/constants/contact';
+
 interface AccordionItem {
   id: number;
   question: string;
@@ -29,7 +31,7 @@ export const faqData: IFaq[] = [
         answer: `
               <p>Tất cả người bệnh đều có thể sử dụng phần mềm để đăng ký khám bệnh.</p>
               <p>Tuy nhiên, phần mềm chỉ phù hợp cho những người bệnh có kế hoạch khám chữa bệnh chủ động, hoặc tình trạng bệnh KHÔNG khẩn cấp.</p>
-              <p>Trong trường hợp CẤP CỨU, người nhà nên đưa người bệnh đến cơ sở y tế gần nhất hoặc gọi số Hotline: (028).3932.5364 để được hỗ trợ.</p>`,
+              <p>Trong trường hợp CẤP CỨU, người nhà nên đưa người bệnh đến cơ sở y tế gần nhất hoặc gọi số Hotline: ${phones.medical.display} để được hỗ trợ.</p>`,
         status: 1,
         category_id: 1,
       },
@@ -145,7 +147,7 @@ export const faqData: IFaq[] = [
         answer: `
               <p>Nếu hồ sơ bệnh nhân của bạn có địa chỉ email chính xác, thì sau khi đăng ký khám bệnh thành công, ngay lập tức phần mềm sẽ gửi phiếu khám bệnh đến địa chỉ email của bạn.</p>
               <p>Bạn vui lòng kiểm tra hộp thư đến hoặc thư rác (Spam) để tìm thấy email phiếu khám bệnh của mình.</p>
-              <p>Trường hợp đã kiểm tra kỹ nhưng vẫn không thấy email gửi phiếu khám bệnh, vui lòng liên hệ tổng đài 19002115 chúng tôi sẽ hỗ trợ bạn.</p>`,
+              <p>Trường hợp đã kiểm tra kỹ nhưng vẫn không thấy email gửi phiếu khám bệnh, vui lòng liên hệ tổng đài ${phones.booking.number} chúng tôi sẽ hỗ trợ bạn.</p>`,
         status: 1,
         category_id: 1,
       },
@@ -174,7 +176,7 @@ export const faqData: IFaq[] = [
         question:
           'Tôi đăng ký mà báo là quý khách chưa đăng ký dịch vụ hoặc dịch vụ không hoạt động?',
         answer: `
-              <p>Vui lòng liên hệ trực tiếp tổng đài 19002115.</p>`,
+              <p>Vui lòng liên hệ trực tiếp tổng đài ${phones.booking.number}.</p>`,
         status: 1,
         category_id: 1,
       },
@@ -182,7 +184,7 @@ export const faqData: IFaq[] = [
         id: 114,
         question: 'Tôi bị bệnh về Mắt nhưng tôi phải đăng ký khoa nào?',
         answer: `
-              <p>Vui lòng điện thoại tổng đài bệnh viện hoặc 19002115 để được tư vấn chọn chuyên khoa.</p>`,
+              <p>Vui lòng điện thoại tổng đài bệnh viện hoặc ${phones.booking.number} để được tư vấn chọn chuyên khoa.</p>`,
         status: 1,
         category_id: 1,
       },
@@ -193,7 +195,7 @@ export const faqData: IFaq[] = [
         answer: `
               <p>Bạn vui lòng thực hiện việc hủy phiếu khám đã đặt trước 16h30 của ngày liền trước ngày khám để nhận lại tiền hoàn. Thao tác hủy phiếu khám cụ thể như sau:</p>
               <p>
-                <strong>Website: </strong>Đăng nhập website https://benhvienmat.medpro.vn/ > chọn thông tin tài khoản > chọn quản lý phiếu khám bệnh > chọn phiếu khám bệnh muốn hủy > bấm hủy phiếu.
+                <strong>Website: </strong>Đăng nhập website ${website.booking.url} > chọn thông tin tài khoản > chọn quản lý phiếu khám bệnh > chọn phiếu khám bệnh muốn hủy > bấm hủy phiếu.
               </p>
               <p>
                 <strong>App: </strong>Mở ứng dụng bệnh viện Mắt > Chọn phiếu khám bệnh > chọn phiếu khám bệnh muốn hủy > bấm hủy phiếu.

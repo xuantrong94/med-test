@@ -1,4 +1,5 @@
 'use client';
+import { address, email, phones, website } from '@/shared/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,17 +23,12 @@ function Footer() {
                     overrideSrc='/logo.svg'
                   />
                   <div className='flex flex-col gap-2'>
+                    <p className='block text-sm'>Địa chỉ: {address.full}</p>
+                    <p className='block text-sm'>Website: {website.main.url}</p>
+                    <p className='block text-sm'>Email: {email.primary}</p>
                     <p className='block text-sm'>
-                      Địa chỉ: 280 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3,
-                      TP.HCM
+                      Điện thoại: {phones.medical.display}
                     </p>
-                    <p className='block text-sm'>
-                      Website: https://benhvienmat.com/
-                    </p>
-                    <p className='block text-sm'>
-                      Email: hcmceyehospital@gmail.com
-                    </p>
-                    <p className='block text-sm'>Điện thoại: (028).3932.5364</p>
                   </div>
                 </div>
               </div>

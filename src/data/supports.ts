@@ -2,32 +2,32 @@ import ChatFb from '@/assets/images/home/chat-fb.png';
 import FanpageFb from '@/assets/images/home/fanpage-fb.svg';
 import Hotline from '@/assets/images/home/hotline.svg';
 import ChatZalo from '@/assets/images/home/chat-zalo.jpg';
+import { phones, social } from '@/shared/constants/contact';
 
 const supports = [
   {
     img: Hotline,
-    title: 'Tổng đài đặt lịch khám',
-    ctaLabel: '1900-2115',
-    ctaUrl: 'tel:19002115',
+    title: phones.booking.label,
+    ctaLabel: phones.booking.display,
+    ctaUrl: phones.booking.tel,
   },
   {
     img: FanpageFb,
-    title: 'Fanpage Facebook',
+    title: social.facebook.label,
     ctaLabel: 'Bấm vào đây',
-    ctaUrl: 'https://www.facebook.com/www.medpro.vn',
+    ctaUrl: social.facebook.url,
   },
   {
     img: ChatZalo,
-    title: 'Hỗ Trợ ZALO',
+    title: social.zalo.label,
     ctaLabel: 'Bấm vào đây',
-    ctaUrl: 'https://zalo.me/4018184502979486994',
+    ctaUrl: social.zalo.url,
   },
   {
     img: ChatFb,
-    title: 'Chat Facebook',
+    title: social.messenger.label,
     ctaLabel: 'Bấm vào đây',
-    ctaUrl:
-      'https://www.messenger.com/t/108646697156703/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792',
+    ctaUrl: social.messenger.url,
   },
 ];
 
