@@ -1,6 +1,6 @@
 import QuestionsMainContent from '@/ui-pages/thac-mac/MainContent';
 
-const Questions = () => {
+const Questions = async () => {
   return (
     <main className='mt-15 lg:mt-30'>
       <div className='bg-linear-45 from-[#6a78d1] to-[#00a4bd] py-15'>

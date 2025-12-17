@@ -3,7 +3,7 @@ import Content from '@/components/layouts/static-page/Content';
 import Hero from '@/components/layouts/static-page/Hero';
 import Layout from '@/components/layouts/static-page/Layout';
 import HuongDanBenhNhanContent from '@/ui-pages/huong-dan-benh-nhan/Content';
-const PatientGuide = () => {
+const PatientGuide = async () => {
   return (
     <Layout
       hero={

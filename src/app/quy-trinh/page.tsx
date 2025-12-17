@@ -3,7 +3,7 @@ import QuyTrinhHeroImg from '@/assets/images/quy-trinh/hero.jpg';
 import Hero from '@/components/layouts/static-page/Hero';
 import Content from '@/components/layouts/static-page/Content';
 import GioiThieuContent from '@/ui-pages/quy-trinh/Content';
-export default function QuyTrinhPage() {
+export default async function QuyTrinhPage() {
   return (
     <Layout
       content={
