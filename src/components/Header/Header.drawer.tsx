@@ -4,13 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LogIn, X } from 'lucide-react';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 interface HeaderDrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-function HeaderDrawer({ isOpen, onClose }: HeaderDrawerProps) {
+function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
+  const pathname = usePathname();
+
   // Handle backdrop click
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -21,8 +24,8 @@ function HeaderDrawer({ isOpen, onClose }: HeaderDrawerProps) {
   if (!isOpen) return null;
 
   return (
-    <div
-      className='fixed inset-0 z-[1000] flex h-screen w-screen justify-end bg-black/50'
+    <button
+      className='fixed inset-0 z-1000 flex h-screen w-screen justify-end bg-black/50'
       onClick={handleBackdropClick}
     >
       <div className='animate-slideInRight flex h-screen w-[280px] flex-col overflow-y-auto bg-white shadow-[-2px_0_8px_rgba(0,0,0,0.15)] lg:w-[320px]'>
@@ -55,20 +58,30 @@ function HeaderDrawer({ isOpen, onClose }: HeaderDrawerProps) {
         {/* Navigation menu */}
         <nav className='flex-1 p-0'>
           <ul className='m-0 list-none p-0'>
-            {HEADER_URLS.map(item => (
-              <li
-                key={item.key}
-                className='border-b border-[--color-border-light]'
-              >
-                <Link
-                  href={item.url}
-                  className='text-text-primary hover:bg-bg-secondary hover:text-primary block px-5 py-4 text-base no-underline transition-all duration-300'
-                  onClick={onClose}
+            {HEADER_URLS.map(item => {
+              const isActive = pathname === item.url;
+
+              return (
+                <li
+                  key={item.key}
+                  className={`border-b border-[--color-border-light] ${
+                    isActive ? 'bg-primary/5' : ''
+                  }`}
                 >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+                  <Link
+                    href={item.url}
+                    className={`relative block px-5 py-4 text-base no-underline transition-all duration-300 ${
+                      isActive
+                        ? 'text-primary bg-primary/5 before:bg-primary font-medium before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:content-[""]'
+                        : 'text-text-primary hover:bg-bg-secondary hover:text-primary'
+                    }`}
+                    onClick={onClose}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -95,7 +108,7 @@ function HeaderDrawer({ isOpen, onClose }: HeaderDrawerProps) {
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 

@@ -2,7 +2,7 @@ const URLS = [
   {
     key: 'home',
     label: 'Trang chủ',
-    url: '/benh-vien-mat',
+    url: '/',
   },
   {
     key: 'about',

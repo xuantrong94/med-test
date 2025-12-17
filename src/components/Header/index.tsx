@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { LogIn, Menu } from 'lucide-react';
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { usePathname } from 'next/navigation';
 
 // Dynamic import cho HeaderDrawer
 const HeaderDrawer = dynamic(() => import('./Header.drawer'), {
@@ -14,6 +15,7 @@ const HeaderDrawer = dynamic(() => import('./Header.drawer'), {
 
 function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -47,19 +49,29 @@ function Header() {
           </div>
           <nav>
             <ul className='m-0 flex list-none justify-end p-0'>
-              {HEADER_URLS.map(item => (
-                <li
-                  key={item.key}
-                  className='group border-gray before:bg-primary relative flex border-t-[0.5px] p-[15px] before:absolute before:top-0 before:left-0 before:z-10 before:h-1 before:w-0 before:transition-[width] before:duration-300 before:ease-out before:content-[""] hover:before:w-full'
-                >
-                  <Link
-                    href={item.url}
-                    className='group-hover:text-text-secondary text-inherit no-underline'
+              {HEADER_URLS.map(item => {
+                const isActive = pathname === item.url;
+
+                return (
+                  <li
+                    key={item.key}
+                    className={`group border-gray before:bg-primary relative flex border-t-[0.5px] p-[15px] before:absolute before:top-0 before:left-0 before:z-10 before:h-1 before:-translate-y-0.5 before:rounded-full before:transition-[width] before:duration-300 before:ease-out before:content-[""] hover:before:w-full ${
+                      isActive ? 'before:w-full' : 'before:w-0'
+                    }`}
                   >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+                    <Link
+                      href={item.url}
+                      className={`no-underline transition-colors duration-200 ${
+                        isActive
+                          ? 'text-primary font-medium'
+                          : 'group-hover:text-primary text-inherit'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
