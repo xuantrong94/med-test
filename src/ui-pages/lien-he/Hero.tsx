@@ -2,6 +2,7 @@ import Image from 'next/image';
 import LienHeHeroImg from '@/assets/images/lien-he/hero.jpg';
 import { officeInfo } from './data';
 import Link from 'next/link';
+import { cn } from '@/utils/cn';
 export default function LienHeHero() {
   return (
     <div className='relative mt-15 hidden flex-col items-center py-10 md:py-12 lg:mt-30 lg:flex lg:pb-32'>
@@ -43,9 +44,10 @@ export default function LienHeHero() {
             </div>
             {office.isInTime !== undefined && (
               <p
-                className={`mt-4 font-semibold md:text-base ${
+                className={cn(
+                  'mt-4 font-semibold md:text-base',
                   office.isInTime ? 'text-green-600' : 'text-red-600'
-                }`}
+                )}
               >
                 {office.isInTime
                   ? 'Đang trong giờ hành chính'

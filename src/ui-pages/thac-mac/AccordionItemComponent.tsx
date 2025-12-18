@@ -2,6 +2,7 @@
 import { AccordionItemProps } from '@/data/faq';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import React from 'react';
+import { cn } from '@/utils/cn';
 
 interface Props {
   item: AccordionItemProps['item'];
@@ -19,7 +20,10 @@ const AccordionItemComponent: React.FC<Props> = ({
       <button
         id={`faqs-title-${item.id}`}
         type='button'
-        className={`bg-primary border-primary flex w-full items-center justify-between rounded-t-md border px-4 py-2 text-left text-white ${expanded ? 'rounded-t-md' : 'rounded-md'}`}
+        className={cn(
+          'bg-primary border-primary flex w-full items-center justify-between border px-4 py-2 text-left text-white',
+          expanded ? 'rounded-t-md' : 'rounded-md'
+        )}
         onClick={onToggle}
         aria-expanded={expanded}
         aria-controls={`faqs-text-${item.id}`}
@@ -41,9 +45,10 @@ const AccordionItemComponent: React.FC<Props> = ({
       <section
         id={`faqs-text-${item.id}`}
         aria-labelledby={`faqs-title-${item.id}`}
-        className={`grid overflow-hidden text-sm text-slate-600 transition-all duration-300 ease-in-out ${
+        className={cn(
+          'grid overflow-hidden text-sm text-slate-600 transition-all duration-300 ease-in-out',
           expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-        }`}
+        )}
       >
         <div
           className={`border-primary overflow-hidden rounded-b-md border border-t-0 bg-white`}

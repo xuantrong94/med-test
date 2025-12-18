@@ -3,18 +3,24 @@ import dynamic from 'next/dynamic';
 import Loading from './loading';
 import HomeHero from '@/ui-pages/home/HomeHero';
 
-const HomeFeatures = dynamic(() => import('@/ui-pages/home/HomeFeatures'), {
+const HomeFeatures = dynamic(
+  () => import('@/ui-pages/home/HomeFeatures/index'),
+  {
+    loading: () => <Loading />,
+  }
+);
+const HomeInfo = dynamic(() => import('@/ui-pages/home/HomeInfo/index'), {
   loading: () => <Loading />,
 });
-const HomeInfo = dynamic(() => import('@/ui-pages/home/HomeInfo'), {
+const HomePosts = dynamic(() => import('@/ui-pages/home/HomePosts/index'), {
   loading: () => <Loading />,
 });
-const HomePosts = dynamic(() => import('@/ui-pages/home/HomePosts'), {
-  loading: () => <Loading />,
-});
-const HomeSupports = dynamic(() => import('@/ui-pages/home/HomeSupports'), {
-  loading: () => <Loading />,
-});
+const HomeSupports = dynamic(
+  () => import('@/ui-pages/home/HomeSupports/index'),
+  {
+    loading: () => <Loading />,
+  }
+);
 export default async function Home() {
   return (
     <div className=''>

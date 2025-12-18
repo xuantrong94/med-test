@@ -1,4 +1,3 @@
-import React from 'react';
 import HomeHeroBg from './HomeHero.bg';
 import HomeHeroFeatures from './HomeHero.features';
 

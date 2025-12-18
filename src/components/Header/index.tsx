@@ -7,6 +7,7 @@ import { LogIn, Menu } from 'lucide-react';
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
+import { cn } from '@/utils/cn';
 
 // Dynamic import cho HeaderDrawer
 const HeaderDrawer = dynamic(() => import('./Header.drawer'), {
@@ -27,7 +28,7 @@ function Header() {
   };
 
   return (
-    <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-[--color-border] bg-white lg:h-[120px]'>
+    <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-gray-200 bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
         <div className='mr-auto ml-0'>
           <Image
@@ -56,17 +57,19 @@ function Header() {
                 return (
                   <li
                     key={item.key}
-                    className={`group border-gray before:bg-primary relative flex border-t-[0.5px] p-[15px] before:absolute before:top-0 before:left-0 before:z-10 before:h-1 before:-translate-y-0.5 before:rounded-full before:transition-[width] before:duration-300 before:ease-out before:content-[""] hover:before:w-full ${
+                    className={cn(
+                      'group border-gray before:bg-primary relative flex border-t-[0.5px] p-[15px] before:absolute before:top-0 before:left-0 before:z-10 before:h-1 before:-translate-y-0.5 before:rounded-full before:transition-[width] before:duration-300 before:ease-out before:content-[""] hover:before:w-full',
                       isActive ? 'before:w-full' : 'before:w-0'
-                    }`}
+                    )}
                   >
                     <Link
                       href={item.url}
-                      className={`no-underline transition-colors duration-200 ${
+                      className={cn(
+                        'no-underline transition-colors duration-200',
                         isActive
                           ? 'text-primary font-medium'
                           : 'group-hover:text-primary text-inherit'
-                      }`}
+                      )}
                     >
                       {item.label}
                     </Link>

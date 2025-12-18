@@ -3,6 +3,7 @@ import faqData from '@/data/faq';
 import React from 'react';
 import AccordionItemComponent from './AccordionItemComponent';
 import { ChevronRight } from 'lucide-react';
+import { cn } from '@/utils/cn';
 
 const faqSections = faqData.map(faqSection => {
   return {
@@ -38,7 +39,7 @@ const MainContent = () => {
               className='text-primary mt-1 mr-2 shrink-0'
             />
             <span
-              className={selectedSection === section.id ? 'text-primary' : ''}
+              className={cn(selectedSection === section.id && 'text-primary')}
             >
               {section.name}
             </span>

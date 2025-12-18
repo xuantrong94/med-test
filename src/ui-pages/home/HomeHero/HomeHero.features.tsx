@@ -1,12 +1,13 @@
-import featuresData from '@/data/features';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-export default function HomeHeroFeatures() {
+import { getListPartnerFeatures } from '@/shared/endpoints/partner-feature.endpint';
+export default async function HomeHeroFeatures() {
+  const featuresData = await getListPartnerFeatures();
   return (
     <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-center px-4 lg:absolute lg:bottom-5 lg:left-1/2 lg:-translate-x-1/2 lg:items-end lg:justify-end'>
-      <div className='z-10 flex h-fit flex-col items-center rounded-lg bg-white/90 p-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] backdrop-blur-[4px]'>
+      <div className='z-10 flex h-fit flex-col items-center rounded-lg bg-white/90 p-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] backdrop-blur-xs'>
         <h3 className='text-text-primary py-5 pb-8 text-xl font-normal uppercase lg:text-2xl'>
           Chọn dịch vụ
         </h3>

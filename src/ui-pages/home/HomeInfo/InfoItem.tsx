@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { cn } from '@/utils/cn';
 
 interface InfoItemProps {
   icon: string;
@@ -10,7 +11,10 @@ interface InfoItemProps {
 function InfoItem({ icon, text, id, reverse = false }: InfoItemProps) {
   return (
     <div
-      className={`flex items-center gap-2 ${reverse ? 'md:flex-row-reverse' : ''}`}
+      className={cn(
+        'flex items-center gap-2',
+        reverse && 'md:flex-row-reverse'
+      )}
     >
       <Image
         src={icon}
@@ -21,7 +25,10 @@ function InfoItem({ icon, text, id, reverse = false }: InfoItemProps) {
         overrideSrc={icon}
       />
       <h3
-        className={`text-primary text-base leading-relaxed font-medium ${reverse ? 'md:text-right' : ''}`}
+        className={cn(
+          'text-primary text-base leading-relaxed font-medium',
+          reverse && 'md:text-right'
+        )}
       >
         {text}
       </h3>

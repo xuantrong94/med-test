@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { LogIn, X } from 'lucide-react';
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import { cn } from '@/utils/cn';
 
 interface HeaderDrawerProps {
   isOpen: boolean;
@@ -65,17 +66,19 @@ function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
               return (
                 <li
                   key={item.key}
-                  className={`border-b border-[--color-border-light] ${
-                    isActive ? 'bg-primary/5' : ''
-                  }`}
+                  className={cn(
+                    'border-b border-[--color-border-light]',
+                    isActive && 'bg-primary/5'
+                  )}
                 >
                   <Link
                     href={item.url}
-                    className={`relative block px-5 py-4 text-base no-underline transition-all duration-300 ${
+                    className={cn(
+                      'relative block px-5 py-4 text-base no-underline transition-all duration-300',
                       isActive
                         ? 'text-primary bg-primary/5 before:bg-primary font-medium before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:content-[""]'
                         : 'text-text-primary hover:bg-bg-secondary hover:text-primary'
-                    }`}
+                    )}
                     onClick={onClose}
                   >
                     {item.label}

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
 import './globals.css';
 import StoreProvider from '@/libs/redux/StoreProvider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/Header/index';
+import Footer from '@/components/Footer/index';
 import { getPartnerConfig } from '@/shared/endpoints/partner-domain.endpoint';
 import { averta } from '@/config/fonts';
+import { cn } from '@/utils/cn';
 
 export async function generateMetadata() {
   const partnerConfig = await getPartnerConfig();
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${averta.variable} antialiased`}>
+      <body className={cn(averta.variable, 'antialiased')}>
         <StoreProvider>
           <Header />
           {children}
