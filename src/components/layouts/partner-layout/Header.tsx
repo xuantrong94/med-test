@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
 
 // Dynamic import cho HeaderDrawer
-const HeaderDrawer = dynamic(() => import('./Header.drawer'), {
+const HeaderDrawer = dynamic(() => import('./HeaderDrawer'), {
   ssr: false,
   loading: () => null,
 });

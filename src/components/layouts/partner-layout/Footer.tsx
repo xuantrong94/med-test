@@ -38,25 +38,25 @@ function Footer() {
                 <div className='flex flex-col gap-2.5'>
                   <Link
                     href='#'
-                    className='text-sm whitespace-nowrap text-inherit no-underline hover:text-[#1890ff]'
+                    className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Liên hệ
                   </Link>
                   <Link
                     href='#'
-                    className='text-sm whitespace-nowrap text-inherit no-underline hover:text-[#1890ff]'
+                    className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Điều khoản dịch vụ
                   </Link>
                   <Link
                     href='#'
-                    className='text-sm whitespace-nowrap text-inherit no-underline hover:text-[#1890ff]'
+                    className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Chính sách bảo mật
                   </Link>
                   <Link
                     href='#'
-                    className='text-sm whitespace-nowrap text-inherit no-underline hover:text-[#1890ff]'
+                    className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Quy định sử dụng
                   </Link>
@@ -141,25 +141,25 @@ function Footer() {
               <div className='flex flex-col gap-2'>
                 <Link
                   href='#'
-                  className='text-sm text-inherit no-underline hover:text-[#1890ff]'
+                  className='hover:text-info text-sm text-inherit no-underline'
                 >
                   ĐƯỢC PHÁT TRIỂN BỞI MEDPRO
                 </Link>
                 <Link
                   href='#'
-                  className='text-sm text-inherit no-underline hover:text-[#1890ff]'
+                  className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Website: medpro.vn
                 </Link>
                 <Link
                   href='#'
-                  className='text-sm text-inherit no-underline hover:text-[#1890ff]'
+                  className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Email: cskh@medpro.vn
                 </Link>
                 <Link
                   href='#'
-                  className='text-sm text-inherit no-underline hover:text-[#1890ff]'
+                  className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Điện thoại: 1900 2115
                 </Link>

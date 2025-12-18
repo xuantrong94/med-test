@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import Loading from './loading';
 import HomeHero from '@/ui-pages/home/HomeHero';
+import Loading from '../loading';
 
 const HomeFeatures = dynamic(
   () => import('@/ui-pages/home/HomeFeatures/index'),
