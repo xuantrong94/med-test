@@ -1,3 +1,4 @@
+import FeatureLayout from '@/components/layouts/feature-layout/FeatureLayout';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -25,6 +26,7 @@ export default async function DatKhamTheoNgayPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <FeatureLayout />
     </main>
   );
 }
