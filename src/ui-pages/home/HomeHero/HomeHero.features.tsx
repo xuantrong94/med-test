@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import { getListPartnerFeatures } from '@/shared/endpoints/partner-feature.endpint';
+import { getListPartnerFeatures } from '@/shared/endpoints/partner-feature.endpoint';
 export default async function HomeHeroFeatures() {
   const featuresData = await getListPartnerFeatures();
   return (
@@ -21,11 +21,7 @@ export default async function HomeHeroFeatures() {
                   className='flex flex-col items-center p-3 text-center text-sm font-semibold'
                 >
                   <Link
-                    href={
-                      item.customURLTarget
-                        ? item.customURLTarget
-                        : `/features/${item.slug}`
-                    }
+                    href={item.slug ? item.slug : `/features/${item.slug}`}
                     title={item.name}
                     className='group flex flex-col items-center gap-2 text-pretty text-inherit no-underline'
                   >
