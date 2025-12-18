@@ -92,3 +92,12 @@ export const getPosts = async (): Promise<Post[]> => {
   }
   return response.json();
 };
+
+//cms.medpro.com.vn/posts?slug=glaucoma-ke-cap-thi-luc-tham-lang-1
+export const getPostBySlug = async (slug: string): Promise<Post[]> => {
+  const response = await fetch(`https://cms.medpro.com.vn/posts?slug=${slug}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch post by slug');
+  }
+  return response.json();
+};

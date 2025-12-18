@@ -9,7 +9,7 @@ interface ScreenOptions {
   headerTitle: string;
 }
 
-interface FeatureItem {
+export interface FeatureItem {
   _id: string;
   name: string;
   message: string;
