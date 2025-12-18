@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 export type SupportCardProps = {
-  img: string;
+  img: string | StaticImageData;
   title: string;
   ctaLabel: string;
   ctaUrl: string;

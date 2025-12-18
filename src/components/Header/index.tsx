@@ -27,7 +27,7 @@ function Header() {
   };
 
   return (
-    <header className='fixed top-0 right-0 left-0 z-50 h-[80px] w-full border-b border-[--color-border] bg-white lg:h-[120px]'>
+    <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-[--color-border] bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
         <div className='mr-auto ml-0'>
           <Image
@@ -41,7 +41,7 @@ function Header() {
         </div>
 
         {/* Desktop menu - ẩn trên mobile */}
-        <div className='hidden w-1/2 flex-grow px-[2.5%] lg:block'>
+        <div className='hidden w-1/2 grow px-[2.5%] lg:block'>
           <div className='py-[15px]'>
             <button className='from-primary to-cyan mr-0 ml-auto flex cursor-pointer gap-2 rounded-sm border-none bg-linear-to-r px-2.5 py-2 text-sm text-white hover:opacity-90'>
               <LogIn size={16} />
