@@ -83,9 +83,9 @@ export interface Category {
   type: string;
 }
 
-export const getPosts = async (): Promise<Post[]> => {
+export const getPosts = async (partner: string): Promise<Post[]> => {
   const response = await fetch(
-    'https://cms.medpro.com.vn/posts?&categories.slug=tin-tuc&_limit=4&_sort=created_at:desc&partners_contains=bvmathcm'
+    `https://cms.medpro.com.vn/posts?&categories.slug=tin-tuc&_limit=4&_sort=created_at:desc&partners_contains=${partner}`
   );
   if (!response.ok) {
     throw new Error('Failed to fetch posts');

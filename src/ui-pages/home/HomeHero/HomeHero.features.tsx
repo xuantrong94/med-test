@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import { getListPartnerFeatures } from '@/shared/endpoints/partner-feature.endpoint';
-export default async function HomeHeroFeatures() {
-  const featuresData = await getListPartnerFeatures();
+import { FeatureItem } from '@/shared/endpoints/partner-feature.endpoint';
+
+export default async function HomeHeroFeatures({
+  featuresData,
+}: Readonly<{ featuresData?: FeatureItem[] }>) {
   return (
     <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-center px-4 lg:absolute lg:bottom-5 lg:left-1/2 lg:-translate-x-1/2 lg:items-end lg:justify-end'>
       <div className='z-10 flex h-fit flex-col items-center rounded-lg bg-white/90 p-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)] backdrop-blur-xs'>

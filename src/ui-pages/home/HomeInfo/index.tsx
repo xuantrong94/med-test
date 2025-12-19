@@ -1,47 +1,12 @@
 import Image from 'next/image';
 import HomeLine from '@/assets/images/home/line.png';
 import InfoItem from './InfoItem';
+import HOME_INFO from '@/shared/static-content/home/home-info';
 
-const leftInfoItems = [
-  {
-    id: 1,
-    icon: 'home-info-1.svg',
-    text: 'Chủ động đặt lịch khám trong vòng 1 phút',
-  },
-  {
-    id: 2,
-    icon: 'home-info-1.svg',
-    text: 'Thay đổi & cập nhật lịch khám bệnh',
-  },
-  {
-    id: 3,
-    icon: 'home-info-3.svg',
-    text: 'Đặt lịch nhắc nhở uống thuốc',
-  },
-];
+async function HomeInfo({ keyword }: Readonly<{ keyword: string }>) {
+  const { LEFT: leftInfoItems, RIGHT: rightInfoItems } = HOME_INFO.ITEMS;
+  const { CENTER_IMAGE_URL } = HOME_INFO;
 
-const rightInfoItems = [
-  {
-    id: 4,
-    icon: 'home-info-4.svg',
-    text: 'Giao diện thân thiện dễ sử dụng',
-  },
-  {
-    id: 5,
-    icon: 'home-info-5.svg',
-    text: 'Thanh toán nhanh chóng và tiện lợi',
-  },
-  {
-    id: 6,
-    icon: 'home-info-6.svg',
-    text: 'Lưu trữ và theo dõi hồ sơ sức khỏe của chính bạn',
-  },
-];
-
-const CENTER_IMAGE_URL =
-  'https://resource.medpro.com.vn/static/images/bvmathcm/web/slide.png?t=21084.808919858144';
-
-function HomeInfo() {
   return (
     <section className='relative container mx-auto flex max-w-[1200px] flex-col justify-center gap-6 px-4 pb-10 md:flex-row md:items-center md:pb-14 lg:pb-20'>
       <Image
@@ -64,12 +29,18 @@ function HomeInfo() {
       </div>
 
       <Image
-        src={CENTER_IMAGE_URL}
+        src={
+          CENTER_IMAGE_URL[keyword as keyof typeof CENTER_IMAGE_URL] ||
+          CENTER_IMAGE_URL['bvmathcm']
+        }
         alt='info-center'
         width={512}
         height={876}
         className='hidden h-auto w-auto shrink-0 md:block md:w-[250px] lg:w-[350px]'
-        overrideSrc={CENTER_IMAGE_URL}
+        overrideSrc={
+          CENTER_IMAGE_URL[keyword as keyof typeof CENTER_IMAGE_URL] ||
+          CENTER_IMAGE_URL['bvmathcm']
+        }
       />
 
       {/* list 2 */}

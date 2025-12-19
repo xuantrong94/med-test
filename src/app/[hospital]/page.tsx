@@ -2,6 +2,9 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import HomeHero from '@/ui-pages/home/HomeHero';
 import Loading from '../loading';
+import { getListPartnerFeatures } from '@/shared/endpoints/partner-feature.endpoint';
+import PARTNERS from '@/shared/constants/partners';
+import { getPosts } from '@/shared/endpoints/post.endpoint';
 
 const HomeFeatures = dynamic(
   () => import('@/ui-pages/home/HomeFeatures/index'),
@@ -26,14 +29,26 @@ export default async function Home({
 }: {
   params: Promise<{ hospital: string }>;
 }) {
-  console.log('Hospital params in page:', (await params).hospital);
+  const partner = PARTNERS.find(
+    async item => item.slug === (await params).hospital
+  );
+
+  if (!partner) {
+    return <div>Partner not found</div>;
+  }
+
+  const [featuresData, posts] = await Promise.all([
+    getListPartnerFeatures(partner.keyword),
+    getPosts(partner.keyword),
+  ]);
+
   return (
     <div className=''>
-      <HomeHero />
+      <HomeHero featuresData={featuresData} />
       <HomeFeatures />
-      <HomeInfo />
+      <HomeInfo keyword={partner.keyword} />
       <Suspense fallback={<Loading />}>
-        <HomePosts />
+        <HomePosts posts={posts} />
       </Suspense>
       <HomeSupports />
     </div>

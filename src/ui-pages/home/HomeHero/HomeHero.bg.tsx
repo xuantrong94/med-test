@@ -1,6 +1,7 @@
 'use client';
-import HomeBanner from '@/assets/images/home/home-banner.webp';
+import HomeBanner from '@/assets/images/home/bvmathcm-home-banner.webp';
 import Image from 'next/image';
+
 export default function HomeHeroBg() {
   return (
     <div className='relative lg:min-h-[720px]'>

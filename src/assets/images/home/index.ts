@@ -1,0 +1,6 @@
+export { default as ImgHomeChatFacebook } from 'chat-fb.png';
+export { default as ImgHomeChatZalo } from 'chat-zalo.jpg';
+export { default as ImgHomeFanpageFacebook } from 'fanpage-fb.svg';
+export { default as ImgHomeHotline } from 'hotline.svg';
+export { default as ImgHomeLine } from 'line.png';
+export { default as ImgBvmathcmHomeBanner } from 'bvmathcm-home-banner.webp';

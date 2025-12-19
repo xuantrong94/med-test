@@ -42,14 +42,16 @@ export interface FeatureItem {
   __v: number;
 }
 
-export const getListPartnerFeatures = async (): Promise<FeatureItem[]> => {
+export const getListPartnerFeatures = async (
+  partnerid: string
+): Promise<FeatureItem[]> => {
   const response = await fetch(
     'https://api-v2.medpro.com.vn/feature/list-feature-by-partner',
     {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        partnerid: 'bvmathcm',
+        partnerid: partnerid,
       },
     }
   );

@@ -5,7 +5,7 @@ export default function MainPost({
   content,
   description,
   created_at,
-}: Post) {
+}: Readonly<Post>) {
   return (
     <>
       <h1 className='mb-4 text-3xl leading-normal font-bold text-pretty'>
