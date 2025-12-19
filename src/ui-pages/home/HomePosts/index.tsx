@@ -53,7 +53,7 @@ async function HomePosts() {
         ))}
       </div>
       <Link
-        href={`/tin-tuc`}
+        href={`/benh-vien-mat/tin-tuc`}
         className='hover:shadow-custom mx-auto inline-flex rounded-lg border border-gray-200 px-4 py-2 text-sm shadow-lg transition-all duration-200 hover:-translate-y-0.5 md:px-6 lg:px-8 lg:py-2.5'
       >
         Xem thêm...

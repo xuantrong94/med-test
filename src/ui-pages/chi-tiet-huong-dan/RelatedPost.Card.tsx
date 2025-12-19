@@ -7,7 +7,7 @@ const RelatedPostCard = ({ title, slug, images, createdAt }: PatientGuide) => {
   return (
     <Link
       className='group grid cursor-pointer grid-cols-12 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-shadow hover:shadow-lg'
-      href={`/chi-tiet-huong-dan/${slug}`}
+      href={`/benh-vien-mat/chi-tiet-huong-dan/${slug}`}
     >
       <div className='relative col-span-12 aspect-2/1 md:col-span-4 md:aspect-auto lg:col-span-5'>
         <Image

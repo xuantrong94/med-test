@@ -2,37 +2,37 @@ const URLS = [
   {
     key: 'home',
     label: 'Trang chủ',
-    url: '/',
+    url: '/benh-vien-mat',
   },
   {
     key: 'about',
     label: 'Giới thiệu',
-    url: '/gioi-thieu',
+    url: '/benh-vien-mat/gioi-thieu',
   },
   {
     key: 'process',
     label: 'Quy trình',
-    url: '/quy-trinh',
+    url: '/benh-vien-mat/quy-trinh',
   },
   {
     key: 'services',
     label: 'Hướng dẫn',
-    url: '/huong-dan-benh-nhan',
+    url: '/benh-vien-mat/huong-dan-benh-nhan',
   },
   {
     key: 'faq',
     label: 'Thắc mắc',
-    url: '/thac-mac',
+    url: '/benh-vien-mat/thac-mac',
   },
   {
     key: 'contact',
     label: 'Liên hệ',
-    url: '/lien-he',
+    url: '/benh-vien-mat/lien-he',
   },
   {
     key: 'news',
     label: 'Tin tức',
-    url: '/tin-tuc',
+    url: '/benh-vien-mat/tin-tuc',
   },
 ];
 

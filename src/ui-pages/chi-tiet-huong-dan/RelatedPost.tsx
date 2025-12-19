@@ -20,7 +20,7 @@ const RelatedPost = async ({ slug }: Props) => {
       </ul>
       <Link
         className='bg-primary hover:bg-primary-dark mx-auto inline-flex rounded-md px-4 py-2 text-white'
-        href={`/huong-dan-benh-nhan`}
+        href={`/benh-vien-mat/huong-dan-benh-nhan`}
       >
         Xem tất cả
       </Link>

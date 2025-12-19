@@ -10,10 +10,14 @@ export async function generateMetadata() {
   };
 }
 
-export default function BenhVienMatLayout({
+export default async function BenhVienMatLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ hospital: string }>;
 }>) {
-  return <PartnerLayout>{children}</PartnerLayout>;
+  return (
+    <PartnerLayout hospital={(await params).hospital}>{children}</PartnerLayout>
+  );
 }

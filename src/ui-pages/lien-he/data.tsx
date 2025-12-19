@@ -19,7 +19,7 @@ export const officeInfo = [
             className='h-10 w-auto lg:h-14'
           />
         ),
-        url: '/thac-mac',
+        url: '/benh-vien-mat/thac-mac',
       },
     ],
   },

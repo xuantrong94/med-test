@@ -16,7 +16,7 @@ export default async function DatKhamTheoNgayPage() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+            <BreadcrumbLink href='/benh-vien-mat'>Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

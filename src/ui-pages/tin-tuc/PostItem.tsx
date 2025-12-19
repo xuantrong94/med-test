@@ -7,7 +7,7 @@ const PostItem = ({ image, title, description, created_at, slug }: Post) => {
   return (
     <Link
       className='mx-auto flex max-w-3xl overflow-hidden rounded-md border border-gray-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg'
-      href={'/tin-tuc/' + slug}
+      href={'/benh-vien-mat/tin-tuc/' + slug}
     >
       <div className='relative aspect-4/3 h-35'>
         <Image

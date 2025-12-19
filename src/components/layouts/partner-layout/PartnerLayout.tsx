@@ -2,7 +2,13 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-const PartnerLayout = ({ children }: { children: React.ReactNode }) => {
+const PartnerLayout = ({
+  children,
+  hospital,
+}: {
+  children: React.ReactNode;
+  hospital: string;
+}) => {
   return (
     <>
       <Header />

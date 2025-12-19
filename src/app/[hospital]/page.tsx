@@ -21,7 +21,12 @@ const HomeSupports = dynamic(
     loading: () => <Loading />,
   }
 );
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ hospital: string }>;
+}) {
+  console.log('Hospital params in page:', (await params).hospital);
   return (
     <div className=''>
       <HomeHero />
