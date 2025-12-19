@@ -8,6 +8,9 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
+import useGetPartnerSlug from '@/hooks/useGetPartnerSlug';
+import { getHeaderLogo } from '@/data/header';
+import { IconLogoMed } from '@/assets/icons/header';
 
 // Dynamic import cho HeaderDrawer
 const HeaderDrawer = dynamic(() => import('./HeaderDrawer'), {
@@ -16,6 +19,9 @@ const HeaderDrawer = dynamic(() => import('./HeaderDrawer'), {
 });
 
 function Header() {
+  const partnerSlug = useGetPartnerSlug();
+  const HeaderLogo = getHeaderLogo(partnerSlug);
+
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const pathname = usePathname();
 
@@ -27,17 +33,20 @@ function Header() {
     setIsDrawerOpen(false);
   };
 
+  const isLandscapeLogo = HeaderLogo.width > HeaderLogo.height * 3;
+  console.log('HeaderLogo:', HeaderLogo);
   return (
     <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-gray-200 bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
         <div className='mr-auto ml-0'>
           <Image
-            src='/logo.svg'
+            src={HeaderLogo}
             alt='Logo'
-            width={154}
-            height={90}
-            className='h-[60px] w-auto lg:h-[90px]'
-            overrideSrc='/logo.svg'
+            className={cn(
+              'w-auto',
+              isLandscapeLogo ? 'h-12' : 'h-[60px] lg:h-[90px]'
+            )}
+            overrideSrc={HeaderLogo.src}
           />
         </div>
 
@@ -83,11 +92,11 @@ function Header() {
         {/* Desktop contact info - ẩn trên mobile */}
         <div className='hidden flex-col items-center lg:flex'>
           <Image
-            src='/logo_medpro.svg'
+            src={IconLogoMed}
             alt='Medpro'
             width={135}
             height={40}
-            overrideSrc='/logo_medpro.svg'
+            overrideSrc={IconLogoMed.src}
           />
           <div className='flex flex-col items-center'>
             <span className='flex text-[13px]'>{phones.booking.label}</span>
@@ -116,6 +125,7 @@ function Header() {
       <HeaderDrawer
         isOpen={isDrawerOpen}
         onClose={closeDrawer}
+        Logo={HeaderLogo}
       />
     </header>
   );

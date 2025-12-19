@@ -1,14 +1,19 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { cn } from '@/utils/cn';
 
 interface InfoItemProps {
-  icon: string;
+  icon: StaticImageData;
   text: string;
   id: number;
   reverse?: boolean;
 }
 
-function InfoItem({ icon, text, id, reverse = false }: InfoItemProps) {
+function InfoItem({
+  icon,
+  text,
+  id,
+  reverse = false,
+}: Readonly<InfoItemProps>) {
   return (
     <div
       className={cn(
@@ -17,12 +22,12 @@ function InfoItem({ icon, text, id, reverse = false }: InfoItemProps) {
       )}
     >
       <Image
-        src={icon}
+        src={icon.src}
         alt={`info-${id}`}
         width={40}
         height={40}
         className='aspect-square shrink-0'
-        overrideSrc={icon}
+        overrideSrc={icon.src}
       />
       <h3
         className={cn(

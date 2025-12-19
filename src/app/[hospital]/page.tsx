@@ -29,9 +29,8 @@ export default async function Home({
 }: {
   params: Promise<{ hospital: string }>;
 }) {
-  const partner = PARTNERS.find(
-    async item => item.slug === (await params).hospital
-  );
+  const { hospital } = await params;
+  const partner = PARTNERS.find(item => item.slug === hospital);
 
   if (!partner) {
     return <div>Partner not found</div>;

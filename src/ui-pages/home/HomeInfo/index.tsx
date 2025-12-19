@@ -6,7 +6,7 @@ import HOME_INFO from '@/shared/static-content/home/home-info';
 async function HomeInfo({ keyword }: Readonly<{ keyword: string }>) {
   const { LEFT: leftInfoItems, RIGHT: rightInfoItems } = HOME_INFO.ITEMS;
   const { CENTER_IMAGE_URL } = HOME_INFO;
-
+  console.log('HomeInfo render with keyword:', keyword);
   return (
     <section className='relative container mx-auto flex max-w-[1200px] flex-col justify-center gap-6 px-4 pb-10 md:flex-row md:items-center md:pb-14 lg:pb-20'>
       <Image

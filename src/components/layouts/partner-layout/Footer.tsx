@@ -14,9 +14,7 @@ import Link from 'next/link';
 
 function Footer() {
   const partnerSlug = useGetPartnerSlug();
-  console.log('Footer render - partnerSlug:', partnerSlug);
   const PartnerLogo = getFooterLogo(partnerSlug);
-  console.log('Footer render - PartnerLogo:', PartnerLogo);
   return (
     <footer className='bg-[#f5f5f5] py-10 md:py-14 lg:py-20 lg:pb-[72px]'>
       <div className='container mx-auto max-w-[1200px] px-4'>

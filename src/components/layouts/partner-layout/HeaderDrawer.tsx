@@ -2,18 +2,19 @@
 import { HEADER_URLS } from '@/shared/constants/urls';
 import { phones } from '@/shared/constants/contact';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { LogIn, X } from 'lucide-react';
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
-
+import { IconLogoMed } from '@/assets/icons/header';
 interface HeaderDrawerProps {
   isOpen: boolean;
   onClose: () => void;
+  Logo: StaticImageData;
 }
 
-function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
+function HeaderDrawer({ isOpen, onClose, Logo }: Readonly<HeaderDrawerProps>) {
   const pathname = usePathname();
 
   // Handle backdrop click
@@ -34,12 +35,12 @@ function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
         {/* Header của drawer */}
         <div className='flex items-center justify-between border-b border-[--color-border] p-5'>
           <Image
-            src='/logo.svg'
+            src={Logo}
             alt='Logo'
             width={120}
             height={70}
             className='h-10 w-auto'
-            overrideSrc='/logo.svg'
+            overrideSrc={Logo.src}
           />
           <button
             className='text-text-secondary hover:bg-bg-secondary cursor-pointer rounded border-none bg-transparent p-2 text-xl transition-colors duration-300'
@@ -92,12 +93,12 @@ function HeaderDrawer({ isOpen, onClose }: Readonly<HeaderDrawerProps>) {
         {/* Contact info */}
         <div className='border-t border-[--color-border] p-5 text-center'>
           <Image
-            src='/logo_medpro.svg'
+            src={IconLogoMed}
             alt='Medpro'
             width={100}
             height={30}
             className='mb-3'
-            overrideSrc='/logo_medpro.svg'
+            overrideSrc={IconLogoMed.src}
           />
           <div className='flex flex-col items-center gap-1'>
             <span className='text-text-secondary text-[13px]'>

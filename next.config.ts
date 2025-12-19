@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         hostname: 'cdn-pkh.longvan.net',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'prod-partner.s3-hcm-r1.longvan.net',
+        pathname: '/**',
+      },
     ],
   },
 };
