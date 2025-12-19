@@ -11,6 +11,10 @@ const PARTNERS = [
     keyword: 'nhidong1',
     slug: 'benh-vien-nhi-dong-1',
   },
+  {
+    keyword: 'choray',
+    slug: 'benh-vien-cho-ray',
+  },
 ];
 
 export default PARTNERS;

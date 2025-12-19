@@ -1,6 +1,10 @@
-export { default as IconAppStore } from 'appstore.svg';
-export { default as IconDangKyBoCongThuong } from 'dangkybocongthuong.svg';
-export { default as IconThongBaoBoCongThuong } from 'thongbaobocongthuong.svg';
-export { default as IconGooglePlay } from 'googleplay.svg';
-export { default as IconFacebook } from 'facebook.svg';
-export { default as IconMedFooterLogo } from 'footer_logo.svg';
+export { default as IconAppStore } from './appstore.svg';
+export { default as IconDangKyBoCongThuong } from './dangkybocongthuong.svg';
+export { default as IconThongBaoBoCongThuong } from './thongbaobocongthuong.svg';
+export { default as IconGooglePlay } from './googleplay.svg';
+export { default as IconFacebook } from './facebook.svg';
+export { default as IconMedFooterLogo } from './footer_logo.svg';
+export { default as IconFooterBenhVienMat } from './footer_logo_bvmathcm.svg';
+export { default as IconFooterChoRay } from './footer_logo_choray.svg';
+export { default as IconFooterNhiDong1 } from './footer_logo_nhidong1.svg';
+export { default as IconFooterDaLieu } from './footer_logo_dalieuhcm.svg';

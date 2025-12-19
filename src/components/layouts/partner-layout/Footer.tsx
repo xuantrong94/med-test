@@ -1,9 +1,22 @@
 'use client';
+import {
+  IconAppStore,
+  IconDangKyBoCongThuong,
+  IconGooglePlay,
+  IconMedFooterLogo,
+  IconThongBaoBoCongThuong,
+} from '@/assets/icons/footer';
+import { getFooterLogo } from '@/data/footer';
+import useGetPartnerSlug from '@/hooks/useGetPartnerSlug';
 import { address, email, phones, website } from '@/shared/constants/contact';
 import Image from 'next/image';
 import Link from 'next/link';
 
 function Footer() {
+  const partnerSlug = useGetPartnerSlug();
+  console.log('Footer render - partnerSlug:', partnerSlug);
+  const PartnerLogo = getFooterLogo(partnerSlug);
+  console.log('Footer render - PartnerLogo:', PartnerLogo);
   return (
     <footer className='bg-[#f5f5f5] py-10 md:py-14 lg:py-20 lg:pb-[72px]'>
       <div className='container mx-auto max-w-[1200px] px-4'>
@@ -15,12 +28,12 @@ function Footer() {
               <div className='w-full lg:w-1/3'>
                 <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
                   <Image
-                    src='/logo.svg'
+                    src={PartnerLogo}
                     alt='logo'
                     className='mb-2 h-12 w-auto lg:mb-4'
                     width={154}
                     height={90}
-                    overrideSrc='/logo.svg'
+                    overrideSrc={PartnerLogo.src}
                   />
                   <div className='flex flex-col gap-2'>
                     <p className='block text-sm'>Địa chỉ: {address.full}</p>
@@ -72,11 +85,11 @@ function Footer() {
                       className='flex items-center justify-center'
                     >
                       <Image
-                        src='/dangkybocongthuong.svg'
+                        src={IconDangKyBoCongThuong}
                         alt='dangkybocongthuong'
                         width={134}
                         height={50}
-                        overrideSrc='/dangkybocongthuong.svg'
+                        overrideSrc={IconDangKyBoCongThuong.src}
                       />
                     </Link>
                   </div>
@@ -86,11 +99,11 @@ function Footer() {
                       className='flex items-center justify-center'
                     >
                       <Image
-                        src='/thongbaobocongthuong.svg'
+                        src={IconThongBaoBoCongThuong}
                         alt='thongbaobocongthuong'
                         width={134}
                         height={50}
-                        overrideSrc='/thongbaobocongthuong.svg'
+                        overrideSrc={IconThongBaoBoCongThuong.src}
                       />
                     </Link>
                   </div>
@@ -100,11 +113,11 @@ function Footer() {
                       className='flex items-center justify-center'
                     >
                       <Image
-                        src='/appstore.svg'
+                        src={IconAppStore}
                         alt='appstore'
                         width={134}
                         height={50}
-                        overrideSrc='/appstore.svg'
+                        overrideSrc={IconAppStore.src}
                       />
                     </Link>
                   </div>
@@ -114,11 +127,11 @@ function Footer() {
                       className='flex items-center justify-center'
                     >
                       <Image
-                        src='/googleplay.svg'
+                        src={IconGooglePlay}
                         alt='googleplay'
                         width={134}
                         height={50}
-                        overrideSrc='/googleplay.svg'
+                        overrideSrc={IconGooglePlay.src}
                       />
                     </Link>
                   </div>
@@ -131,12 +144,12 @@ function Footer() {
           <div className='w-full lg:w-1/4'>
             <div className='flex flex-col gap-2 text-center lg:ml-auto lg:text-left'>
               <Image
-                src='/footer_logo.svg'
+                src={IconMedFooterLogo}
                 alt='footer logo'
                 className='mx-auto h-10 w-auto lg:ml-0'
                 width={80}
                 height={41}
-                overrideSrc='/footer_logo.svg'
+                overrideSrc={IconMedFooterLogo.src}
               />
               <div className='flex flex-col gap-2'>
                 <Link
@@ -146,19 +159,19 @@ function Footer() {
                   ĐƯỢC PHÁT TRIỂN BỞI MEDPRO
                 </Link>
                 <Link
-                  href='#'
+                  href='https://medpro.vn'
                   className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Website: medpro.vn
                 </Link>
                 <Link
-                  href='#'
+                  href='mailto:cskh@medpro.vn'
                   className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Email: cskh@medpro.vn
                 </Link>
                 <Link
-                  href='#'
+                  href='tel:19002115'
                   className='hover:text-info text-sm text-inherit no-underline'
                 >
                   Điện thoại: 1900 2115

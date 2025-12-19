@@ -12,12 +12,8 @@ export async function generateMetadata() {
 
 export default async function BenhVienMatLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ hospital: string }>;
 }>) {
-  return (
-    <PartnerLayout hospital={(await params).hospital}>{children}</PartnerLayout>
-  );
+  return <PartnerLayout>{children}</PartnerLayout>;
 }
