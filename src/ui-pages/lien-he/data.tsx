@@ -1,4 +1,10 @@
-import { address, hospital, phones, social } from '@/shared/constants/contact';
+import {
+  address,
+  hospital,
+  phones,
+  social,
+  type HospitalKey,
+} from '@/shared/constants/contact';
 import Image from 'next/image';
 import { Hospital, Settings, Stethoscope } from 'lucide-react';
 import {
@@ -7,6 +13,7 @@ import {
   IconLienHeTime,
   IconLienHeMessage,
 } from '@/assets/icons/lien-he';
+
 export const officeInfo = [
   {
     title: 'Hỏi đáp nhanh',
@@ -69,17 +76,17 @@ export const officeInfo = [
     isInTime: new Date().getHours() >= 7.5 && new Date().getHours() <= 16.5,
   },
 ];
-export const contactInfo = [
+export const getContactInfo = (keyword: HospitalKey) => [
   {
     img: <Hospital size={28} />,
-    title: hospital.name,
-    info: address.full,
+    title: hospital[keyword]?.name,
+    info: address[keyword]?.full,
   },
   {
     img: <Stethoscope size={28} />,
-    title: phones.medical.label,
-    info: phones.medical.display,
-    url: phones.medical.tel,
+    title: phones[keyword]?.label,
+    info: phones[keyword]?.display,
+    url: phones[keyword]?.tel,
   },
   {
     img: <Settings size={28} />,
@@ -88,4 +95,4 @@ export const contactInfo = [
     url: phones.booking.tel,
   },
 ];
-export type ContactInfo = (typeof contactInfo)[number];
+export type ContactInfo = ReturnType<typeof getContactInfo>[number];

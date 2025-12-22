@@ -8,12 +8,23 @@ import {
 } from '@/assets/icons/footer';
 import { getFooterLogo } from '@/data/footer';
 import useGetPartnerSlug from '@/hooks/useGetPartnerSlug';
-import { address, email, phones, website } from '@/shared/constants/contact';
+import {
+  address,
+  email,
+  phones,
+  website,
+  type HospitalKey,
+} from '@/shared/constants/contact';
+import PARTNERS from '@/shared/constants/partners';
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 function Footer() {
   const partnerSlug = useGetPartnerSlug();
+  const partner = PARTNERS.find(item => item.slug === partnerSlug);
+  if (!partner) return notFound();
+  const { keyword } = partner;
   const PartnerLogo = getFooterLogo(partnerSlug);
   return (
     <footer className='bg-[#f5f5f5] py-10 md:py-14 lg:py-20 lg:pb-[72px]'>
@@ -34,11 +45,17 @@ function Footer() {
                     overrideSrc={PartnerLogo.src}
                   />
                   <div className='flex flex-col gap-2'>
-                    <p className='block text-sm'>Địa chỉ: {address.full}</p>
-                    <p className='block text-sm'>Website: {website.main.url}</p>
-                    <p className='block text-sm'>Email: {email.primary}</p>
                     <p className='block text-sm'>
-                      Điện thoại: {phones.medical.display}
+                      Địa chỉ: {address[keyword as HospitalKey]?.full}
+                    </p>
+                    <p className='block text-sm'>
+                      Website: {website[keyword as HospitalKey]?.url}
+                    </p>
+                    <p className='block text-sm'>
+                      Email: {email[keyword as HospitalKey]}
+                    </p>
+                    <p className='block text-sm'>
+                      Điện thoại: {phones[keyword as HospitalKey]?.display}
                     </p>
                   </div>
                 </div>

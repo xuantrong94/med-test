@@ -169,6 +169,20 @@ export const CONTACT_INFO = {
   },
 } as const;
 
+export type ContactInfoType = typeof CONTACT_INFO;
+export type HospitalKey = Exclude<
+  keyof typeof CONTACT_INFO.hospital,
+  'name' | 'nameFull'
+>;
+export type AddressKey = Exclude<
+  keyof typeof CONTACT_INFO.address,
+  'full' | 'street' | 'ward' | 'district' | 'city'
+>;
+export type PhoneKey = Exclude<
+  keyof typeof CONTACT_INFO.phones,
+  'booking' | 'medical'
+>;
+
 // Helper functions để dễ sử dụng
 export const getWorkingHoursStatus = () => {
   const currentHour = new Date().getHours() + new Date().getMinutes() / 60;
