@@ -21,8 +21,10 @@ const AccordionItemComponent: React.FC<Props> = ({
         id={`faqs-title-${item.id}`}
         type='button'
         className={cn(
-          'bg-primary border-primary flex w-full items-center justify-between border px-4 py-2 text-left text-white',
-          expanded ? 'rounded-t-md' : 'rounded-md'
+          'flex w-full items-center justify-between border px-4 py-2 text-left',
+          expanded
+            ? 'bg-primary border-primary rounded-t-md text-white'
+            : 'rounded-md bg-gray-100'
         )}
         onClick={onToggle}
         aria-expanded={expanded}
@@ -36,7 +38,7 @@ const AccordionItemComponent: React.FC<Props> = ({
           />
         ) : (
           <ChevronDown
-            className='ml-8 shrink-0 text-white transition duration-200 ease-out'
+            className='text-gray ml-8 shrink-0 transition duration-200 ease-out'
             size={16}
           />
         )}

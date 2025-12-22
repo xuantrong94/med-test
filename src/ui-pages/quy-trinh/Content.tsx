@@ -1,11 +1,10 @@
-import React from 'react';
-import { bookingProcess } from './data';
 import Step from './Step';
+import { Partner } from '@/shared/constants/partners';
 
-const GioiThieuContent = () => {
+const GioiThieuContent = ({ partner }: { partner: Partner }) => {
   return (
     <section>
-      {bookingProcess.map(step => (
+      {partner.process.map(step => (
         <Step
           key={step.step}
           {...step}

@@ -3,12 +3,22 @@ import QuyTrinhHeroImg from '@/assets/images/quy-trinh/hero.jpg';
 import Hero from '@/components/layouts/static-page/Hero';
 import Content from '@/components/layouts/static-page/Content';
 import GioiThieuContent from '@/ui-pages/quy-trinh/Content';
-export default async function QuyTrinhPage() {
+import PARTNERS from '@/shared/constants/partners';
+export default async function QuyTrinhPage({
+  params,
+}: {
+  params: Promise<{ hospital: string }>;
+}) {
+  const { hospital } = await params;
+  const partner = PARTNERS.find(item => item.slug === hospital);
+  if (!partner) {
+    return <div>Hospital not found</div>;
+  }
   return (
     <Layout
       content={
         <Content>
-          <GioiThieuContent />
+          <GioiThieuContent partner={partner} />
         </Content>
       }
       hero={

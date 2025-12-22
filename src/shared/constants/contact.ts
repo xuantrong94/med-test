@@ -8,6 +8,22 @@ export const CONTACT_INFO = {
   hospital: {
     name: 'Bệnh viện Mắt®',
     nameFull: 'Bệnh viện Mắt - Eye Hospital',
+    bvmathcm: {
+      name: 'Bệnh viện Mắt®',
+      nameFull: 'Bệnh viện Mắt - Eye Hospital',
+    },
+    dalieuhcm: {
+      name: 'Bệnh viện Da Liễu Thành phố Hồ Chí Minh®',
+      nameFull: '',
+    },
+    nhidong1: {
+      name: 'Bệnh viện Nhi Đồng 1®',
+      nameFull: '',
+    },
+    choray: {
+      name: 'Bệnh viện Chợ Rẫy®',
+      nameFull: '',
+    },
   },
 
   // Địa chỉ
@@ -17,6 +33,34 @@ export const CONTACT_INFO = {
     ward: 'Phường Võ Thị Sáu',
     district: 'Quận 3',
     city: 'TP.HCM',
+    bvmathcm: {
+      full: '280 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, TP.HCM',
+      street: '280 Điện Biên Phủ',
+      ward: 'Phường Võ Thị Sáu',
+      district: 'Quận 3',
+      city: 'TP.HCM',
+    },
+    dalieuhcm: {
+      full: '2 Nguyễn Thông, Phường 6, Quận 3, TP.HCM',
+      street: '2 Nguyễn Thông',
+      ward: 'Phường 6',
+      district: 'Quận 3',
+      city: 'TP.HCM',
+    },
+    nhidong1: {
+      full: '341 Sư Vạn Hạnh, Phường 10, Quận 10, TP.HCM',
+      street: '341 Sư Vạn Hạnh',
+      ward: 'Phường 10',
+      district: 'Quận 10',
+      city: 'TP.HCM',
+    },
+    choray: {
+      full: '201B Nguyễn Chí Thanh, Phường 12, Quận 5, TP.HCM',
+      street: '201B Nguyễn Chí Thanh',
+      ward: 'Phường 12',
+      district: 'Quận 5',
+      city: 'TP.HCM',
+    },
   },
 
   // Số điện thoại
@@ -35,11 +79,39 @@ export const CONTACT_INFO = {
       tel: 'tel:02839325364',
       label: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
     },
+    bvmathcm: {
+      display: '(028).3932.5356',
+      number: '02839325356',
+      tel: 'tel:02839325356',
+      label: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
+    },
+    dalieuhcm: {
+      display: '028.3930.1996 - 0901.365.638',
+      number: '02839301996 - 0901365638',
+      tel: 'tel:02839301996',
+      label: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
+    },
+    nhidong1: {
+      display: '(028) 39271119 - (028) 39272726',
+      number: '02839271119 - 02839272726',
+      tel: 'tel:02839271119',
+      label: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
+    },
+    choray: {
+      display: '(84-028) 3855 4137',
+      number: '03838554137',
+      tel: 'tel:03838554137',
+      label: 'GIẢI ĐÁP VỀ CHUYÊN MÔN',
+    },
   },
 
   // Email
   email: {
     primary: 'hcmceyehospital@gmail.com',
+    bvmathcm: 'hcmceyehospital@gmail.com',
+    dalieuhcm: '',
+    nhidong1: 'bvnhidong@nhidong.org.vn',
+    choray: 'bvchoray@choray.vn',
   },
 
   // Website
@@ -48,6 +120,22 @@ export const CONTACT_INFO = {
     main: {
       url: 'https://benhvienmat.com/',
       label: 'Website chính',
+    },
+    bvmathcm: {
+      url: ' http://www.bvdl.org.vn',
+      label: 'Website Bệnh viện Mắt TP.HCM',
+    },
+    dalieuhcm: {
+      url: ' http://www.bvdl.org.vn',
+      label: 'Website Bệnh viện Da Liễu TP.HCM',
+    },
+    nhidong1: {
+      url: 'http://www.nhidong.org.vn/',
+      label: 'Website Bệnh viện Nhi Đồng 1',
+    },
+    choray: {
+      url: 'https://choray.vn',
+      label: 'Website Bệnh viện Chợ Rẫy',
     },
     // Website đặt lịch khám bệnh
     booking: {
