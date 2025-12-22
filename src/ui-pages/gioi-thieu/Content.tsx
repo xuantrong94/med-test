@@ -1,16 +1,21 @@
 import { gioiThieuContent } from './data';
 
-export default async function GioiThieuContent() {
+export default async function GioiThieuContent({
+  partner,
+}: Readonly<{
+  partner: string;
+}>) {
+  const content = gioiThieuContent(partner);
   return (
     <>
-      {gioiThieuContent.greeting}
+      {content.greeting}
       <ul className='my-3 ml-2 list-inside list-disc space-y-2'>
-        {gioiThieuContent.list.map((item, index) => (
-          <li key={index}>{item}</li>
+        {content.list.map(item => (
+          <li key={item}>{item}</li>
         ))}
       </ul>
-      <p>{gioiThieuContent.commitment}</p>
-      <p>{gioiThieuContent.footer}</p>
+      <p>{content.commitment}</p>
+      <p>{content.footer}</p>
     </>
   );
 }

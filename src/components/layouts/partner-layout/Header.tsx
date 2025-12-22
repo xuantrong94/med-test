@@ -24,6 +24,7 @@ function Header() {
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const pathname = usePathname();
+  const partner = useGetPartnerSlug();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -34,7 +35,6 @@ function Header() {
   };
 
   const isLandscapeLogo = HeaderLogo.width > HeaderLogo.height * 3;
-  console.log('HeaderLogo:', HeaderLogo);
   return (
     <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-gray-200 bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
@@ -61,7 +61,7 @@ function Header() {
           <nav>
             <ul className='m-0 flex list-none justify-end p-0'>
               {HEADER_URLS.map(item => {
-                const isActive = pathname === item.url;
+                const isActive = pathname === `/${partner}${item.url}`;
 
                 return (
                   <li
@@ -72,7 +72,7 @@ function Header() {
                     )}
                   >
                     <Link
-                      href={item.url}
+                      href={`/${partner}${item.url}`}
                       className={cn(
                         'no-underline transition-colors duration-200',
                         isActive

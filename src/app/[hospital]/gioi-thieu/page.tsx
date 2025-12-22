@@ -3,8 +3,19 @@ import Layout from '@/components/layouts/static-page/Layout';
 import GioiThieuHeroImg from '@/assets/images/gioi-thieu/hero.jpg';
 import Content from '@/components/layouts/static-page/Content';
 import GioiThieuContent from '@/ui-pages/gioi-thieu/Content';
+import PARTNERS from '@/shared/constants/partners';
 
-export default function GioiThieu() {
+export default async function GioiThieu({
+  params,
+}: {
+  params: Promise<{ hospital: string }>;
+}) {
+  const { hospital } = await params;
+  const partner = PARTNERS.find(item => item.slug === hospital);
+  if (!partner) {
+    return <div>Partner not found</div>;
+  }
+  const partnerGioiThieuContent = partner.gioithieuContent;
   return (
     <Layout
       hero={
@@ -15,7 +26,7 @@ export default function GioiThieu() {
       }
       content={
         <Content>
-          <GioiThieuContent />
+          <GioiThieuContent partner={partnerGioiThieuContent} />
         </Content>
       }
     />
