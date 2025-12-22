@@ -6,7 +6,10 @@ import getImageUrl from '@/utils/getImageUrl';
 import HOME_POSTS from '@/shared/static-content/home/home-posts';
 import { Post } from '@/shared/endpoints/post.endpoint';
 
-async function HomePosts({ posts }: Readonly<{ posts?: Post[] }>) {
+async function HomePosts({
+  posts,
+  hospital,
+}: Readonly<{ posts?: Post[]; hospital: string }>) {
   const postsToRender = Array.isArray(posts) ? posts : [];
 
   return (
@@ -19,11 +22,12 @@ async function HomePosts({ posts }: Readonly<{ posts?: Post[] }>) {
             post={post}
             imageUrl={getImageUrl(post)}
             formattedDate={formatDate(post.published_at || post.created_at)}
+            hospital={hospital}
           />
         ))}
       </div>
       <Link
-        href={`/benh-vien-mat/tin-tuc`}
+        href={`/${hospital}/tin-tuc`}
         className='hover:shadow-custom mx-auto inline-flex rounded-lg border border-gray-200 px-4 py-2 text-sm shadow-lg transition-all duration-200 hover:-translate-y-0.5 md:px-6 lg:px-8 lg:py-2.5'
       >
         {HOME_POSTS.CTA}

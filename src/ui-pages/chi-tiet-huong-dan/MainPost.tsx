@@ -2,10 +2,14 @@ import { getGuide } from '@/shared/endpoints/patient-guide.endpint';
 
 type Props = {
   slug: string;
+  hospital: string;
 };
 
-const MainPost = async ({ slug }: Props) => {
-  const { title, content, description, createdAt } = await getGuide(slug);
+const MainPost = async ({ slug, hospital }: Props) => {
+  const { title, content, description, createdAt } = await getGuide(
+    slug,
+    hospital
+  );
   return (
     <>
       <h1 className='mb-4 text-3xl leading-normal font-bold text-pretty'>

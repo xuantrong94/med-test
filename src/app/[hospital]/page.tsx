@@ -47,7 +47,10 @@ export default async function Home({
       <HomeFeatures />
       <HomeInfo keyword={partner.keyword} />
       <Suspense fallback={<Loading />}>
-        <HomePosts posts={posts} />
+        <HomePosts
+          posts={posts}
+          hospital={hospital}
+        />
       </Suspense>
       <HomeSupports />
     </div>

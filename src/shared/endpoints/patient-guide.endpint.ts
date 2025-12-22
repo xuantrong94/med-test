@@ -17,14 +17,16 @@ export interface PatientGuideResponse {
   rows: PatientGuide[];
 }
 
-export const getGuides = async (): Promise<PatientGuideResponse> => {
+export const getGuides = async (
+  partnerid: string
+): Promise<PatientGuideResponse> => {
   const response = await fetch(
-    'https://api-v2.medpro.com.vn/guide-patient/list?partnerId=bvmathcm&pageSize=8&pageIndex=0',
+    `https://api-v2.medpro.com.vn/guide-patient/list?partnerId=${partnerid}&pageSize=8&pageIndex=0`,
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        partnerid: 'bvmathcm',
+        partnerid: partnerid,
       },
       body: JSON.stringify({
         pageIndex: 0,
@@ -39,14 +41,18 @@ export const getGuides = async (): Promise<PatientGuideResponse> => {
   return data;
 };
 
-export const getGuide = async (slug: string): Promise<PatientGuide> => {
+export const getGuide = async (
+  slug: string,
+  partnerid: string
+): Promise<PatientGuide> => {
+  console.log('Fetching guide with slug:', slug, 'and partnerid:', partnerid);
   const response = await fetch(
     `https://api-v2.medpro.com.vn/guide-patient/find-by-condition?slug=${slug}`,
     {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        partnerid: 'bvmathcm',
+        partnerid: partnerid,
       },
     }
   );

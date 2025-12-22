@@ -3,7 +3,17 @@ import Content from '@/components/layouts/static-page/Content';
 import Hero from '@/components/layouts/static-page/Hero';
 import Layout from '@/components/layouts/static-page/Layout';
 import HuongDanBenhNhanContent from '@/ui-pages/huong-dan-benh-nhan/Content';
-const PatientGuide = async () => {
+import getPartnerId from '@/utils/getPartnertId';
+const PatientGuide = async ({
+  params,
+}: {
+  params: Promise<{ hospital: string }>;
+}) => {
+  const { hospital } = await params;
+  const partnerId = getPartnerId(hospital); // Ensure partner exists, can add error handling if needed
+  if (!partnerId) {
+    return <div>Partner not found</div>;
+  }
   return (
     <Layout
       hero={
@@ -14,7 +24,10 @@ const PatientGuide = async () => {
       }
       content={
         <Content>
-          <HuongDanBenhNhanContent />
+          <HuongDanBenhNhanContent
+            partnerId={partnerId}
+            hospital={hospital}
+          />
         </Content>
       }
     />

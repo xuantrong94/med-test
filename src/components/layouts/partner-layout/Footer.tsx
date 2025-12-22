@@ -48,25 +48,25 @@ function Footer() {
               <div className='hidden lg:block lg:w-1/4'>
                 <div className='flex flex-col gap-2.5'>
                   <Link
-                    href='/benh-vien-mat/lien-he'
+                    href={`/${partnerSlug}/lien-he`}
                     className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Liên hệ
                   </Link>
                   <Link
-                    href='/benh-vien-mat/dieu-khoan-dich-vu'
+                    href={`/${partnerSlug}/dieu-khoan-dich-vu`}
                     className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Điều khoản dịch vụ
                   </Link>
                   <Link
-                    href='/benh-vien-mat/chinh-sach-bao-mat'
+                    href={`/${partnerSlug}/chinh-sach-bao-mat`}
                     className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Chính sách bảo mật
                   </Link>
                   <Link
-                    href='/benh-vien-mat/quy-dinh-su-dung'
+                    href={`/${partnerSlug}/quy-dinh-su-dung`}
                     className='hover:text-info text-sm whitespace-nowrap text-inherit no-underline'
                   >
                     Quy định sử dụng

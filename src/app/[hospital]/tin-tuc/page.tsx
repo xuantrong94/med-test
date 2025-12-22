@@ -1,7 +1,16 @@
 import { getPosts } from '@/shared/endpoints/post.endpoint';
 import PostItem from '@/ui-pages/tin-tuc/PostItem';
-const Posts = async () => {
-  const posts = await getPosts();
+import getPartnerId from '@/utils/getPartnertId';
+const Posts = async ({ params }: { params: Promise<{ hospital: string }> }) => {
+  const { hospital } = await params;
+  const partnerid = getPartnerId(hospital);
+
+  if (!partnerid) {
+    return <div>Partner not found</div>;
+  }
+
+  const posts = await getPosts(partnerid);
+
   return (
     <div className='mt-15 lg:mt-30'>
       <div className='bg-linear-45 from-[#6a78d1] to-[#00a4bd] py-15'>
@@ -16,6 +25,7 @@ const Posts = async () => {
           <PostItem
             key={post.id}
             {...post}
+            hospital={hospital}
           />
         ))}
       </div>

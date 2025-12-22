@@ -1,11 +1,12 @@
-import IconFb from '@/assets/icons/facebook.svg';
-import IconZalo from '@/assets/icons/zalo.svg';
-import IconTime from '@/assets/icons/time.svg';
-import IconMsg from '@/assets/icons/message.svg';
-import IconPhone from '@/assets/icons/phone.svg';
 import { address, hospital, phones, social } from '@/shared/constants/contact';
 import Image from 'next/image';
 import { Hospital, Settings, Stethoscope } from 'lucide-react';
+import {
+  IconLienHeFacebook,
+  IconLienHeZalo,
+  IconLienHeTime,
+  IconLienHeMessage,
+} from '@/assets/icons/lien-he';
 export const officeInfo = [
   {
     title: 'Hỏi đáp nhanh',
@@ -14,7 +15,7 @@ export const officeInfo = [
       {
         icon: (
           <Image
-            src={IconMsg}
+            src={IconLienHeMessage}
             alt='Message'
             className='h-10 w-auto lg:h-14'
           />
@@ -30,7 +31,7 @@ export const officeInfo = [
       {
         icon: (
           <Image
-            src={IconFb}
+            src={IconLienHeFacebook}
             alt='Facebook'
             className='h-7 w-auto'
           />
@@ -40,7 +41,7 @@ export const officeInfo = [
       {
         icon: (
           <Image
-            src={IconZalo}
+            src={IconLienHeZalo}
             alt='Zalo'
             className='h-7 w-auto'
           />
@@ -56,7 +57,7 @@ export const officeInfo = [
       {
         icon: (
           <Image
-            src={IconTime}
+            src={IconLienHeTime}
             alt='Time'
             className='h-10 w-auto'
           />
