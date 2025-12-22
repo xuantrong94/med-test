@@ -43,7 +43,10 @@ export default async function Home({
 
   return (
     <div className=''>
-      <HomeHero featuresData={featuresData} />
+      <HomeHero
+        featuresData={featuresData}
+        banner={partner.banner}
+      />
       <HomeFeatures />
       <HomeInfo keyword={partner.keyword} />
       <Suspense fallback={<Loading />}>

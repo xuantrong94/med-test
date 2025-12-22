@@ -1,12 +1,14 @@
 'use client';
 import HomeBanner from '@/assets/images/home/bvmathcm-home-banner.webp';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-export default function HomeHeroBg() {
+export default function HomeHeroBg({
+  banner,
+}: Readonly<{ banner?: StaticImageData }>) {
   return (
     <div className='relative lg:min-h-[720px]'>
       <Image
-        src={HomeBanner}
+        src={banner || HomeBanner}
         alt='Hero Background'
         className='w-full object-cover lg:max-h-[720px]'
         fetchPriority='high'
