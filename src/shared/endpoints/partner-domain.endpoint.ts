@@ -17,9 +17,11 @@ export interface PartnerConfig {
   updatedAt: string;
 }
 
-export const getPartnerConfig = async (): Promise<PartnerConfig> => {
+export const getPartnerConfig = async (
+  slug: string
+): Promise<PartnerConfig> => {
   const response = await fetch(
-    'https://bo-api.medpro.com.vn/partner-domain/get-by-domain?domain=benh-vien-mat'
+    `https://bo-api.medpro.com.vn/partner-domain/get-by-domain?domain=${slug}`
   );
   if (!response.ok) {
     throw new Error('Failed to fetch partner config');
