@@ -3,11 +3,12 @@ import { HEADER_URLS } from '@/shared/constants/urls';
 import { phones } from '@/shared/constants/contact';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
-import { LogIn, X } from 'lucide-react';
+import { LogIn, X, User, LogOut } from 'lucide-react';
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
 import { IconLogoMed } from '@/assets/icons/header';
+import { useAuth } from '@/hooks/useAuth';
 interface HeaderDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -16,6 +17,12 @@ interface HeaderDrawerProps {
 
 function HeaderDrawer({ isOpen, onClose, Logo }: Readonly<HeaderDrawerProps>) {
   const pathname = usePathname();
+  const { isAuthenticated, userInfo, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    onClose();
+  };
 
   // Handle backdrop click
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -50,12 +57,38 @@ function HeaderDrawer({ isOpen, onClose, Logo }: Readonly<HeaderDrawerProps>) {
           </button>
         </div>
 
-        {/* Login button */}
+        {/* User section */}
         <div className='border-b border-[--color-border-light] p-5'>
-          <button className='from-primary to-cyan flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-none bg-linear-to-r px-4 py-3 text-base text-white transition-opacity duration-300 hover:opacity-90'>
-            <LogIn size={20} />
-            <span>Đăng nhập</span>
-          </button>
+          {isAuthenticated ? (
+            /* User info when logged in */
+            <div>
+              <div className='from-primary to-cyan flex items-center gap-3 rounded-md bg-linear-to-r px-4 py-3 text-white'>
+                <User size={20} />
+                <div className='min-w-0 flex-1'>
+                  <p className='truncate font-medium'>{userInfo.fullName}</p>
+                  <p className='truncate text-sm opacity-90'>
+                    {userInfo.email}
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={handleLogout}
+                className='mt-3 flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-red-200 bg-red-50 px-4 py-2 text-base text-red-600 transition-colors duration-300 hover:bg-red-100'
+              >
+                <LogOut size={18} />
+                <span>Đăng xuất</span>
+              </button>
+            </div>
+          ) : (
+            /* Login button when not logged in */
+            <Link
+              href={`https://id-v121.medpro.com.vn/check-phone`}
+              className='from-primary to-cyan flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-none bg-linear-to-r px-4 py-3 text-base text-white no-underline transition-opacity duration-300 hover:opacity-90'
+            >
+              <LogIn size={20} />
+              <span>Đăng nhập</span>
+            </Link>
+          )}
         </div>
 
         {/* Navigation menu */}

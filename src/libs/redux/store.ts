@@ -15,7 +15,7 @@ import { apiSlice } from './services/apiSlice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['counter'], // User is now handled by RTK Query cache, usually not persisted this way or separately
+  whitelist: ['counter', 'auth'], // Persist counter and auth state
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
