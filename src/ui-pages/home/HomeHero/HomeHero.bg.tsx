@@ -6,11 +6,11 @@ export default function HomeHeroBg({
   banner,
 }: Readonly<{ banner?: StaticImageData }>) {
   return (
-    <div className='relative lg:min-h-[720px]'>
+    <div className='relative lg:min-h-[600px]'>
       <Image
         src={banner || HomeBanner}
         alt='Hero Background'
-        className='w-full object-cover lg:max-h-[720px]'
+        className='w-full object-cover lg:max-h-[600px]'
         fetchPriority='high'
         quality={100}
         blurDataURL={HomeBanner.blurDataURL}

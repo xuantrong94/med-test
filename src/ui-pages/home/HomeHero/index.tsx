@@ -8,7 +8,7 @@ function HomeHero({
   banner,
 }: Readonly<{ featuresData?: FeatureItem[]; banner?: StaticImageData }>) {
   return (
-    <section className='relative w-full lg:min-h-fit'>
+    <section className='relative mt-15 w-full lg:mt-30 lg:min-h-fit'>
       <HomeHeroBg banner={banner} />
       <HomeHeroFeatures featuresData={featuresData} />
     </section>

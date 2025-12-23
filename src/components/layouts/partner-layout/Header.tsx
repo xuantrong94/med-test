@@ -12,7 +12,7 @@ import useGetPartnerSlug from '@/hooks/useGetPartnerSlug';
 import { getHeaderLogo } from '@/data/header';
 import { IconLogoMed } from '@/assets/icons/header';
 import { useAuth } from '@/hooks/useAuth';
-import getPartnerId from '@/utils/getPartnertId';
+import useGetLoginRedirectTo from '@/hooks/useGetLoginRedirectTo';
 
 // Dynamic import cho HeaderDrawer
 const HeaderDrawer = dynamic(() => import('./HeaderDrawer'), {
@@ -23,8 +23,8 @@ const HeaderDrawer = dynamic(() => import('./HeaderDrawer'), {
 function Header() {
   const partnerSlug = useGetPartnerSlug();
   const HeaderLogo = getHeaderLogo(partnerSlug);
-  const partnerId = getPartnerId(partnerSlug);
   const { isAuthenticated, userInfo, logout } = useAuth();
+  const redirectTo = useGetLoginRedirectTo();
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = React.useState(false);
@@ -63,11 +63,6 @@ function Header() {
   }, [isUserDropdownOpen]);
 
   const isLandscapeLogo = HeaderLogo.width > HeaderLogo.height * 3;
-  const urlLogin = `https://id-v121.medpro.com.vn/check-phone`;
-  const url = `localhost:3000/${partnerSlug}`;
-  const redirectTo = `${urlLogin}/url=${url}&partnerId=${partnerId}`;
-
-  console.log('Redirect URL:', redirectTo);
 
   return (
     <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-gray-200 bg-white lg:h-[120px]'>

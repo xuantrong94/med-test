@@ -19,7 +19,10 @@ const HOME_FEATURES = [
       'Quy trình khám bệnh & nhận phiếu khám bệnh',
       'Hoàn tất thanh toán',
     ],
-    cta: 'Xem thêm',
+    cta: {
+      text: 'Xem thêm',
+      url: '/thac-mac',
+    },
   },
 ];
 export default HOME_FEATURES;

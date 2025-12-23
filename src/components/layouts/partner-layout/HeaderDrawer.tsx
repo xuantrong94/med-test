@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
 import { IconLogoMed } from '@/assets/icons/header';
 import { useAuth } from '@/hooks/useAuth';
+import useGetLoginRedirectTo from '@/hooks/useGetLoginRedirectTo';
 interface HeaderDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -18,6 +19,7 @@ interface HeaderDrawerProps {
 function HeaderDrawer({ isOpen, onClose, Logo }: Readonly<HeaderDrawerProps>) {
   const pathname = usePathname();
   const { isAuthenticated, userInfo, logout } = useAuth();
+  const redirectTo = useGetLoginRedirectTo();
 
   const handleLogout = () => {
     logout();
@@ -82,7 +84,7 @@ function HeaderDrawer({ isOpen, onClose, Logo }: Readonly<HeaderDrawerProps>) {
           ) : (
             /* Login button when not logged in */
             <Link
-              href={`https://id-v121.medpro.com.vn/check-phone`}
+              href={redirectTo}
               className='from-primary to-cyan flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-none bg-linear-to-r px-4 py-3 text-base text-white no-underline transition-opacity duration-300 hover:opacity-90'
             >
               <LogIn size={20} />

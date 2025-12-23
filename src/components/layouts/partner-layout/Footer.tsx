@@ -161,14 +161,16 @@ function Footer() {
           {/* Right Section: Medpro Info */}
           <div className='w-full lg:w-1/4'>
             <div className='flex flex-col gap-2 text-center lg:ml-auto lg:text-left'>
-              <Image
-                src={IconMedFooterLogo}
-                alt='footer logo'
-                className='mx-auto h-10 w-auto lg:ml-0'
-                width={80}
-                height={41}
-                overrideSrc={IconMedFooterLogo.src}
-              />
+              <Link href='https://medpro.vn'>
+                <Image
+                  src={IconMedFooterLogo}
+                  alt='footer logo'
+                  className='mx-auto h-10 w-auto lg:ml-0'
+                  width={80}
+                  height={41}
+                  overrideSrc={IconMedFooterLogo.src}
+                />
+              </Link>
               <div className='flex flex-col gap-2'>
                 <Link
                   href='#'
