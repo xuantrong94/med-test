@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { getPosts } from '@/shared/endpoints/post.endpoint';
 import PostItem from '@/ui-pages/tin-tuc/PostItem';
 import getPartnerId from '@/utils/getPartnertId';
@@ -6,7 +7,7 @@ const Posts = async ({ params }: { params: Promise<{ hospital: string }> }) => {
   const partnerid = getPartnerId(hospital);
 
   if (!partnerid) {
-    return <div>Partner not found</div>;
+    notFound();
   }
 
   const posts = await getPosts(partnerid);

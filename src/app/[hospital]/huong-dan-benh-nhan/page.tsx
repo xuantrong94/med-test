@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import HuongDanBenhNhanHeroImg from '@/assets/images/huong-dan-benh-nhan/hero.jpg';
 import Content from '@/components/layouts/static-page/Content';
 import Hero from '@/components/layouts/static-page/Hero';
@@ -12,7 +13,7 @@ const PatientGuide = async ({
   const { hospital } = await params;
   const partnerId = getPartnerId(hospital); // Ensure partner exists, can add error handling if needed
   if (!partnerId) {
-    return <div>Partner not found</div>;
+    notFound();
   }
   return (
     <Layout

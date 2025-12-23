@@ -1,6 +1,6 @@
 import { phones, website } from '@/shared/constants/contact';
 
-interface AccordionItem {
+export interface AccordionItem {
   id: number;
   question: string;
   answer: string; // answer giờ là HTML string
@@ -13,7 +13,7 @@ export interface AccordionItemProps {
   item: AccordionItem;
 }
 
-interface IFaq {
+export interface IFaq {
   id: number;
   name: string;
   faq: AccordionItem[];

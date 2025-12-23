@@ -6,7 +6,30 @@ import {
 } from '@/assets/images/home';
 import { phones, website } from './contact';
 
-const PARTNERS = [
+import { IFaq } from '@/data/faq';
+import { StaticImageData } from 'next/image';
+
+interface ProcessItem {
+  step: number;
+  title: string;
+  items: string[];
+  note?: {
+    title: string;
+    items: string[];
+  };
+}
+
+export interface Partner {
+  keyword: string;
+  slug: string;
+  map: string;
+  banner: StaticImageData;
+  gioithieuContent: string;
+  process: ProcessItem[];
+  faq: IFaq[];
+}
+
+export const PARTNERS: Partner[] = [
   {
     keyword: 'bvmathcm',
     slug: 'benh-vien-mat',
@@ -720,6 +743,411 @@ const PARTNERS = [
         ],
       },
     ],
+    faq: [
+      {
+        id: 1,
+        name: 'Vấn đề chung',
+        faq: [
+          {
+            id: 101,
+            question:
+              'Lợi ích khi sử dụng phần mềm đăng ký khám bệnh trực tuyến này là gì?',
+            answer: `<p>Đặt lịch kh&aacute;m bệnh theo hẹn, mọi l&uacute;c mọi nơi, m&agrave; kh&ocirc;ng cần đến bệnh viện</p>
+              <ul>
+              <li>Kh&ocirc;ng xếp h&agrave;ng chờ đợi để lấy số tiếp nhận kh&aacute;m bệnhd</li>
+              <li>Giảm thời gian chờ kh&aacute;m tại bệnh viện.</li>
+              <li>Thanh to&aacute;n trực tuyến từ xa, kh&ocirc;ng sử dụng tiền mặt</li>
+              <li>Nhận th&ocirc;ng tin phiếu kh&aacute;m bệnh điện tử qua phần mềm</li>
+              <li>Chủ động chọn lịch kh&aacute;m ( ng&agrave;y kh&aacute;m, khung giờ kh&aacute;m, b&aacute;c sỹ kh&aacute;m )</li>
+              <li>Nhắc lịch t&aacute;i kh&aacute;m, đặt lịch t&aacute;i kh&aacute;m tự động</li>
+              <li>Tra cứu kết quả kh&aacute;m chữa bệnh trực tuyến qua phần mềm.</li>
+              <li>Thanh to&aacute;n viện ph&iacute;, chi ph&iacute; kh&aacute;m chữa bệnh trực tuyến, mọi l&uacute;c mọi nơi</li>
+              <li>Dễ d&agrave;ng tiếp cận v&agrave; nhận c&aacute;c th&ocirc;ng b&aacute;o mới, th&ocirc;ng tin từ bệnh viện</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 102,
+            question:
+              'Làm sao để sử dụng được phần mềm đăng ký khám bệnh trực tuyến?',
+            answer: `<p>
+              <ul>
+              <li>C&oacute; thể truy cập v&agrave; sử dụng phần mềm tr&ecirc;n tất cả thiết bị c&oacute; thể truy cập mạng internet. ( 3G,4G,5G,Wifi, d&acirc;y mạng&hellip;..)</li>
+              <li>M&aacute;y t&iacute;nh b&agrave;n, laptop: truy cập website</li>
+              <li>Hầu hết điện thoại th&ocirc;ng minh: tải ứng dụng phần mềm tại kho tải Gplay hoặc AppStore</li>
+              <li>M&aacute;y t&iacute;nh bảng v&agrave; c&aacute;c thiết bị kh&aacute;c &hellip;&hellip;</li>
+              </ul>
+              </p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 103,
+            question: 'Đăng ký khám bệnh online có mất phí không?',
+            answer: `<ul>
+              <li>C&oacute; ph&iacute; tiện &iacute;ch, khi sử dụng dịch vụ đăng k&yacute; kh&aacute;m bệnh trực tuyến qua phần mềm ( tương tự ph&iacute; cước viễn th&ocirc;ng qua tổng đ&agrave;i )</li>
+              <li>Hiện tại chỉ mất ph&iacute; khi đăng k&yacute; kh&aacute;m bệnh th&agrave;nh c&ocirc;ng, ngo&agrave;i ra việc sử dụng ứng dụng v&agrave; c&aacute;c t&iacute;nh năng kh&aacute;c l&agrave; ho&agrave;n to&agrave;n miễn ph&iacute;.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 104,
+            question:
+              'Tôi có thể dùng phần mềm để đăng ký và lấy số thứ tự khám cho bệnh nhân khác không?',
+            answer: `<ul>
+              <li>Phần mềm khuyến c&aacute;o người d&acirc;n, tự sử dụng phần mềm để đăng k&yacute; kh&aacute;m bệnh cho bản th&acirc;n. Để tự quản l&yacute; th&ocirc;ng tin, hồ sơ bệnh, lịch sử kh&aacute;m chữa bệnh, kết quả kh&aacute;m chữa bệnh&hellip;</li>
+              <li>Trường hợp nhờ người kh&aacute;c đăng k&yacute; qua phần mềm, hoặc chủ động đăng k&yacute; gi&uacute;p người kh&aacute;c ( như th&acirc;n nh&acirc;n, họ h&agrave;ng, &ocirc;ng b&agrave; cha mẹ, người th&acirc;n, bạn b&egrave; , đồng nghiệp&hellip;&hellip;) vẫn c&oacute; thể được, nếu người đ&oacute; thực sự kh&ocirc;ng c&oacute; khả năng tiếp cận phần mềm. Nhưng những trường hợp n&agrave;y l&agrave; tr&aacute;i với quy định của phần mềm v&agrave; an to&agrave;n bảo mật th&ocirc;ng tin của ng&agrave;nh y, c&aacute;c vấn đề ph&aacute;t sinh, người đặt kh&aacute;m d&ugrave;m người kh&aacute;c v&agrave; người nhờ người kh&aacute;c đặt kh&aacute;m sẽ tự chịu tr&aacute;ch nhiệm trước ph&aacute;p luật.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 105,
+            question: 'Phần mềm có hỗ trợ đăng ký khám 24/7 không?',
+            answer: `<ul>
+              <li>Phần mềm cho ph&eacute;p bạn thực hiện việc đăng k&yacute; kh&aacute;m v&agrave;o bất kỳ thời điểm n&agrave;o trong ng&agrave;y v&agrave; bất cứ ng&agrave;y n&agrave;o trong tuần, đảm bảo bạn c&oacute; thể sử dụng Phần mềm để đăng k&yacute; kh&aacute;m bệnh mọi l&uacute;c&nbsp;mọi nơi, m&agrave; kh&ocirc;ng cần phải đến trực tiếp&nbsp;bệnh viện để thực hiện.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 106,
+            question:
+              'Sau khi đăng ký khám thành công tôi nhận được phiếu khám bệnh như thế nào?',
+            answer: `<p>Bạn sẽ nhận được phiếu kh&aacute;m bệnh điện tử trực tiếp tr&ecirc;n phần mềm. Mục quản l&yacute; &ldquo; phiếu kh&aacute;m bệnh&rdquo;.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời bạn c&oacute; thể sử dụng t&iacute;nh năng gửi tin nhắn, để nhận th&ocirc;ng tin về phiếu kh&aacute;m bệnh được gửi qua tin nhắn điện thoại SMS.</p>
+              <p>&nbsp;</p>
+              <p>Nếu hồ sơ bệnh của bạn c&oacute; khai b&aacute;o th&ocirc;ng tin email, hoặc sử dụng email để đăng nhập phần mềm, bạn cũng sẽ nhận được phiếu kh&aacute;m bệnh điện tử gửi qua email.</p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 107,
+            question:
+              'Có thể thanh toán trực tuyến chi phí khám chữa bệnh bằng những phương thức nào?',
+            answer: `<ul>
+              <li>Thẻ quốc tế Visa , Master ,JCB</li>
+              <li>Thẻ ATM nội địa/ InternetBanking (thẻ phải được k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến)</li>
+              <li>V&iacute; điện tử MOMO,SMART PAY</li>
+              <li>Qu&eacute;t QRCode/ Mobile Banking</li>
+              <li>Thanh to&aacute;n đại l&yacute; (c&aacute;c cửa h&agrave;ng tiện lợi)</li>
+              <li>Hỗ trợ thanh to&aacute;n (chuyển khoản)</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 108,
+            question: 'Làm sao tôi biết được là đã thanh toán thành công?',
+            answer: `<p>Khi thanh to&aacute;n th&agrave;nh c&ocirc;ng, tiền kh&aacute;m chữa bệnh sẽ được trừ th&agrave;nh c&ocirc;ng tr&ecirc;n&nbsp; t&agrave;i khoản thanh to&aacute;n của bạn qua phương thức thanh to&aacute;n bạn đ&atilde; chọn.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời sẽ c&oacute; th&ocirc;ng tin x&aacute;c nhận giao dịch th&agrave;nh c&ocirc;ng, bi&ecirc;n lai thanh to&aacute;n, m&atilde; giao dịch, m&atilde; thanh to&aacute;n cho giao dịch th&agrave;nh c&ocirc;ng.</p>
+              <p><br /> Hệ thống cũng sẽ cấp ngay phiếu kh&aacute;m bệnh điện tử khi bạn đặt kh&aacute;m th&agrave;nh c&ocirc;ng.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 109,
+            question: 'Tôi có thể đặt khám cho người nhà tôi được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch c&oacute; thể tạo tối đa 10 hồ sơ bệnh nh&acirc;n. Qu&yacute; kh&aacute;ch đặt kh&aacute;m cho bệnh nh&acirc;n n&agrave;o th&igrave; chọn hồ sơ bệnh nh&acirc;n đ&oacute;.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm v&agrave; bệnh viện khuyến c&aacute;o, trừ trường hợp bất khả kh&aacute;ng, kh&ocirc;ng n&ecirc;n đặt d&ugrave;m cho người kh&aacute;c v&igrave; quy định an to&agrave;n bảo mật th&ocirc;ng tin sức khỏe mỗi người.</p>
+              <p>&nbsp;</p>
+              <p>Mọi vấn đề ph&aacute;t sinh từ việc đặt kh&aacute;m cho người kh&aacute;c, c&aacute; nh&acirc;n người đặt sẽ chịu ho&agrave;n to&agrave;n tr&aacute;ch nhiệm trước ph&aacute;p luật.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 110,
+            question: 'Đối tượng bệnh nhân nào có thể sử dụng qua phần mềm?',
+            answer: `<p>Tất cả&nbsp;người bệnh&nbsp;đều c&oacute; thể sử dụng phần mềm&nbsp;để đăng k&yacute; kh&aacute;m bệnh trực tuyến,nếu đủ điều kiện tiếp cận v&agrave; sử dụng phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm&nbsp;ph&ugrave; hợp&nbsp;cho những người bệnh&nbsp;c&oacute; kế hoạch kh&aacute;m chữa&nbsp;bệnh chủ động, hoặc t&igrave;nh trạng bệnh&nbsp;KH&Ocirc;NG qu&aacute; khẩn cấp.</p>
+              <p>&nbsp;</p>
+              <p>Trong trường hợp CẤP CỨU, người nh&agrave; n&ecirc;n đưa người bệnh&nbsp;đến cơ sở y tế gần nhất hoặc gọi số cấp cứu 115 để được hỗ trợ.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 111,
+            question:
+              'Sau khi đã đăng ký khám thành công qua phần mềm, có thể hủy phiếu khám không?',
+            answer: `<p>Bạn c&oacute; thể chủ động hủy phiếu kh&aacute;m đ&atilde; đặt th&agrave;nh c&ocirc;ng, nếu kế hoạch kh&aacute;m chữa bệnh c&aacute; nh&acirc;n c&oacute; thay đổi.</p>
+              <p><br /> Hoặc trong 1 số trường hợp, bệnh viện c&oacute; quyền từ chối phiếu kh&aacute;m nếu c&oacute; sự sai lệch th&ocirc;ng tin bệnh nh&acirc;n, sai th&ocirc;ng tin phiếu kh&aacute;m, hoặc c&oacute; vấn đề bất khả kh&aacute;ng ph&aacute;t sinh từ ph&iacute;a bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Bạn đều sẽ được ho&agrave;n tiền lại nếu chưa thực sự đặt kh&aacute;m v&agrave; kh&aacute;m th&agrave;nh c&ocirc;ng (nhưng phải tu&acirc;n theo quy định của phần mềm v&agrave; bệnh viện).</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 112,
+            question:
+              'Tôi đến bệnh viện trễ hơn so với giờ khám đã đăng ký, vậy tôi có được khám hay không?',
+            answer: `<p>Trường hợp bạn đến trễ so với giờ hẹn tr&ecirc;n phiếu kh&aacute;m bệnh, bạn vẫn c&oacute; thể đến bệnh viện để được thăm kh&aacute;m, nhưng mọi sự tiếp nhận v&agrave; thời gian kh&aacute;m bệnh sẽ theo sự sắp xếp của bệnh viện, t&ugrave;y v&agrave;o t&igrave;nh h&igrave;nh thực tế tại bệnh viện v&agrave; ph&ograve;ng kh&aacute;m l&uacute;c đ&oacute;.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'Vấn đề tài khoản',
+        faq: [
+          {
+            id: 201,
+            question: 'Có bao nhiêu cách để đăng nhập vào phần mềm?',
+            answer: `<p>- Đăng nhập bằng số điện thoại di động, email, mạng x&atilde; hội Zalo, Facebook.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 202,
+            question:
+              '“Mã số bệnh nhân là gì “ làm sao tôi có thể biết được mã số bệnh nhân của mình?',
+            answer: `<ul>
+              <li>M&atilde; số bệnh nh&acirc;n l&agrave;&nbsp;số hồ sơ&nbsp;m&agrave; bệnh viện d&ugrave;ng để quản l&yacute; th&ocirc;ng tin của bạn tr&ecirc;n hệ thống dữ liệu của bệnh viện.</li>
+              <li>Để biết được m&atilde; số bệnh nh&acirc;n của m&igrave;nh, bạn c&oacute; thể tham khảo gợi &yacute; về c&aacute;ch t&igrave;m m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m thấy trong&nbsp;c&aacute;c loại giấy tờ&nbsp;như: toa thuốc, phiếu chỉ định cận l&acirc;m s&agrave;ng, c&aacute;c bi&ecirc;n lai thu tiền&hellip;</li>
+              </ul>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 203,
+            question: '“Tôi quên mã số bệnh nhân của mình thì phải làm sao?',
+            answer: `<p>Để t&igrave;m lại m&atilde; số bệnh nh&acirc;n, bạn c&oacute; thể xem qua gợi &yacute; về c&aacute;ch t&igrave;m lại m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m lại trong c&aacute;c loại giấy tờ kh&aacute;m chữa bệnh của m&igrave;nh.</p>
+              <p>&nbsp;</p>
+              <p>Hoặc mở t&iacute;nh năng "T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n" &gt; nhập ch&iacute;nh x&aacute;c c&aacute;c th&ocirc;ng tin y&ecirc;u cầu &gt; bấm&nbsp;"X&aacute;c nhận" &gt; v&agrave; chọn hồ sơ của m&igrave;nh trong danh s&aacute;ch kết quả.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 204,
+            question: 'Làm sao tôi biết bên mình đã có mã số bệnh nhân chưa?',
+            answer: `<p>Nếu bạn đ&atilde; từng thực hiện việc&nbsp;kh&aacute;m chữa bệnh&nbsp;tại bệnh viện, đồng nghĩa với việc bạn&nbsp;đ&atilde; c&oacute; &ldquo;m&atilde; số bệnh nh&acirc;n&rdquo; tr&ecirc;n hệ thống của bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Khi đ&oacute;, h&atilde;y t&igrave;m lại m&atilde; số bệnh nh&acirc;n của bạn trong c&aacute;c loại&nbsp;giấy tờ kh&aacute;m chữa bệnh, hoặc bạn c&oacute; thể&nbsp;sử dụng t&iacute;nh năng &ldquo;T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n&rdquo; để t&igrave;m lại m&atilde; số bệnh nh&acirc;n của m&igrave;nh ngay tr&ecirc;n phần mềm.</p>`,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 205,
+            question:
+              'Tôi có thể chọn tùy ý một hồ sơ bệnh nhân của người khác để đăng ký khám bệnh cho mình không?',
+            answer: `<p>Trong trường hợp bạn cố t&igrave;nh hay nhầm lẫn&nbsp;d&ugrave;ng hồ sơ bệnh nh&acirc;n&nbsp;của người kh&aacute;c hoặc khai b&aacute;o sai th&ocirc;ng tin&nbsp;để đăng k&yacute; kh&aacute;m bệnh, bạn đ&atilde; vi phạm điều khoản sử dụng của phần mềm v&agrave; quy định tại bệnh viện.&nbsp;</p>
+              <p><br /> Bệnh viện sẽ từ chối kh&aacute;m chữa bệnh, bạn sẽ chịu ho&agrave;n to&agrave;n những thiệt hại v&agrave; t&ugrave;y mức độ c&oacute; thể chịu tr&aacute;ch nhiệm trước&nbsp;ph&aacute;p luật.</p>
+              <p>&nbsp;</p>
+              <p>V&igrave; vậy,&nbsp;khi đăng k&yacute; kh&aacute;m bệnh bạn vui l&ograve;ng chọn/nhập v&agrave; kiểm tra&nbsp;ch&iacute;nh x&aacute;c&nbsp;hồ sơ&nbsp;bệnh nh&acirc;n của m&igrave;nh!</p>`,
+            status: 1,
+            category_id: 2,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: 'Vấn đề về quy trình đặt khám',
+        faq: [
+          {
+            id: 301,
+            question:
+              'Có thể đăng ký khám bệnh trong ngày bằng phần mềm không?',
+            answer: `<p>Hiện tại bệnh viện hỗ trợ cả đặt kh&aacute;m đăng k&yacute; trong ng&agrave;y, cho ph&eacute;p đặt kh&aacute;m trước 30 ph&uacute;t. Nhưng bạn kh&ocirc;ng được huỷ phiếu kh&aacute;m trong ng&agrave;y.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 302,
+            question: 'Có thể đăng ký khám bệnh trong khoảng thời gian nào?',
+            answer: `<p>Bạn c&oacute; thể đăng k&yacute; kh&aacute;m bệnh qua phần mềm, mọi l&uacute;c mọi nơi. C&oacute; thể đặt lịch hẹn kh&aacute;m bệnh trước ng&agrave;y kh&aacute;m đến 30 ng&agrave;y.&nbsp;</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 303,
+            question: 'Khi đi khám bệnh, tôi có cần chuẩn bị gì không?',
+            answer: `<p><strong>Đối với Người bệnh c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Vui l&ograve;ng mang thẻ BHYT v&agrave; giấy tờ tuỳ th&acirc;n, v&agrave; đến cửa tiếp nhận số 1trước hẹn 15 ph&uacute;t để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>
+              <p>&nbsp;</p>
+              <p><strong>Đối với Người bệnh KH&Ocirc;NG c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Bệnh nh&acirc;n vui l&ograve;ng đến trước giờ hẹn 15 ph&uacute;t, xuất tr&igrave;nh phiếu kh&aacute;m bệnh điện tử v&agrave; giấy tờ t&ugrave;y th&acirc;n để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 304,
+            question:
+              'Tôi có việc đột xuất hoặc bận không đến khám được, tôi muốn huỷ phiếu khám có được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch chủ động thực hiện việc hủy phiếu tr&ecirc;n phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Tiền kh&aacute;m bệnh sẽ ho&agrave;n lại t&agrave;i khoản của bệnh nh&acirc;n&nbsp;đ&atilde; sử dụng&nbsp;thanh to&aacute;n. Ph&iacute; tiện &iacute;ch sẽ kh&ocirc;ng được ho&agrave;n trả.</p>
+              <p>&nbsp;</p>
+              <p>Thời gian nhận lại tiền kh&aacute;m trong t&agrave;i khoản: từ&nbsp;1 - 3&nbsp;ng&agrave;y&nbsp;(đối với v&iacute; điện tử&nbsp;MOMO).</p>
+              <p>&nbsp;</p>
+              <p>C&aacute;c loại thẻ&nbsp;ATM nội địa: từ&nbsp;01 đến 05&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Thẻ thanh to&aacute;n&nbsp;quốc tế&nbsp;(Visa/MasterCard&hellip;): từ&nbsp;05 đến 45&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Trường hợp kh&aacute;ch h&agrave;ng thanh to&aacute;n bằng c&aacute;c cửa h&agrave;ng tiện lợi m&agrave; muốn huỷ phiếu kh&aacute;m bệnh,kh&aacute;ch h&agrave;ng vui l&ograve;ng đến cửa h&agrave;ng tiện lợi cung cấp đầy đủ th&ocirc;ng tin v&agrave; cửa h&agrave;ng sẽ kiểm tra ho&agrave;n tiền lại (Tuỳ theo cửa h&agrave;ng c&oacute; thể nhanh hoặc chậm).</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 305,
+            question:
+              'Tôi có thể thay đổi thông tin khám đã đặt qua phần mềm không?',
+            answer: `<p>Bạn kh&ocirc;ng thể thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh đ&atilde; đặt th&agrave;nh c&ocirc;ng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 306,
+            question:
+              'Phần mềm có cho đăng ký khám bệnh với đối tượng bệnh nhân bhyt không?',
+            answer: `<p>Hiện tại bệnh viện chỉ hỗ trợ bệnh nh&acirc;n đăng k&yacute; kh&aacute;m dịch vụ qua ứng dụng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 307,
+            question: 'Nếu bác sĩ thay đổi lịch khám, tôi phải làm sao?',
+            answer: `<p>Khi b&aacute;c sĩ thay đổi lịch kh&aacute;m, phần mềm sẽ gửi th&ocirc;ng b&aacute;o cho bạn qua tin nhắn sms, email v&agrave; tr&ecirc;n ứng dụng.Khi nhận được th&ocirc;ng b&aacute;o về sự thay đổi. Bạn c&oacute; thể:</p>
+              <ul>
+              <li>Hủy Phiếu Kh&aacute;m Bệnh để nhận lại tiền kh&aacute;m theo quy định ho&agrave;n tiền.</li>
+              <li>Vẫn giữ nguy&ecirc;n th&ocirc;ng tin tr&ecirc;n Phiếu Kh&aacute;m Bệnh, v&agrave; điều n&agrave;y đồng nghĩa với việc bạn chấp nhận kh&aacute;m với b&aacute;c sĩ thay thế m&agrave; bệnh viện đ&atilde; sắp xếp.</li>
+              <li>Thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh, bằng c&aacute;ch: Đăng nhập phần mềm &gt; Th&ocirc;ng Tin T&agrave;i Khoản &gt; Quản l&yacute; phiếu kh&aacute;m bệnh &gt; chọn v&agrave;o phiếu kh&aacute;m bệnh bị thay đổi lịch kh&aacute;m &gt; bấm "Chỉnh sửa".</li>
+              </ul>
+              <p>Việc thay đổi th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh phải được thực hiện theo Quy định chỉnh sửa th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 308,
+            question:
+              'Làm sao có thể chọn đúng chuyên khoa để đăng ký khám qua phần mềm?',
+            answer: `<p>Trường hợp t&aacute;i kh&aacute;m, bạn chỉ việc chọn đ&uacute;ng chuy&ecirc;n khoa của lần kh&aacute;m trước.</p>
+              <p>Trường hợp kh&aacute;m mới:</p>
+              <ul>
+              <li>Nếu biết chắc chuy&ecirc;n khoa m&igrave;nh muốn đăng k&yacute; kh&aacute;m, bạn chỉ việc t&igrave;m&nbsp;chọn chuy&ecirc;n khoa đ&oacute; trong danh s&aacute;ch.</li>
+              <li>Nếu&nbsp;chưa biết chuy&ecirc;n khoa n&agrave;o ph&ugrave; hợp, bạn&nbsp;c&oacute; thể gọi v&agrave;o tổng đ&agrave;i tư vấn chăm s&oacute;c kh&aacute;ch h&agrave;ng của bệnh viện hoặc tổng đ&agrave;i medpro&nbsp;<strong>19002115</strong> hoặc li&ecirc;n hệ hỗ trợ tại k&ecirc;nh chat mạng x&atilde; hội facebook, zalo.</li>
+              </ul>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 309,
+            question:
+              'Tôi sẽ được khám bệnh vào đúng thời gian đã chọn, sau khi đăng ký khám qua phần mềm đúng không?',
+            answer: `<p>Trả lời: C&oacute; thể.</p>
+              <p>Thời gian bạn chọn khi đăng k&yacute; kh&aacute;m, được xem l&agrave; thời gian kh&aacute;m bệnh dự kiến. Do đặc th&ugrave; của c&ocirc;ng t&aacute;c kh&aacute;m chữa bệnh, sẽ kh&ocirc;ng thể ch&iacute;nh x&aacute;c thời gian kh&aacute;m 100%.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 310,
+            question:
+              'Tôi đăng ký đã bị trừ tiền nhưng sao không nhận được mã số khám bệnh?',
+            answer: `<p>Bạn vui l&ograve;ng kiểm tra th&ocirc;ng tin phiếu kh&aacute;m trong t&agrave;i khoản tr&ecirc;n phần mềm. Hoặc vui l&ograve;ng gọi điện tổng đ&agrave;i 19002115 để được hỗ trợ.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 311,
+            question:
+              'Tôi đã đăng ký thành công vậy khi đi khám tôi có phải xếp hàng gì không?',
+            answer: `<p>Kh&ocirc;ng, bạn kh&ocirc;ng c&ograve;n phải xếp h&agrave;ng chờ đợi để lấy số kh&aacute;m bệnh, l&agrave;m thủ tục đ&oacute;ng tiền, bạn chỉ cần đến cửa tiếp nhận số 1 để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: 'Vấn đề về thanh toán',
+        faq: [
+          {
+            id: 401,
+            question: 'Điều kiện để được hoàn tiền là gì?',
+            answer: `<p>Bạn chỉ được ho&agrave;n tiền khi thực hiện th&agrave;nh c&ocirc;ng y&ecirc;u cầu Hủy Phiếu Kh&aacute;m Bệnh tr&ecirc;n phần mềm theo theo quy định.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 402,
+            question:
+              'Hoàn tiền như thế nào? Bao lâu thì tôi nhận lại được tiền hoàn?',
+            answer: `<p>Khi bạn thực hiện việc&nbsp;thanh to&aacute;n bằng phương thức n&agrave;o, th&igrave; phần mềm sẽ ho&agrave;n tiền&nbsp;lại cho bạn&nbsp;bằng&nbsp;đ&uacute;ng phương thức v&agrave; số t&agrave;i khoản&nbsp;đ&atilde; d&ugrave;ng để thanh to&aacute;n đ&oacute;.</p>
+              <p>Thời gian bạn nhận được&nbsp;tiền ho&agrave;n th&ocirc;ng thường được quy định như sau:</p>
+              <ul>
+              <li>Thẻ kh&aacute;m bệnh:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ ATM nội địa:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ t&iacute;n dụng Visa, MasterCard:&nbsp; &nbsp; &nbsp; &nbsp; 1 - 45 ng&agrave;y l&agrave;m việc.</li>
+              </ul>
+              <p>T&iacute;nh từ thời điểm bạn thực hiện Hủy Phiếu Kh&aacute;m Bệnh th&agrave;nh c&ocirc;ng, nếu qu&aacute; thời gian tr&ecirc;n bạn vẫn chưa nhận được tiền ho&agrave;n, vui l&ograve;ng li&ecirc;n hệ tổng đ&agrave;i 1900 2115 ch&uacute;ng t&ocirc;i sẽ hỗ&nbsp;trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 403,
+            question:
+              'Tôi không có bất kỳ một thẻ khám bệnh hoặc thẻ ngân hàng nào để thanh toán, vậy tôi phải làm sao?',
+            answer: `<p>&nbsp;Bạn c&oacute; thể li&ecirc;n hệ nh&acirc;n vi&ecirc;n bệnh viện&nbsp;tại c&aacute;c quầy hướng dẫn trong bệnh viện để được hỗ trợ l&agrave;m&nbsp;thẻ kh&aacute;m bệnh&nbsp;miễn ph&iacute;.</p>
+              <p>Nhờ con,ch&aacute;u hoặc người th&acirc;n trong gia đ&igrave;nh c&oacute; sử dụng c&aacute;c phương thức thanh to&aacute;n trực tuyến để đặt kh&aacute;m.</p>
+              <p>Đăng k&yacute; mới một trong c&aacute;c phương thức thanh to&aacute;n trực tuyến c&oacute; hỗ trợ ngay, để tiếp tục sử dụng trong tương lai.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 404,
+            question:
+              'Thông tin thanh toán của tôi có bị lộ khi tôi tiến hành thanh toán trên phần mềm không?',
+            answer: `<p>Trả lời : Kh&ocirc;ng!</p>
+              <p>Phần mềm&nbsp;v&agrave; bệnh viện ho&agrave;n to&agrave;n kh&ocirc;ng thể sao lưu lại&nbsp;bất kỳ th&ocirc;ng tin thanh to&aacute;n n&agrave;o của bạn.</p>
+              <p>C&aacute;c th&ocirc;ng tin của bạn được bảo mật tại cổng thanh to&aacute;n v&agrave; ng&acirc;n h&agrave;ng nh&agrave; nước việt nam.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 405,
+            question:
+              'Tôi đăng nhập đúng tên tài khoản nhưng không thanh toán được?',
+            answer: `<ul>
+              <li>Đối với thẻ kh&aacute;m bệnh/ATM nội địa phải đảm bảo đ&atilde; k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến th&igrave; mới c&oacute; thể thanh to&aacute;n được. Nếu thẻ của bạn chưa k&iacute;ch hoạt Thanh to&aacute;n trực tuyến th&igrave; vui l&ograve;ng li&ecirc;n hệ với ng&acirc;n h&agrave;ng ph&aacute;t h&agrave;nh thẻ của bạn để đăng k&yacute;.</li>
+              <li>Nếu thẻ của bạn đ&atilde; đăng k&yacute; thanh to&aacute;n trực tuyến v&agrave; nhập ch&iacute;nh x&aacute;c th&ocirc;ng tin thanh to&aacute;n nhưng vẫn kh&ocirc;ng thanh to&aacute;n được, vui l&ograve;ng li&ecirc;n hệ 19002115 ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</li>
+              </ul>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 406,
+            question:
+              'Tôi muốn đăng ký khám online nhưng đến trực tiếp bệnh viện để thanh toán được không?',
+            answer: `Trả lời : không
+
+              Hiện tại khi đặt khám trên phần mềm bạn vui lòng hoàn tất quy trình thanh toán ngay trên phần mềm để được nhận phiếu khám bệnh.`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 407,
+            question:
+              'Tôi nhập tài khoản thẻ nhưng bấm xác thực hoài không được?',
+            answer: `<p>Vui lòng ki&ecirc;̉m tra ch&iacute;nh x&aacute;c th&ocirc;ng tin thẻ đ&atilde; nhập. Trường hợp vẫn bị lỗi, h&atilde;y chụp ảnh m&agrave;n h&igrave;nh b&aacute;o lỗi v&agrave; gửi qua c&aacute;c k&ecirc;nh hỗ trợ, ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+        ],
+      },
+    ],
   },
   {
     keyword: 'nhidong1',
@@ -772,6 +1200,411 @@ const PARTNERS = [
           'Thực hiện cận lâm sàng (nếu có) và đóng phí tại quầy thu ngân',
           'Khi đủ kết quả cận lâm sàng, người bệnh quay lại phòng khám gặp Bác sĩ nhận toa thuốc.',
           'Lưu ý : Đối với dịch vụ khám chuyên gia 1 điểm dừng, quý khách đã đóng tạm ứng 350.000đ rồi trên ứng dụng web/app sẽ được kết toán tại quầy thuốc ( Hoàn tiền thừa hoặc đóng thêm sau khi kết thúc hành trình đi khám bệnh CLS, mua thuốc ( nếu có ))',
+        ],
+      },
+    ],
+    faq: [
+      {
+        id: 1,
+        name: 'Vấn đề chung',
+        faq: [
+          {
+            id: 101,
+            question:
+              'Lợi ích khi sử dụng phần mềm đăng ký khám bệnh trực tuyến này là gì?',
+            answer: `<p>Đặt lịch kh&aacute;m bệnh theo hẹn, mọi l&uacute;c mọi nơi, m&agrave; kh&ocirc;ng cần đến bệnh viện</p>
+              <ul>
+              <li>Kh&ocirc;ng xếp h&agrave;ng chờ đợi để lấy số tiếp nhận kh&aacute;m bệnhd</li>
+              <li>Giảm thời gian chờ kh&aacute;m tại bệnh viện.</li>
+              <li>Thanh to&aacute;n trực tuyến từ xa, kh&ocirc;ng sử dụng tiền mặt</li>
+              <li>Nhận th&ocirc;ng tin phiếu kh&aacute;m bệnh điện tử qua phần mềm</li>
+              <li>Chủ động chọn lịch kh&aacute;m ( ng&agrave;y kh&aacute;m, khung giờ kh&aacute;m, b&aacute;c sỹ kh&aacute;m )</li>
+              <li>Nhắc lịch t&aacute;i kh&aacute;m, đặt lịch t&aacute;i kh&aacute;m tự động</li>
+              <li>Tra cứu kết quả kh&aacute;m chữa bệnh trực tuyến qua phần mềm.</li>
+              <li>Thanh to&aacute;n viện ph&iacute;, chi ph&iacute; kh&aacute;m chữa bệnh trực tuyến, mọi l&uacute;c mọi nơi</li>
+              <li>Dễ d&agrave;ng tiếp cận v&agrave; nhận c&aacute;c th&ocirc;ng b&aacute;o mới, th&ocirc;ng tin từ bệnh viện</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 102,
+            question:
+              'Làm sao để sử dụng được phần mềm đăng ký khám bệnh trực tuyến?',
+            answer: `<p>
+              <ul>
+              <li>C&oacute; thể truy cập v&agrave; sử dụng phần mềm tr&ecirc;n tất cả thiết bị c&oacute; thể truy cập mạng internet. ( 3G,4G,5G,Wifi, d&acirc;y mạng&hellip;..)</li>
+              <li>M&aacute;y t&iacute;nh b&agrave;n, laptop: truy cập website</li>
+              <li>Hầu hết điện thoại th&ocirc;ng minh: tải ứng dụng phần mềm tại kho tải Gplay hoặc AppStore</li>
+              <li>M&aacute;y t&iacute;nh bảng v&agrave; c&aacute;c thiết bị kh&aacute;c &hellip;&hellip;</li>
+              </ul>
+              </p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 103,
+            question: 'Đăng ký khám bệnh online có mất phí không?',
+            answer: `<ul>
+              <li>C&oacute; ph&iacute; tiện &iacute;ch, khi sử dụng dịch vụ đăng k&yacute; kh&aacute;m bệnh trực tuyến qua phần mềm ( tương tự ph&iacute; cước viễn th&ocirc;ng qua tổng đ&agrave;i )</li>
+              <li>Hiện tại chỉ mất ph&iacute; khi đăng k&yacute; kh&aacute;m bệnh th&agrave;nh c&ocirc;ng, ngo&agrave;i ra việc sử dụng ứng dụng v&agrave; c&aacute;c t&iacute;nh năng kh&aacute;c l&agrave; ho&agrave;n to&agrave;n miễn ph&iacute;.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 104,
+            question:
+              'Tôi có thể dùng phần mềm để đăng ký và lấy số thứ tự khám cho bệnh nhân khác không?',
+            answer: `<ul>
+              <li>Phần mềm khuyến c&aacute;o người d&acirc;n, tự sử dụng phần mềm để đăng k&yacute; kh&aacute;m bệnh cho bản th&acirc;n. Để tự quản l&yacute; th&ocirc;ng tin, hồ sơ bệnh, lịch sử kh&aacute;m chữa bệnh, kết quả kh&aacute;m chữa bệnh&hellip;</li>
+              <li>Trường hợp nhờ người kh&aacute;c đăng k&yacute; qua phần mềm, hoặc chủ động đăng k&yacute; gi&uacute;p người kh&aacute;c ( như th&acirc;n nh&acirc;n, họ h&agrave;ng, &ocirc;ng b&agrave; cha mẹ, người th&acirc;n, bạn b&egrave; , đồng nghiệp&hellip;&hellip;) vẫn c&oacute; thể được, nếu người đ&oacute; thực sự kh&ocirc;ng c&oacute; khả năng tiếp cận phần mềm. Nhưng những trường hợp n&agrave;y l&agrave; tr&aacute;i với quy định của phần mềm v&agrave; an to&agrave;n bảo mật th&ocirc;ng tin của ng&agrave;nh y, c&aacute;c vấn đề ph&aacute;t sinh, người đặt kh&aacute;m d&ugrave;m người kh&aacute;c v&agrave; người nhờ người kh&aacute;c đặt kh&aacute;m sẽ tự chịu tr&aacute;ch nhiệm trước ph&aacute;p luật.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 105,
+            question: 'Phần mềm có hỗ trợ đăng ký khám 24/7 không?',
+            answer: `<ul>
+              <li>Phần mềm cho ph&eacute;p bạn thực hiện việc đăng k&yacute; kh&aacute;m v&agrave;o bất kỳ thời điểm n&agrave;o trong ng&agrave;y v&agrave; bất cứ ng&agrave;y n&agrave;o trong tuần, đảm bảo bạn c&oacute; thể sử dụng Phần mềm để đăng k&yacute; kh&aacute;m bệnh mọi l&uacute;c&nbsp;mọi nơi, m&agrave; kh&ocirc;ng cần phải đến trực tiếp&nbsp;bệnh viện để thực hiện.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 106,
+            question:
+              'Sau khi đăng ký khám thành công tôi nhận được phiếu khám bệnh như thế nào?',
+            answer: `<p>Bạn sẽ nhận được phiếu kh&aacute;m bệnh điện tử trực tiếp tr&ecirc;n phần mềm. Mục quản l&yacute; &ldquo; phiếu kh&aacute;m bệnh&rdquo;.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời bạn c&oacute; thể sử dụng t&iacute;nh năng gửi tin nhắn, để nhận th&ocirc;ng tin về phiếu kh&aacute;m bệnh được gửi qua tin nhắn điện thoại SMS.</p>
+              <p>&nbsp;</p>
+              <p>Nếu hồ sơ bệnh của bạn c&oacute; khai b&aacute;o th&ocirc;ng tin email, hoặc sử dụng email để đăng nhập phần mềm, bạn cũng sẽ nhận được phiếu kh&aacute;m bệnh điện tử gửi qua email.</p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 107,
+            question:
+              'Có thể thanh toán trực tuyến chi phí khám chữa bệnh bằng những phương thức nào?',
+            answer: `<ul>
+              <li>Thẻ quốc tế Visa , Master ,JCB</li>
+              <li>Thẻ ATM nội địa/ InternetBanking (thẻ phải được k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến)</li>
+              <li>V&iacute; điện tử MOMO,SMART PAY</li>
+              <li>Qu&eacute;t QRCode/ Mobile Banking</li>
+              <li>Thanh to&aacute;n đại l&yacute; (c&aacute;c cửa h&agrave;ng tiện lợi)</li>
+              <li>Hỗ trợ thanh to&aacute;n (chuyển khoản)</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 108,
+            question: 'Làm sao tôi biết được là đã thanh toán thành công?',
+            answer: `<p>Khi thanh to&aacute;n th&agrave;nh c&ocirc;ng, tiền kh&aacute;m chữa bệnh sẽ được trừ th&agrave;nh c&ocirc;ng tr&ecirc;n&nbsp; t&agrave;i khoản thanh to&aacute;n của bạn qua phương thức thanh to&aacute;n bạn đ&atilde; chọn.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời sẽ c&oacute; th&ocirc;ng tin x&aacute;c nhận giao dịch th&agrave;nh c&ocirc;ng, bi&ecirc;n lai thanh to&aacute;n, m&atilde; giao dịch, m&atilde; thanh to&aacute;n cho giao dịch th&agrave;nh c&ocirc;ng.</p>
+              <p><br /> Hệ thống cũng sẽ cấp ngay phiếu kh&aacute;m bệnh điện tử khi bạn đặt kh&aacute;m th&agrave;nh c&ocirc;ng.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 109,
+            question: 'Tôi có thể đặt khám cho người nhà tôi được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch c&oacute; thể tạo tối đa 10 hồ sơ bệnh nh&acirc;n. Qu&yacute; kh&aacute;ch đặt kh&aacute;m cho bệnh nh&acirc;n n&agrave;o th&igrave; chọn hồ sơ bệnh nh&acirc;n đ&oacute;.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm v&agrave; bệnh viện khuyến c&aacute;o, trừ trường hợp bất khả kh&aacute;ng, kh&ocirc;ng n&ecirc;n đặt d&ugrave;m cho người kh&aacute;c v&igrave; quy định an to&agrave;n bảo mật th&ocirc;ng tin sức khỏe mỗi người.</p>
+              <p>&nbsp;</p>
+              <p>Mọi vấn đề ph&aacute;t sinh từ việc đặt kh&aacute;m cho người kh&aacute;c, c&aacute; nh&acirc;n người đặt sẽ chịu ho&agrave;n to&agrave;n tr&aacute;ch nhiệm trước ph&aacute;p luật.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 110,
+            question: 'Đối tượng bệnh nhân nào có thể sử dụng qua phần mềm?',
+            answer: `<p>Tất cả&nbsp;người bệnh&nbsp;đều c&oacute; thể sử dụng phần mềm&nbsp;để đăng k&yacute; kh&aacute;m bệnh trực tuyến,nếu đủ điều kiện tiếp cận v&agrave; sử dụng phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm&nbsp;ph&ugrave; hợp&nbsp;cho những người bệnh&nbsp;c&oacute; kế hoạch kh&aacute;m chữa&nbsp;bệnh chủ động, hoặc t&igrave;nh trạng bệnh&nbsp;KH&Ocirc;NG qu&aacute; khẩn cấp.</p>
+              <p>&nbsp;</p>
+              <p>Trong trường hợp CẤP CỨU, người nh&agrave; n&ecirc;n đưa người bệnh&nbsp;đến cơ sở y tế gần nhất hoặc gọi số cấp cứu 115 để được hỗ trợ.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 111,
+            question:
+              'Sau khi đã đăng ký khám thành công qua phần mềm, có thể hủy phiếu khám không?',
+            answer: `<p>Bạn c&oacute; thể chủ động hủy phiếu kh&aacute;m đ&atilde; đặt th&agrave;nh c&ocirc;ng, nếu kế hoạch kh&aacute;m chữa bệnh c&aacute; nh&acirc;n c&oacute; thay đổi.</p>
+              <p><br /> Hoặc trong 1 số trường hợp, bệnh viện c&oacute; quyền từ chối phiếu kh&aacute;m nếu c&oacute; sự sai lệch th&ocirc;ng tin bệnh nh&acirc;n, sai th&ocirc;ng tin phiếu kh&aacute;m, hoặc c&oacute; vấn đề bất khả kh&aacute;ng ph&aacute;t sinh từ ph&iacute;a bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Bạn đều sẽ được ho&agrave;n tiền lại nếu chưa thực sự đặt kh&aacute;m v&agrave; kh&aacute;m th&agrave;nh c&ocirc;ng (nhưng phải tu&acirc;n theo quy định của phần mềm v&agrave; bệnh viện).</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 112,
+            question:
+              'Tôi đến bệnh viện trễ hơn so với giờ khám đã đăng ký, vậy tôi có được khám hay không?',
+            answer: `<p>Trường hợp bạn đến trễ so với giờ hẹn tr&ecirc;n phiếu kh&aacute;m bệnh, bạn vẫn c&oacute; thể đến bệnh viện để được thăm kh&aacute;m, nhưng mọi sự tiếp nhận v&agrave; thời gian kh&aacute;m bệnh sẽ theo sự sắp xếp của bệnh viện, t&ugrave;y v&agrave;o t&igrave;nh h&igrave;nh thực tế tại bệnh viện v&agrave; ph&ograve;ng kh&aacute;m l&uacute;c đ&oacute;.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'Vấn đề tài khoản',
+        faq: [
+          {
+            id: 201,
+            question: 'Có bao nhiêu cách để đăng nhập vào phần mềm?',
+            answer: `<p>- Đăng nhập bằng số điện thoại di động, email, mạng x&atilde; hội Zalo, Facebook.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 202,
+            question:
+              '“Mã số bệnh nhân là gì “ làm sao tôi có thể biết được mã số bệnh nhân của mình?',
+            answer: `<ul>
+              <li>M&atilde; số bệnh nh&acirc;n l&agrave;&nbsp;số hồ sơ&nbsp;m&agrave; bệnh viện d&ugrave;ng để quản l&yacute; th&ocirc;ng tin của bạn tr&ecirc;n hệ thống dữ liệu của bệnh viện.</li>
+              <li>Để biết được m&atilde; số bệnh nh&acirc;n của m&igrave;nh, bạn c&oacute; thể tham khảo gợi &yacute; về c&aacute;ch t&igrave;m m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m thấy trong&nbsp;c&aacute;c loại giấy tờ&nbsp;như: toa thuốc, phiếu chỉ định cận l&acirc;m s&agrave;ng, c&aacute;c bi&ecirc;n lai thu tiền&hellip;</li>
+              </ul>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 203,
+            question: '“Tôi quên mã số bệnh nhân của mình thì phải làm sao?',
+            answer: `<p>Để t&igrave;m lại m&atilde; số bệnh nh&acirc;n, bạn c&oacute; thể xem qua gợi &yacute; về c&aacute;ch t&igrave;m lại m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m lại trong c&aacute;c loại giấy tờ kh&aacute;m chữa bệnh của m&igrave;nh.</p>
+              <p>&nbsp;</p>
+              <p>Hoặc mở t&iacute;nh năng "T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n" &gt; nhập ch&iacute;nh x&aacute;c c&aacute;c th&ocirc;ng tin y&ecirc;u cầu &gt; bấm&nbsp;"X&aacute;c nhận" &gt; v&agrave; chọn hồ sơ của m&igrave;nh trong danh s&aacute;ch kết quả.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 204,
+            question: 'Làm sao tôi biết bên mình đã có mã số bệnh nhân chưa?',
+            answer: `<p>Nếu bạn đ&atilde; từng thực hiện việc&nbsp;kh&aacute;m chữa bệnh&nbsp;tại bệnh viện, đồng nghĩa với việc bạn&nbsp;đ&atilde; c&oacute; &ldquo;m&atilde; số bệnh nh&acirc;n&rdquo; tr&ecirc;n hệ thống của bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Khi đ&oacute;, h&atilde;y t&igrave;m lại m&atilde; số bệnh nh&acirc;n của bạn trong c&aacute;c loại&nbsp;giấy tờ kh&aacute;m chữa bệnh, hoặc bạn c&oacute; thể&nbsp;sử dụng t&iacute;nh năng &ldquo;T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n&rdquo; để t&igrave;m lại m&atilde; số bệnh nh&acirc;n của m&igrave;nh ngay tr&ecirc;n phần mềm.</p>`,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 205,
+            question:
+              'Tôi có thể chọn tùy ý một hồ sơ bệnh nhân của người khác để đăng ký khám bệnh cho mình không?',
+            answer: `<p>Trong trường hợp bạn cố t&igrave;nh hay nhầm lẫn&nbsp;d&ugrave;ng hồ sơ bệnh nh&acirc;n&nbsp;của người kh&aacute;c hoặc khai b&aacute;o sai th&ocirc;ng tin&nbsp;để đăng k&yacute; kh&aacute;m bệnh, bạn đ&atilde; vi phạm điều khoản sử dụng của phần mềm v&agrave; quy định tại bệnh viện.&nbsp;</p>
+              <p><br /> Bệnh viện sẽ từ chối kh&aacute;m chữa bệnh, bạn sẽ chịu ho&agrave;n to&agrave;n những thiệt hại v&agrave; t&ugrave;y mức độ c&oacute; thể chịu tr&aacute;ch nhiệm trước&nbsp;ph&aacute;p luật.</p>
+              <p>&nbsp;</p>
+              <p>V&igrave; vậy,&nbsp;khi đăng k&yacute; kh&aacute;m bệnh bạn vui l&ograve;ng chọn/nhập v&agrave; kiểm tra&nbsp;ch&iacute;nh x&aacute;c&nbsp;hồ sơ&nbsp;bệnh nh&acirc;n của m&igrave;nh!</p>`,
+            status: 1,
+            category_id: 2,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: 'Vấn đề về quy trình đặt khám',
+        faq: [
+          {
+            id: 301,
+            question:
+              'Có thể đăng ký khám bệnh trong ngày bằng phần mềm không?',
+            answer: `<p>Hiện tại bệnh viện hỗ trợ cả đặt kh&aacute;m đăng k&yacute; trong ng&agrave;y, cho ph&eacute;p đặt kh&aacute;m trước 30 ph&uacute;t. Nhưng bạn kh&ocirc;ng được huỷ phiếu kh&aacute;m trong ng&agrave;y.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 302,
+            question: 'Có thể đăng ký khám bệnh trong khoảng thời gian nào?',
+            answer: `<p>Bạn c&oacute; thể đăng k&yacute; kh&aacute;m bệnh qua phần mềm, mọi l&uacute;c mọi nơi. C&oacute; thể đặt lịch hẹn kh&aacute;m bệnh trước ng&agrave;y kh&aacute;m đến 30 ng&agrave;y.&nbsp;</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 303,
+            question: 'Khi đi khám bệnh, tôi có cần chuẩn bị gì không?',
+            answer: `<p><strong>Đối với Người bệnh c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Vui l&ograve;ng mang thẻ BHYT v&agrave; giấy tờ tuỳ th&acirc;n, v&agrave; đến cửa tiếp nhận số 1trước hẹn 15 ph&uacute;t để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>
+              <p>&nbsp;</p>
+              <p><strong>Đối với Người bệnh KH&Ocirc;NG c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Bệnh nh&acirc;n vui l&ograve;ng đến trước giờ hẹn 15 ph&uacute;t, xuất tr&igrave;nh phiếu kh&aacute;m bệnh điện tử v&agrave; giấy tờ t&ugrave;y th&acirc;n để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 304,
+            question:
+              'Tôi có việc đột xuất hoặc bận không đến khám được, tôi muốn huỷ phiếu khám có được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch chủ động thực hiện việc hủy phiếu tr&ecirc;n phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Tiền kh&aacute;m bệnh sẽ ho&agrave;n lại t&agrave;i khoản của bệnh nh&acirc;n&nbsp;đ&atilde; sử dụng&nbsp;thanh to&aacute;n. Ph&iacute; tiện &iacute;ch sẽ kh&ocirc;ng được ho&agrave;n trả.</p>
+              <p>&nbsp;</p>
+              <p>Thời gian nhận lại tiền kh&aacute;m trong t&agrave;i khoản: từ&nbsp;1 - 3&nbsp;ng&agrave;y&nbsp;(đối với v&iacute; điện tử&nbsp;MOMO).</p>
+              <p>&nbsp;</p>
+              <p>C&aacute;c loại thẻ&nbsp;ATM nội địa: từ&nbsp;01 đến 05&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Thẻ thanh to&aacute;n&nbsp;quốc tế&nbsp;(Visa/MasterCard&hellip;): từ&nbsp;05 đến 45&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Trường hợp kh&aacute;ch h&agrave;ng thanh to&aacute;n bằng c&aacute;c cửa h&agrave;ng tiện lợi m&agrave; muốn huỷ phiếu kh&aacute;m bệnh,kh&aacute;ch h&agrave;ng vui l&ograve;ng đến cửa h&agrave;ng tiện lợi cung cấp đầy đủ th&ocirc;ng tin v&agrave; cửa h&agrave;ng sẽ kiểm tra ho&agrave;n tiền lại (Tuỳ theo cửa h&agrave;ng c&oacute; thể nhanh hoặc chậm).</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 305,
+            question:
+              'Tôi có thể thay đổi thông tin khám đã đặt qua phần mềm không?',
+            answer: `<p>Bạn kh&ocirc;ng thể thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh đ&atilde; đặt th&agrave;nh c&ocirc;ng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 306,
+            question:
+              'Phần mềm có cho đăng ký khám bệnh với đối tượng bệnh nhân bhyt không?',
+            answer: `<p>Hiện tại bệnh viện chỉ hỗ trợ bệnh nh&acirc;n đăng k&yacute; kh&aacute;m dịch vụ qua ứng dụng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 307,
+            question: 'Nếu bác sĩ thay đổi lịch khám, tôi phải làm sao?',
+            answer: `<p>Khi b&aacute;c sĩ thay đổi lịch kh&aacute;m, phần mềm sẽ gửi th&ocirc;ng b&aacute;o cho bạn qua tin nhắn sms, email v&agrave; tr&ecirc;n ứng dụng.Khi nhận được th&ocirc;ng b&aacute;o về sự thay đổi. Bạn c&oacute; thể:</p>
+              <ul>
+              <li>Hủy Phiếu Kh&aacute;m Bệnh để nhận lại tiền kh&aacute;m theo quy định ho&agrave;n tiền.</li>
+              <li>Vẫn giữ nguy&ecirc;n th&ocirc;ng tin tr&ecirc;n Phiếu Kh&aacute;m Bệnh, v&agrave; điều n&agrave;y đồng nghĩa với việc bạn chấp nhận kh&aacute;m với b&aacute;c sĩ thay thế m&agrave; bệnh viện đ&atilde; sắp xếp.</li>
+              <li>Thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh, bằng c&aacute;ch: Đăng nhập phần mềm &gt; Th&ocirc;ng Tin T&agrave;i Khoản &gt; Quản l&yacute; phiếu kh&aacute;m bệnh &gt; chọn v&agrave;o phiếu kh&aacute;m bệnh bị thay đổi lịch kh&aacute;m &gt; bấm "Chỉnh sửa".</li>
+              </ul>
+              <p>Việc thay đổi th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh phải được thực hiện theo Quy định chỉnh sửa th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          // {
+          //   id: 308,
+          //   question:
+          //     "Làm sao có thể chọn đúng chuyên khoa để đăng ký khám qua phần mềm?",
+          //   answer: `<p>Trường hợp t&aacute;i kh&aacute;m, bạn chỉ việc chọn đ&uacute;ng chuy&ecirc;n khoa của lần kh&aacute;m trước.</p>
+          //   <p>Trường hợp kh&aacute;m mới:</p>
+          //   <ul>
+          //   <li>Nếu biết chắc chuy&ecirc;n khoa m&igrave;nh muốn đăng k&yacute; kh&aacute;m, bạn chỉ việc t&igrave;m&nbsp;chọn chuy&ecirc;n khoa đ&oacute; trong danh s&aacute;ch.</li>
+          //   <li>Nếu&nbsp;chưa biết chuy&ecirc;n khoa n&agrave;o ph&ugrave; hợp, bạn&nbsp;c&oacute; thể gọi v&agrave;o tổng đ&agrave;i tư vấn chăm s&oacute;c kh&aacute;ch h&agrave;ng của bệnh viện hoặc tổng đ&agrave;i medpro&nbsp;<strong>19007178</strong> hoặc li&ecirc;n hệ hỗ trợ tại k&ecirc;nh chat mạng x&atilde; hội facebook, zalo.</li>
+          //   </ul>`,
+          //   status: 1,
+          //   category_id: 3
+          // },
+          {
+            id: 309,
+            question:
+              'Tôi sẽ được khám bệnh vào đúng thời gian đã chọn, sau khi đăng ký khám qua phần mềm đúng không?',
+            answer: `<p>Trả lời: C&oacute; thể.</p>
+              <p>Thời gian bạn chọn khi đăng k&yacute; kh&aacute;m, được xem l&agrave; thời gian kh&aacute;m bệnh dự kiến. Do đặc th&ugrave; của c&ocirc;ng t&aacute;c kh&aacute;m chữa bệnh, sẽ kh&ocirc;ng thể ch&iacute;nh x&aacute;c thời gian kh&aacute;m 100%.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 310,
+            question:
+              'Tôi đăng ký đã bị trừ tiền nhưng sao không nhận được mã số khám bệnh?',
+            answer: `<p>Bạn vui l&ograve;ng kiểm tra th&ocirc;ng tin phiếu kh&aacute;m trong t&agrave;i khoản tr&ecirc;n phần mềm. Hoặc vui l&ograve;ng gọi điện tổng đ&agrave;i 19002115 để được hỗ trợ.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 311,
+            question:
+              'Tôi đã đăng ký thành công vậy khi đi khám tôi có phải xếp hàng gì không?',
+            answer: `<p>Kh&ocirc;ng, bạn kh&ocirc;ng c&ograve;n phải xếp h&agrave;ng chờ đợi để lấy số kh&aacute;m bệnh, l&agrave;m thủ tục đ&oacute;ng tiền, bạn chỉ cần đến cửa tiếp nhận số 1 để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: 'Vấn đề về thanh toán',
+        faq: [
+          {
+            id: 401,
+            question: 'Điều kiện để được hoàn tiền là gì?',
+            answer: `<p>Bạn chỉ được ho&agrave;n tiền khi thực hiện th&agrave;nh c&ocirc;ng y&ecirc;u cầu Hủy Phiếu Kh&aacute;m Bệnh tr&ecirc;n phần mềm theo theo quy định.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 402,
+            question:
+              'Hoàn tiền như thế nào? Bao lâu thì tôi nhận lại được tiền hoàn?',
+            answer: `<p>Khi bạn thực hiện việc&nbsp;thanh to&aacute;n bằng phương thức n&agrave;o, th&igrave; phần mềm sẽ ho&agrave;n tiền&nbsp;lại cho bạn&nbsp;bằng&nbsp;đ&uacute;ng phương thức v&agrave; số t&agrave;i khoản&nbsp;đ&atilde; d&ugrave;ng để thanh to&aacute;n đ&oacute;.</p>
+              <p>Thời gian bạn nhận được&nbsp;tiền ho&agrave;n th&ocirc;ng thường được quy định như sau:</p>
+              <ul>
+              <li>Thẻ kh&aacute;m bệnh:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ ATM nội địa:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ t&iacute;n dụng Visa, MasterCard:&nbsp; &nbsp; &nbsp; &nbsp; 1 - 45 ng&agrave;y l&agrave;m việc.</li>
+              </ul>
+              <p>T&iacute;nh từ thời điểm bạn thực hiện Hủy Phiếu Kh&aacute;m Bệnh th&agrave;nh c&ocirc;ng, nếu qu&aacute; thời gian tr&ecirc;n bạn vẫn chưa nhận được tiền ho&agrave;n, vui l&ograve;ng li&ecirc;n hệ tổng đ&agrave;i 1900 2115 ch&uacute;ng t&ocirc;i sẽ hỗ&nbsp;trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 403,
+            question:
+              'Tôi không có bất kỳ một thẻ khám bệnh hoặc thẻ ngân hàng nào để thanh toán, vậy tôi phải làm sao?',
+            answer: `<p>&nbsp;Bạn c&oacute; thể li&ecirc;n hệ nh&acirc;n vi&ecirc;n bệnh viện&nbsp;tại c&aacute;c quầy hướng dẫn trong bệnh viện để được hỗ trợ l&agrave;m&nbsp;thẻ kh&aacute;m bệnh&nbsp;miễn ph&iacute;.</p>
+              <p>Nhờ con,ch&aacute;u hoặc người th&acirc;n trong gia đ&igrave;nh c&oacute; sử dụng c&aacute;c phương thức thanh to&aacute;n trực tuyến để đặt kh&aacute;m.</p>
+              <p>Đăng k&yacute; mới một trong c&aacute;c phương thức thanh to&aacute;n trực tuyến c&oacute; hỗ trợ ngay, để tiếp tục sử dụng trong tương lai.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 404,
+            question:
+              'Thông tin thanh toán của tôi có bị lộ khi tôi tiến hành thanh toán trên phần mềm không?',
+            answer: `<p>Trả lời : Kh&ocirc;ng!</p>
+              <p>Phần mềm&nbsp;v&agrave; bệnh viện ho&agrave;n to&agrave;n kh&ocirc;ng thể sao lưu lại&nbsp;bất kỳ th&ocirc;ng tin thanh to&aacute;n n&agrave;o của bạn.</p>
+              <p>C&aacute;c th&ocirc;ng tin của bạn được bảo mật tại cổng thanh to&aacute;n v&agrave; ng&acirc;n h&agrave;ng nh&agrave; nước việt nam.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 405,
+            question:
+              'Tôi đăng nhập đúng tên tài khoản nhưng không thanh toán được?',
+            answer: `<ul>
+              <li>Đối với thẻ kh&aacute;m bệnh/ATM nội địa phải đảm bảo đ&atilde; k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến th&igrave; mới c&oacute; thể thanh to&aacute;n được. Nếu thẻ của bạn chưa k&iacute;ch hoạt Thanh to&aacute;n trực tuyến th&igrave; vui l&ograve;ng li&ecirc;n hệ với ng&acirc;n h&agrave;ng ph&aacute;t h&agrave;nh thẻ của bạn để đăng k&yacute;.</li>
+              <li>Nếu thẻ của bạn đ&atilde; đăng k&yacute; thanh to&aacute;n trực tuyến v&agrave; nhập ch&iacute;nh x&aacute;c th&ocirc;ng tin thanh to&aacute;n nhưng vẫn kh&ocirc;ng thanh to&aacute;n được, vui l&ograve;ng li&ecirc;n hệ 19002115 ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</li>
+              </ul>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 406,
+            question:
+              'Tôi muốn đăng ký khám online nhưng đến trực tiếp bệnh viện để thanh toán được không?',
+            answer: `Trả lời : không
+
+              Hiện tại khi đặt khám trên phần mềm bạn vui lòng hoàn tất quy trình thanh toán ngay trên phần mềm để được nhận phiếu khám bệnh.`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 407,
+            question:
+              'Tôi nhập tài khoản thẻ nhưng bấm xác thực hoài không được?',
+            answer: `<p>Vui lòng ki&ecirc;̉m tra ch&iacute;nh x&aacute;c th&ocirc;ng tin thẻ đ&atilde; nhập. Trường hợp vẫn bị lỗi, h&atilde;y chụp ảnh m&agrave;n h&igrave;nh b&aacute;o lỗi v&agrave; gửi qua c&aacute;c k&ecirc;nh hỗ trợ, ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
         ],
       },
     ],
@@ -838,9 +1671,412 @@ const PARTNERS = [
         },
       },
     ],
+    faq: [
+      {
+        id: 1,
+        name: 'Vấn đề chung',
+        faq: [
+          {
+            id: 101,
+            question:
+              'Lợi ích khi sử dụng phần mềm đăng ký khám bệnh trực tuyến này là gì?',
+            answer: `<p>Đặt lịch kh&aacute;m bệnh theo hẹn, mọi l&uacute;c mọi nơi, m&agrave; kh&ocirc;ng cần đến bệnh viện</p>
+              <ul>
+              <li>Kh&ocirc;ng xếp h&agrave;ng chờ đợi để lấy số tiếp nhận kh&aacute;m bệnhd</li>
+              <li>Giảm thời gian chờ kh&aacute;m tại bệnh viện.</li>
+              <li>Thanh to&aacute;n trực tuyến từ xa, kh&ocirc;ng sử dụng tiền mặt</li>
+              <li>Nhận th&ocirc;ng tin phiếu kh&aacute;m bệnh điện tử qua phần mềm</li>
+              <li>Chủ động chọn lịch kh&aacute;m ( ng&agrave;y kh&aacute;m, khung giờ kh&aacute;m, b&aacute;c sỹ kh&aacute;m )</li>
+              <li>Nhắc lịch t&aacute;i kh&aacute;m, đặt lịch t&aacute;i kh&aacute;m tự động</li>
+              <li>Tra cứu kết quả kh&aacute;m chữa bệnh trực tuyến qua phần mềm.</li>
+              <li>Thanh to&aacute;n viện ph&iacute;, chi ph&iacute; kh&aacute;m chữa bệnh trực tuyến, mọi l&uacute;c mọi nơi</li>
+              <li>Dễ d&agrave;ng tiếp cận v&agrave; nhận c&aacute;c th&ocirc;ng b&aacute;o mới, th&ocirc;ng tin từ bệnh viện</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 102,
+            question:
+              'Làm sao để sử dụng được phần mềm đăng ký khám bệnh trực tuyến?',
+            answer: `<p>
+              <ul>
+              <li>C&oacute; thể truy cập v&agrave; sử dụng phần mềm tr&ecirc;n tất cả thiết bị c&oacute; thể truy cập mạng internet. ( 3G,4G,5G,Wifi, d&acirc;y mạng&hellip;..)</li>
+              <li>M&aacute;y t&iacute;nh b&agrave;n, laptop: truy cập website</li>
+              <li>Hầu hết điện thoại th&ocirc;ng minh: tải ứng dụng phần mềm tại kho tải Gplay hoặc AppStore</li>
+              <li>M&aacute;y t&iacute;nh bảng v&agrave; c&aacute;c thiết bị kh&aacute;c &hellip;&hellip;</li>
+              </ul>
+              </p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 103,
+            question: 'Đăng ký khám bệnh online có mất phí không?',
+            answer: `<ul>
+              <li>C&oacute; ph&iacute; tiện &iacute;ch, khi sử dụng dịch vụ đăng k&yacute; kh&aacute;m bệnh trực tuyến qua phần mềm ( tương tự ph&iacute; cước viễn th&ocirc;ng qua tổng đ&agrave;i )</li>
+              <li>Hiện tại chỉ mất ph&iacute; khi đăng k&yacute; kh&aacute;m bệnh th&agrave;nh c&ocirc;ng, ngo&agrave;i ra việc sử dụng ứng dụng v&agrave; c&aacute;c t&iacute;nh năng kh&aacute;c l&agrave; ho&agrave;n to&agrave;n miễn ph&iacute;.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 104,
+            question:
+              'Tôi có thể dùng phần mềm để đăng ký và lấy số thứ tự khám cho bệnh nhân khác không?',
+            answer: `<ul>
+              <li>Phần mềm khuyến c&aacute;o người d&acirc;n, tự sử dụng phần mềm để đăng k&yacute; kh&aacute;m bệnh cho bản th&acirc;n. Để tự quản l&yacute; th&ocirc;ng tin, hồ sơ bệnh, lịch sử kh&aacute;m chữa bệnh, kết quả kh&aacute;m chữa bệnh&hellip;</li>
+              <li>Trường hợp nhờ người kh&aacute;c đăng k&yacute; qua phần mềm, hoặc chủ động đăng k&yacute; gi&uacute;p người kh&aacute;c ( như th&acirc;n nh&acirc;n, họ h&agrave;ng, &ocirc;ng b&agrave; cha mẹ, người th&acirc;n, bạn b&egrave; , đồng nghiệp&hellip;&hellip;) vẫn c&oacute; thể được, nếu người đ&oacute; thực sự kh&ocirc;ng c&oacute; khả năng tiếp cận phần mềm. Nhưng những trường hợp n&agrave;y l&agrave; tr&aacute;i với quy định của phần mềm v&agrave; an to&agrave;n bảo mật th&ocirc;ng tin của ng&agrave;nh y, c&aacute;c vấn đề ph&aacute;t sinh, người đặt kh&aacute;m d&ugrave;m người kh&aacute;c v&agrave; người nhờ người kh&aacute;c đặt kh&aacute;m sẽ tự chịu tr&aacute;ch nhiệm trước ph&aacute;p luật.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 105,
+            question: 'Phần mềm có hỗ trợ đăng ký khám 24/7 không?',
+            answer: `<ul>
+              <li>Phần mềm cho ph&eacute;p bạn thực hiện việc đăng k&yacute; kh&aacute;m v&agrave;o bất kỳ thời điểm n&agrave;o trong ng&agrave;y v&agrave; bất cứ ng&agrave;y n&agrave;o trong tuần, đảm bảo bạn c&oacute; thể sử dụng Phần mềm để đăng k&yacute; kh&aacute;m bệnh mọi l&uacute;c&nbsp;mọi nơi, m&agrave; kh&ocirc;ng cần phải đến trực tiếp&nbsp;bệnh viện để thực hiện.</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 106,
+            question:
+              'Sau khi đăng ký khám thành công tôi nhận được phiếu khám bệnh như thế nào?',
+            answer: `<p>Bạn sẽ nhận được phiếu kh&aacute;m bệnh điện tử trực tiếp tr&ecirc;n phần mềm. Mục quản l&yacute; &ldquo; phiếu kh&aacute;m bệnh&rdquo;.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời bạn c&oacute; thể sử dụng t&iacute;nh năng gửi tin nhắn, để nhận th&ocirc;ng tin về phiếu kh&aacute;m bệnh được gửi qua tin nhắn điện thoại SMS.</p>
+              <p>&nbsp;</p>
+              <p>Nếu hồ sơ bệnh của bạn c&oacute; khai b&aacute;o th&ocirc;ng tin email, hoặc sử dụng email để đăng nhập phần mềm, bạn cũng sẽ nhận được phiếu kh&aacute;m bệnh điện tử gửi qua email.</p>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 107,
+            question:
+              'Có thể thanh toán trực tuyến chi phí khám chữa bệnh bằng những phương thức nào?',
+            answer: `<ul>
+              <li>Thẻ quốc tế Visa , Master ,JCB</li>
+              <li>Thẻ ATM nội địa/ InternetBanking (thẻ phải được k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến)</li>
+              <li>V&iacute; điện tử MOMO,SMART PAY</li>
+              <li>Qu&eacute;t QRCode/ Mobile Banking</li>
+              <li>Thanh to&aacute;n đại l&yacute; (c&aacute;c cửa h&agrave;ng tiện lợi)</li>
+              <li>Hỗ trợ thanh to&aacute;n (chuyển khoản)</li>
+              </ul>`,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 108,
+            question: 'Làm sao tôi biết được là đã thanh toán thành công?',
+            answer: `<p>Khi thanh to&aacute;n th&agrave;nh c&ocirc;ng, tiền kh&aacute;m chữa bệnh sẽ được trừ th&agrave;nh c&ocirc;ng tr&ecirc;n&nbsp; t&agrave;i khoản thanh to&aacute;n của bạn qua phương thức thanh to&aacute;n bạn đ&atilde; chọn.</p>
+              <p>&nbsp;</p>
+              <p>Đồng thời sẽ c&oacute; th&ocirc;ng tin x&aacute;c nhận giao dịch th&agrave;nh c&ocirc;ng, bi&ecirc;n lai thanh to&aacute;n, m&atilde; giao dịch, m&atilde; thanh to&aacute;n cho giao dịch th&agrave;nh c&ocirc;ng.</p>
+              <p><br /> Hệ thống cũng sẽ cấp ngay phiếu kh&aacute;m bệnh điện tử khi bạn đặt kh&aacute;m th&agrave;nh c&ocirc;ng.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 109,
+            question: 'Tôi có thể đặt khám cho người nhà tôi được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch c&oacute; thể tạo tối đa 10 hồ sơ bệnh nh&acirc;n. Qu&yacute; kh&aacute;ch đặt kh&aacute;m cho bệnh nh&acirc;n n&agrave;o th&igrave; chọn hồ sơ bệnh nh&acirc;n đ&oacute;.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm v&agrave; bệnh viện khuyến c&aacute;o, trừ trường hợp bất khả kh&aacute;ng, kh&ocirc;ng n&ecirc;n đặt d&ugrave;m cho người kh&aacute;c v&igrave; quy định an to&agrave;n bảo mật th&ocirc;ng tin sức khỏe mỗi người.</p>
+              <p>&nbsp;</p>
+              <p>Mọi vấn đề ph&aacute;t sinh từ việc đặt kh&aacute;m cho người kh&aacute;c, c&aacute; nh&acirc;n người đặt sẽ chịu ho&agrave;n to&agrave;n tr&aacute;ch nhiệm trước ph&aacute;p luật.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 110,
+            question: 'Đối tượng bệnh nhân nào có thể sử dụng qua phần mềm?',
+            answer: `<p>Tất cả&nbsp;người bệnh&nbsp;đều c&oacute; thể sử dụng phần mềm&nbsp;để đăng k&yacute; kh&aacute;m bệnh trực tuyến,nếu đủ điều kiện tiếp cận v&agrave; sử dụng phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Phần mềm&nbsp;ph&ugrave; hợp&nbsp;cho những người bệnh&nbsp;c&oacute; kế hoạch kh&aacute;m chữa&nbsp;bệnh chủ động, hoặc t&igrave;nh trạng bệnh&nbsp;KH&Ocirc;NG qu&aacute; khẩn cấp.</p>
+              <p>&nbsp;</p>
+              <p>Trong trường hợp CẤP CỨU, người nh&agrave; n&ecirc;n đưa người bệnh&nbsp;đến cơ sở y tế gần nhất hoặc gọi số cấp cứu 115 để được hỗ trợ.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 111,
+            question:
+              'Sau khi đã đăng ký khám thành công qua phần mềm, có thể hủy phiếu khám không?',
+            answer: `<p>Bạn c&oacute; thể chủ động hủy phiếu kh&aacute;m đ&atilde; đặt th&agrave;nh c&ocirc;ng, nếu kế hoạch kh&aacute;m chữa bệnh c&aacute; nh&acirc;n c&oacute; thay đổi.</p>
+              <p><br /> Hoặc trong 1 số trường hợp, bệnh viện c&oacute; quyền từ chối phiếu kh&aacute;m nếu c&oacute; sự sai lệch th&ocirc;ng tin bệnh nh&acirc;n, sai th&ocirc;ng tin phiếu kh&aacute;m, hoặc c&oacute; vấn đề bất khả kh&aacute;ng ph&aacute;t sinh từ ph&iacute;a bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Bạn đều sẽ được ho&agrave;n tiền lại nếu chưa thực sự đặt kh&aacute;m v&agrave; kh&aacute;m th&agrave;nh c&ocirc;ng (nhưng phải tu&acirc;n theo quy định của phần mềm v&agrave; bệnh viện).</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+          {
+            id: 112,
+            question:
+              'Tôi đến bệnh viện trễ hơn so với giờ khám đã đăng ký, vậy tôi có được khám hay không?',
+            answer: `<p>Trường hợp bạn đến trễ so với giờ hẹn tr&ecirc;n phiếu kh&aacute;m bệnh, bạn vẫn c&oacute; thể đến bệnh viện để được thăm kh&aacute;m, nhưng mọi sự tiếp nhận v&agrave; thời gian kh&aacute;m bệnh sẽ theo sự sắp xếp của bệnh viện, t&ugrave;y v&agrave;o t&igrave;nh h&igrave;nh thực tế tại bệnh viện v&agrave; ph&ograve;ng kh&aacute;m l&uacute;c đ&oacute;.</p>
+              `,
+            status: 1,
+            category_id: 1,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'Vấn đề tài khoản',
+        faq: [
+          {
+            id: 201,
+            question: 'Có bao nhiêu cách để đăng nhập vào phần mềm?',
+            answer: `<p>- Đăng nhập bằng số điện thoại di động, email, mạng x&atilde; hội Zalo, Facebook.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 202,
+            question:
+              '“Mã số bệnh nhân là gì “ làm sao tôi có thể biết được mã số bệnh nhân của mình?',
+            answer: `<ul>
+              <li>M&atilde; số bệnh nh&acirc;n l&agrave;&nbsp;số hồ sơ&nbsp;m&agrave; bệnh viện d&ugrave;ng để quản l&yacute; th&ocirc;ng tin của bạn tr&ecirc;n hệ thống dữ liệu của bệnh viện.</li>
+              <li>Để biết được m&atilde; số bệnh nh&acirc;n của m&igrave;nh, bạn c&oacute; thể tham khảo gợi &yacute; về c&aacute;ch t&igrave;m m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m thấy trong&nbsp;c&aacute;c loại giấy tờ&nbsp;như: toa thuốc, phiếu chỉ định cận l&acirc;m s&agrave;ng, c&aacute;c bi&ecirc;n lai thu tiền&hellip;</li>
+              </ul>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 203,
+            question: '“Tôi quên mã số bệnh nhân của mình thì phải làm sao?',
+            answer: `<p>Để t&igrave;m lại m&atilde; số bệnh nh&acirc;n, bạn c&oacute; thể xem qua gợi &yacute; về c&aacute;ch t&igrave;m lại m&atilde; số bệnh nh&acirc;n, v&agrave; t&igrave;m lại trong c&aacute;c loại giấy tờ kh&aacute;m chữa bệnh của m&igrave;nh.</p>
+              <p>&nbsp;</p>
+              <p>Hoặc mở t&iacute;nh năng "T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n" &gt; nhập ch&iacute;nh x&aacute;c c&aacute;c th&ocirc;ng tin y&ecirc;u cầu &gt; bấm&nbsp;"X&aacute;c nhận" &gt; v&agrave; chọn hồ sơ của m&igrave;nh trong danh s&aacute;ch kết quả.</p>
+              `,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 204,
+            question: 'Làm sao tôi biết bên mình đã có mã số bệnh nhân chưa?',
+            answer: `<p>Nếu bạn đ&atilde; từng thực hiện việc&nbsp;kh&aacute;m chữa bệnh&nbsp;tại bệnh viện, đồng nghĩa với việc bạn&nbsp;đ&atilde; c&oacute; &ldquo;m&atilde; số bệnh nh&acirc;n&rdquo; tr&ecirc;n hệ thống của bệnh viện.</p>
+              <p>&nbsp;</p>
+              <p>Khi đ&oacute;, h&atilde;y t&igrave;m lại m&atilde; số bệnh nh&acirc;n của bạn trong c&aacute;c loại&nbsp;giấy tờ kh&aacute;m chữa bệnh, hoặc bạn c&oacute; thể&nbsp;sử dụng t&iacute;nh năng &ldquo;T&ocirc;i qu&ecirc;n m&atilde; số bệnh nh&acirc;n&rdquo; để t&igrave;m lại m&atilde; số bệnh nh&acirc;n của m&igrave;nh ngay tr&ecirc;n phần mềm.</p>`,
+            status: 1,
+            category_id: 2,
+          },
+          {
+            id: 205,
+            question:
+              'Tôi có thể chọn tùy ý một hồ sơ bệnh nhân của người khác để đăng ký khám bệnh cho mình không?',
+            answer: `<p>Trong trường hợp bạn cố t&igrave;nh hay nhầm lẫn&nbsp;d&ugrave;ng hồ sơ bệnh nh&acirc;n&nbsp;của người kh&aacute;c hoặc khai b&aacute;o sai th&ocirc;ng tin&nbsp;để đăng k&yacute; kh&aacute;m bệnh, bạn đ&atilde; vi phạm điều khoản sử dụng của phần mềm v&agrave; quy định tại bệnh viện.&nbsp;</p>
+              <p><br /> Bệnh viện sẽ từ chối kh&aacute;m chữa bệnh, bạn sẽ chịu ho&agrave;n to&agrave;n những thiệt hại v&agrave; t&ugrave;y mức độ c&oacute; thể chịu tr&aacute;ch nhiệm trước&nbsp;ph&aacute;p luật.</p>
+              <p>&nbsp;</p>
+              <p>V&igrave; vậy,&nbsp;khi đăng k&yacute; kh&aacute;m bệnh bạn vui l&ograve;ng chọn/nhập v&agrave; kiểm tra&nbsp;ch&iacute;nh x&aacute;c&nbsp;hồ sơ&nbsp;bệnh nh&acirc;n của m&igrave;nh!</p>`,
+            status: 1,
+            category_id: 2,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: 'Vấn đề về quy trình đặt khám',
+        faq: [
+          {
+            id: 301,
+            question:
+              'Có thể đăng ký khám bệnh trong ngày bằng phần mềm không?',
+            answer: `<p>Hiện tại bệnh viện hỗ trợ cả đặt kh&aacute;m đăng k&yacute; trong ng&agrave;y, cho ph&eacute;p đặt kh&aacute;m trước 30 ph&uacute;t. Nhưng bạn kh&ocirc;ng được huỷ phiếu kh&aacute;m trong ng&agrave;y.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 302,
+            question: 'Có thể đăng ký khám bệnh trong khoảng thời gian nào?',
+            answer: `<p>Bạn c&oacute; thể đăng k&yacute; kh&aacute;m bệnh qua phần mềm, mọi l&uacute;c mọi nơi. C&oacute; thể đặt lịch hẹn kh&aacute;m bệnh trước ng&agrave;y kh&aacute;m đến 30 ng&agrave;y.&nbsp;</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 303,
+            question: 'Khi đi khám bệnh, tôi có cần chuẩn bị gì không?',
+            answer: `<p><strong>Đối với Người bệnh c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Vui l&ograve;ng mang thẻ BHYT v&agrave; giấy tờ tuỳ th&acirc;n, v&agrave; đến cửa tiếp nhận số 1trước hẹn 15 ph&uacute;t để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>
+              <p>&nbsp;</p>
+              <p><strong>Đối với Người bệnh KH&Ocirc;NG c&oacute; thẻ Bảo hiểm y tế:</strong></p>
+              <p><br /> Bệnh nh&acirc;n vui l&ograve;ng đến trước giờ hẹn 15 ph&uacute;t, xuất tr&igrave;nh phiếu kh&aacute;m bệnh điện tử v&agrave; giấy tờ t&ugrave;y th&acirc;n để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 304,
+            question:
+              'Tôi có việc đột xuất hoặc bận không đến khám được, tôi muốn huỷ phiếu khám có được không?',
+            answer: `<p>Qu&yacute; kh&aacute;ch chủ động thực hiện việc hủy phiếu tr&ecirc;n phần mềm.</p>
+              <p>&nbsp;</p>
+              <p>Tiền kh&aacute;m bệnh sẽ ho&agrave;n lại t&agrave;i khoản của bệnh nh&acirc;n&nbsp;đ&atilde; sử dụng&nbsp;thanh to&aacute;n. Ph&iacute; tiện &iacute;ch sẽ kh&ocirc;ng được ho&agrave;n trả.</p>
+              <p>&nbsp;</p>
+              <p>Thời gian nhận lại tiền kh&aacute;m trong t&agrave;i khoản: từ&nbsp;1 - 3&nbsp;ng&agrave;y&nbsp;(đối với v&iacute; điện tử&nbsp;MOMO).</p>
+              <p>&nbsp;</p>
+              <p>C&aacute;c loại thẻ&nbsp;ATM nội địa: từ&nbsp;01 đến 05&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Thẻ thanh to&aacute;n&nbsp;quốc tế&nbsp;(Visa/MasterCard&hellip;): từ&nbsp;05 đến 45&nbsp;ng&agrave;y l&agrave;m việc.</p>
+              <p>&nbsp;</p>
+              <p>Trường hợp kh&aacute;ch h&agrave;ng thanh to&aacute;n bằng c&aacute;c cửa h&agrave;ng tiện lợi m&agrave; muốn huỷ phiếu kh&aacute;m bệnh,kh&aacute;ch h&agrave;ng vui l&ograve;ng đến cửa h&agrave;ng tiện lợi cung cấp đầy đủ th&ocirc;ng tin v&agrave; cửa h&agrave;ng sẽ kiểm tra ho&agrave;n tiền lại (Tuỳ theo cửa h&agrave;ng c&oacute; thể nhanh hoặc chậm).</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 305,
+            question:
+              'Tôi có thể thay đổi thông tin khám đã đặt qua phần mềm không?',
+            answer: `<p>Bạn kh&ocirc;ng thể thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh đ&atilde; đặt th&agrave;nh c&ocirc;ng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 306,
+            question:
+              'Phần mềm có cho đăng ký khám bệnh với đối tượng bệnh nhân bhyt không?',
+            answer: `<p>Hiện tại bệnh viện chỉ hỗ trợ bệnh nh&acirc;n đăng k&yacute; kh&aacute;m dịch vụ qua ứng dụng.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 307,
+            question: 'Nếu bác sĩ thay đổi lịch khám, tôi phải làm sao?',
+            answer: `<p>Khi b&aacute;c sĩ thay đổi lịch kh&aacute;m, phần mềm sẽ gửi th&ocirc;ng b&aacute;o cho bạn qua tin nhắn sms, email v&agrave; tr&ecirc;n ứng dụng.Khi nhận được th&ocirc;ng b&aacute;o về sự thay đổi. Bạn c&oacute; thể:</p>
+              <ul>
+              <li>Hủy Phiếu Kh&aacute;m Bệnh để nhận lại tiền kh&aacute;m theo quy định ho&agrave;n tiền.</li>
+              <li>Vẫn giữ nguy&ecirc;n th&ocirc;ng tin tr&ecirc;n Phiếu Kh&aacute;m Bệnh, v&agrave; điều n&agrave;y đồng nghĩa với việc bạn chấp nhận kh&aacute;m với b&aacute;c sĩ thay thế m&agrave; bệnh viện đ&atilde; sắp xếp.</li>
+              <li>Thay đổi th&ocirc;ng tin kh&aacute;m tr&ecirc;n phiếu kh&aacute;m bệnh, bằng c&aacute;ch: Đăng nhập phần mềm &gt; Th&ocirc;ng Tin T&agrave;i Khoản &gt; Quản l&yacute; phiếu kh&aacute;m bệnh &gt; chọn v&agrave;o phiếu kh&aacute;m bệnh bị thay đổi lịch kh&aacute;m &gt; bấm "Chỉnh sửa".</li>
+              </ul>
+              <p>Việc thay đổi th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh phải được thực hiện theo Quy định chỉnh sửa th&ocirc;ng tin tr&ecirc;n phiếu kh&aacute;m bệnh.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 308,
+            question:
+              'Làm sao có thể chọn đúng chuyên khoa để đăng ký khám qua phần mềm?',
+            answer: `<p>Trường hợp t&aacute;i kh&aacute;m, bạn chỉ việc chọn đ&uacute;ng chuy&ecirc;n khoa của lần kh&aacute;m trước.</p>
+              <p>Trường hợp kh&aacute;m mới:</p>
+              <ul>
+              <li>Nếu biết chắc chuy&ecirc;n khoa m&igrave;nh muốn đăng k&yacute; kh&aacute;m, bạn chỉ việc t&igrave;m&nbsp;chọn chuy&ecirc;n khoa đ&oacute; trong danh s&aacute;ch.</li>
+              <li>Nếu&nbsp;chưa biết chuy&ecirc;n khoa n&agrave;o ph&ugrave; hợp, bạn&nbsp;c&oacute; thể gọi v&agrave;o tổng đ&agrave;i tư vấn chăm s&oacute;c kh&aacute;ch h&agrave;ng của bệnh viện hoặc tổng đ&agrave;i medpro&nbsp;<strong>19002115</strong> hoặc li&ecirc;n hệ hỗ trợ tại k&ecirc;nh chat mạng x&atilde; hội facebook, zalo.</li>
+              </ul>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 309,
+            question:
+              'Tôi sẽ được khám bệnh vào đúng thời gian đã chọn, sau khi đăng ký khám qua phần mềm đúng không?',
+            answer: `<p>Trả lời: C&oacute; thể.</p>
+              <p>Thời gian bạn chọn khi đăng k&yacute; kh&aacute;m, được xem l&agrave; thời gian kh&aacute;m bệnh dự kiến. Do đặc th&ugrave; của c&ocirc;ng t&aacute;c kh&aacute;m chữa bệnh, sẽ kh&ocirc;ng thể ch&iacute;nh x&aacute;c thời gian kh&aacute;m 100%.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 310,
+            question:
+              'Tôi đăng ký đã bị trừ tiền nhưng sao không nhận được mã số khám bệnh?',
+            answer: `<p>Bạn vui l&ograve;ng kiểm tra th&ocirc;ng tin phiếu kh&aacute;m trong t&agrave;i khoản tr&ecirc;n phần mềm. Hoặc vui l&ograve;ng gọi điện tổng đ&agrave;i 19002115 để được hỗ trợ.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+          {
+            id: 311,
+            question:
+              'Tôi đã đăng ký thành công vậy khi đi khám tôi có phải xếp hàng gì không?',
+            answer: `<p>Kh&ocirc;ng, bạn kh&ocirc;ng c&ograve;n phải xếp h&agrave;ng chờ đợi để lấy số kh&aacute;m bệnh, l&agrave;m thủ tục đ&oacute;ng tiền, bạn chỉ cần đến cửa tiếp nhận số 1 để được hướng dẫn v&agrave;o ph&ograve;ng kh&aacute;m.</p>`,
+            status: 1,
+            category_id: 3,
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: 'Vấn đề về thanh toán',
+        faq: [
+          {
+            id: 401,
+            question: 'Điều kiện để được hoàn tiền là gì?',
+            answer: `<p>Bạn chỉ được ho&agrave;n tiền khi thực hiện th&agrave;nh c&ocirc;ng y&ecirc;u cầu Hủy Phiếu Kh&aacute;m Bệnh tr&ecirc;n phần mềm theo theo quy định.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 402,
+            question:
+              'Hoàn tiền như thế nào? Bao lâu thì tôi nhận lại được tiền hoàn?',
+            answer: `<p>Khi bạn thực hiện việc&nbsp;thanh to&aacute;n bằng phương thức n&agrave;o, th&igrave; phần mềm sẽ ho&agrave;n tiền&nbsp;lại cho bạn&nbsp;bằng&nbsp;đ&uacute;ng phương thức v&agrave; số t&agrave;i khoản&nbsp;đ&atilde; d&ugrave;ng để thanh to&aacute;n đ&oacute;.</p>
+              <p>Thời gian bạn nhận được&nbsp;tiền ho&agrave;n th&ocirc;ng thường được quy định như sau:</p>
+              <ul>
+              <li>Thẻ kh&aacute;m bệnh:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ ATM nội địa:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 - 30 ng&agrave;y l&agrave;m việc.</li>
+              <li>Thẻ t&iacute;n dụng Visa, MasterCard:&nbsp; &nbsp; &nbsp; &nbsp; 1 - 45 ng&agrave;y l&agrave;m việc.</li>
+              </ul>
+              <p>T&iacute;nh từ thời điểm bạn thực hiện Hủy Phiếu Kh&aacute;m Bệnh th&agrave;nh c&ocirc;ng, nếu qu&aacute; thời gian tr&ecirc;n bạn vẫn chưa nhận được tiền ho&agrave;n, vui l&ograve;ng li&ecirc;n hệ tổng đ&agrave;i 1900 2115 ch&uacute;ng t&ocirc;i sẽ hỗ&nbsp;trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 403,
+            question:
+              'Tôi không có bất kỳ một thẻ khám bệnh hoặc thẻ ngân hàng nào để thanh toán, vậy tôi phải làm sao?',
+            answer: `<p>&nbsp;Bạn c&oacute; thể li&ecirc;n hệ nh&acirc;n vi&ecirc;n bệnh viện&nbsp;tại c&aacute;c quầy hướng dẫn trong bệnh viện để được hỗ trợ l&agrave;m&nbsp;thẻ kh&aacute;m bệnh&nbsp;miễn ph&iacute;.</p>
+              <p>Nhờ con,ch&aacute;u hoặc người th&acirc;n trong gia đ&igrave;nh c&oacute; sử dụng c&aacute;c phương thức thanh to&aacute;n trực tuyến để đặt kh&aacute;m.</p>
+              <p>Đăng k&yacute; mới một trong c&aacute;c phương thức thanh to&aacute;n trực tuyến c&oacute; hỗ trợ ngay, để tiếp tục sử dụng trong tương lai.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 404,
+            question:
+              'Thông tin thanh toán của tôi có bị lộ khi tôi tiến hành thanh toán trên phần mềm không?',
+            answer: `<p>Trả lời : Kh&ocirc;ng!</p>
+              <p>Phần mềm&nbsp;v&agrave; bệnh viện ho&agrave;n to&agrave;n kh&ocirc;ng thể sao lưu lại&nbsp;bất kỳ th&ocirc;ng tin thanh to&aacute;n n&agrave;o của bạn.</p>
+              <p>C&aacute;c th&ocirc;ng tin của bạn được bảo mật tại cổng thanh to&aacute;n v&agrave; ng&acirc;n h&agrave;ng nh&agrave; nước việt nam.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 405,
+            question:
+              'Tôi đăng nhập đúng tên tài khoản nhưng không thanh toán được?',
+            answer: `<ul>
+              <li>Đối với thẻ kh&aacute;m bệnh/ATM nội địa phải đảm bảo đ&atilde; k&iacute;ch hoạt t&iacute;nh năng thanh to&aacute;n trực tuyến th&igrave; mới c&oacute; thể thanh to&aacute;n được. Nếu thẻ của bạn chưa k&iacute;ch hoạt Thanh to&aacute;n trực tuyến th&igrave; vui l&ograve;ng li&ecirc;n hệ với ng&acirc;n h&agrave;ng ph&aacute;t h&agrave;nh thẻ của bạn để đăng k&yacute;.</li>
+              <li>Nếu thẻ của bạn đ&atilde; đăng k&yacute; thanh to&aacute;n trực tuyến v&agrave; nhập ch&iacute;nh x&aacute;c th&ocirc;ng tin thanh to&aacute;n nhưng vẫn kh&ocirc;ng thanh to&aacute;n được, vui l&ograve;ng li&ecirc;n hệ 19002115 ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</li>
+              </ul>`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 406,
+            question:
+              'Tôi muốn đăng ký khám online nhưng đến trực tiếp bệnh viện để thanh toán được không?',
+            answer: `Trả lời : không
+
+              Hiện tại khi đặt khám trên phần mềm bạn vui lòng hoàn tất quy trình thanh toán ngay trên phần mềm để được nhận phiếu khám bệnh.`,
+            status: 1,
+            category_id: 4,
+          },
+          {
+            id: 407,
+            question:
+              'Tôi nhập tài khoản thẻ nhưng bấm xác thực hoài không được?',
+            answer: `<p>Vui lòng ki&ecirc;̉m tra ch&iacute;nh x&aacute;c th&ocirc;ng tin thẻ đ&atilde; nhập. Trường hợp vẫn bị lỗi, h&atilde;y chụp ảnh m&agrave;n h&igrave;nh b&aacute;o lỗi v&agrave; gửi qua c&aacute;c k&ecirc;nh hỗ trợ, ch&uacute;ng t&ocirc;i sẽ hỗ trợ bạn.</p>`,
+            status: 1,
+            category_id: 4,
+          },
+        ],
+      },
+    ],
   },
 ];
-
-export type Partner = (typeof PARTNERS)[number];
 
 export default PARTNERS;

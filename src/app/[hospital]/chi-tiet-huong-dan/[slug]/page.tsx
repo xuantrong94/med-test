@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Loading from '@/app/loading';
 import PARTNERS from '@/shared/constants/partners';
 import MainPost from '@/ui-pages/chi-tiet-huong-dan/MainPost';
@@ -14,7 +15,7 @@ const GuideDetail = async ({
   const partnerid = PARTNERS.find(item => item.slug === hospital)?.keyword;
 
   if (!partnerid) {
-    return <div>Partner not found</div>;
+    notFound();
   }
 
   return (

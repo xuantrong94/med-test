@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Hero from '@/components/layouts/static-page/Hero';
 import Layout from '@/components/layouts/static-page/Layout';
 import GioiThieuHeroImg from '@/assets/images/gioi-thieu/hero.jpg';
@@ -13,7 +14,7 @@ export default async function GioiThieu({
   const { hospital } = await params;
   const partner = PARTNERS.find(item => item.slug === hospital);
   if (!partner) {
-    return <div>Partner not found</div>;
+    notFound();
   }
   const partnerGioiThieuContent = partner.gioithieuContent;
   return (

@@ -1,19 +1,13 @@
 'use client';
-import faqData from '@/data/faq';
 import React from 'react';
 import AccordionItemComponent from './AccordionItemComponent';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/utils/cn';
+import { IFaq } from '@/data/faq';
 
-const faqSections = faqData.map(faqSection => {
-  return {
-    id: faqSection.id,
-    name: faqSection.name,
-  };
-});
-const MainContent = () => {
+const MainContent = ({ faq }: { faq: IFaq[] }) => {
   const [selectedSection, setSelectedSection] = React.useState<number>(
-    faqSections[0].id
+    faq[0].id
   );
   const [expandedItemId, setExpandedItemId] = React.useState<number | null>(
     null
@@ -25,7 +19,7 @@ const MainContent = () => {
         <p className='bg-cyan rounded-md px-4 py-2 text-white'>
           Giải đáp nhanh câu hỏi
         </p>
-        {faqSections.map(section => (
+        {faq.map(section => (
           <button
             key={section.id}
             onClick={() => {
@@ -49,7 +43,7 @@ const MainContent = () => {
       {/* End Sections */}
       {/* Start FAQ Items */}
       <div className='col-span-12 space-y-2 md:col-span-8 lg:col-span-9'>
-        {faqData
+        {faq
           .find(section => section.id === selectedSection)
           ?.faq.map(item => (
             <AccordionItemComponent

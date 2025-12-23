@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import HomeHero from '@/ui-pages/home/HomeHero';
 import Loading from '../loading';
@@ -57,7 +58,7 @@ export default async function Home({
   const partner = PARTNERS.find(item => item.slug === hospital);
 
   if (!partner) {
-    return <div>Partner not found</div>;
+    notFound();
   }
 
   const [featuresData, posts] = await Promise.all([
