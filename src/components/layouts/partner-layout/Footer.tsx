@@ -35,7 +35,10 @@ function Footer() {
             <div className='flex flex-col items-end gap-6 lg:flex-row'>
               {/* Logo & Info */}
               <div className='w-full lg:w-1/3'>
-                <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
+                <Link
+                  href={`${partnerSlug}`}
+                  className='flex flex-col items-center text-center lg:items-start lg:text-left'
+                >
                   <Image
                     src={PartnerLogo}
                     alt='logo'
@@ -58,7 +61,7 @@ function Footer() {
                       Điện thoại: {phones[keyword as HospitalKey]?.display}
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
 
               {/* Navigation Links */}

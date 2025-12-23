@@ -38,7 +38,10 @@ function Header() {
   return (
     <header className='fixed top-0 right-0 left-0 z-50 h-20 w-full border-b border-gray-200 bg-white lg:h-[120px]'>
       <div className='container mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 lg:justify-end'>
-        <div className='mr-auto ml-0'>
+        <Link
+          href={partner ? `/${partner}` : '/'}
+          className='mr-auto ml-0'
+        >
           <Image
             src={HeaderLogo}
             alt='Logo'
@@ -48,15 +51,18 @@ function Header() {
             )}
             overrideSrc={HeaderLogo.src}
           />
-        </div>
+        </Link>
 
         {/* Desktop menu - ẩn trên mobile */}
         <div className='hidden w-1/2 grow px-[2.5%] lg:block'>
           <div className='py-[15px]'>
-            <button className='from-primary to-cyan mr-0 ml-auto flex cursor-pointer gap-2 rounded-sm border-none bg-linear-to-r px-2.5 py-2 text-sm text-white hover:opacity-90'>
+            <Link
+              className='from-primary to-cyan mr-0 ml-auto flex w-fit cursor-pointer gap-2 rounded-sm border-none bg-linear-to-r px-2.5 py-2 text-sm text-white hover:opacity-90'
+              href={`https://id-v121.medpro.com.vn/check-phone`}
+            >
               <LogIn size={16} />
               <span>Đăng nhập</span>
-            </button>
+            </Link>
           </div>
           <nav>
             <ul className='m-0 flex list-none justify-end p-0'>
