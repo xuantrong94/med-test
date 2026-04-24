@@ -1,0 +1,41 @@
+.clearFiltersContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-primary;
+  border-radius: $radius-md;
+  box-shadow: 0 spacing(1) spacing(5) rgba($color-black, 0.04);
+  border: 1px solid rgba($color-black, 0.03);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 spacing(3) spacing(8) rgba($color-primary, 0.25);
+  }
+
+  &:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+  }
+
+  @include screen(lg) {
+    flex: 0 0 auto !important;
+  }
+}
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  gap: spacing(2);
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0.5rem !important;
+  font-weight: $font-semibold !important;
+  color: $color-white !important;
+  font-size: $text-sm !important;
+
+  .icon {
+    font-size: $text-base;
+  }
+}

@@ -1,0 +1,43 @@
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: spacing(16) spacing(4);
+  text-align: center;
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  margin-top: spacing(8);
+  border: 1px solid $color-gray-border;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  background-color: $color-blue-wash;
+  border-radius: $radius-full;
+  margin-bottom: spacing(6);
+  color: $color-blue;
+}
+
+.icon {
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-blue-deep;
+  margin-bottom: spacing(2);
+}
+
+.description {
+  font-size: 1rem;
+  color: $color-gray-dark;
+  max-width: 400px;
+  line-height: 1.6;
+}

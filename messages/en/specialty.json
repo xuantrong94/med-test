@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "update": "Updated:",
+    "author": "Author:",
+    "authorDefault": "Medpro",
+    "noRelatedPosts": "Related articles are being updated...",
+    "hospitalList": "Hospital List",
+    "relatedPosts": "Related Articles",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "bookNow": "Book specialty now",
+    "bookSchedule": "Book Now",
+    "learnMore": "Learn More",
+    "bookAppointment": "Book Appointment",
+    "heroTag": "Medical Excellence",
+    "heroFallbackDesc": "A leading system of experts in treatment and healthcare. We combine advanced technology with ethical medical understanding to bring the best results for our clients.",
+    "specialtyPrefix": "Specialty {name}",
+    "hospitalItemTitle": "Hospital {name}",
+    "hospitalItemDesc": "View detailed services and doctors at {name}",
+    "heroTitle": "Specialty {name}",
+    "heroDesc": "Explore specialized medical services in {name} with leading doctors.",
+    "subjects": "Facility Specialties",
+    "noSubjects": "Specialty data is being updated..."
+  }
+}

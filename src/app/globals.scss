@@ -1,0 +1,123 @@
+// Import CSS Reset first
+@use "../assets/styles/abstracts/reset";
+@use "../assets/styles/abstracts/variables";
+@use "../assets/styles/abstracts/typography";
+@use "../assets/styles/abstracts/mixins";
+@use "../assets/styles/abstracts/utilities";
+
+// Import dynamic loading animations
+@import "../assets/styles/dynamic-loading.css";
+
+// CSS Custom Properties (Variables) - Force Light Theme
+:root {
+  // Typography
+  --font-family-primary:
+    var(--font-roboto), "Helvetica Neue", arial, sans-serif;
+  --font-family-secondary:
+    var(--font-roboto), "Helvetica Neue", arial, sans-serif;
+  --font-size-base: #{$text-base};
+  --line-height-base: 1.5;
+
+  // Force light mode
+  color-scheme: light !important;
+}
+
+// Base body styles
+body {
+  // background: $color-background !important;
+  color: $color-foreground;
+
+  @include typography.font-primary;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+// Force light mode - override any dark mode styles
+html {
+  // background: $color-background !important;
+  color-scheme: light !important;
+}
+
+// Reset any dark mode overrides
+* {
+  color-scheme: light !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app {
+  margin-top: 60px;
+
+  @include screen(lg) {
+    margin-top: 100px;
+  }
+
+  @include screen(xl) {
+    margin-top: 140px;
+  }
+}
+
+.flag-dropdown {
+  width: 140px !important;
+}
+
+.ant-picker-calendar {
+  background: transparent;
+}
+
+.ant-picker-calendar-header {
+  padding: 0 0 spacing(2);
+}
+
+.ant-picker-content th {
+  font-size: 10px;
+  font-weight: $font-bold;
+  color: $color-text;
+  padding-bottom: spacing(1);
+}
+
+.ant-picker-cell {
+  padding: 2px 0;
+}
+
+.ant-picker-cell-inner {
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: $text-xs;
+  border-radius: $radius-md !important;
+  transition: all 0.2s;
+
+  &::before {
+    display: none !important;
+  }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner {
+  &::before {
+    display: block !important;
+    border: 1px solid $color-blue !important;
+  }
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: $color-blue-linear !important;
+  color: $color-white !important;
+  box-shadow: 0 2px 8px rgba($color-blue, 0.2);
+}
+
+.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: $color-blue !important;
+}

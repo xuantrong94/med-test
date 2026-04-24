@@ -1,0 +1,319 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.doctorCard {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 4%);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 15px 40px rgb(0 0 0 / 8%);
+  }
+}
+
+.infoSection {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+  border-bottom: 1px solid #f1f5f9;
+  align-items: center;
+
+  @media (width <= 640px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #f8fafc;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    border: 3px solid white;
+    border-radius: 50%;
+    z-index: 10;
+  }
+}
+
+.avatar {
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.details {
+  flex: 1;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+
+  @media (width <= 640px) {
+    justify-content: center;
+  }
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff7ed;
+  color: #ea580c;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid #ffedd5;
+
+  svg {
+    font-size: 14px;
+    color: #fbbf24;
+  }
+}
+
+.role {
+  font-size: 1rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: inline-block;
+  background: #eef2ff;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.935rem;
+
+  @media (width <= 640px) {
+    justify-content: center;
+  }
+
+  .icon {
+    color: #94a3b8;
+  }
+
+  span {
+    line-height: 1.5;
+  }
+}
+
+.bookingSummary {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.partnerHeader {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.partnerIcon {
+  width: 48px;
+  height: 48px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.partnerContent {
+  flex: 1;
+}
+
+.partnerName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.partnerAddress {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .icon {
+    font-size: 14px;
+  }
+}
+
+.summaryDivider {
+  height: 1px;
+  background: #f1f5f9;
+  width: 100%;
+}
+
+.summaryTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #f1f5f9;
+  }
+}
+
+.itemIcon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+}
+
+.itemContent {
+  label {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 0.935rem;
+    color: #334155;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+// Steps styling (kept mostly same but refined)
+.stepsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+
+  &.completed,
+  &.current {
+    opacity: 1;
+  }
+
+  &.current {
+    .stepIcon {
+      background: #6366f1;
+      color: white;
+      border-color: #6366f1;
+      box-shadow: 0 4px 12px rgb(99 102 241 / 30%);
+    }
+
+    .stepTitle {
+      color: #6366f1;
+      font-weight: 700;
+    }
+  }
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.stepLine {
+  width: 40px;
+  height: 2px;
+  background: #e2e8f0;
+  border-radius: 2px;
+}

@@ -1,0 +1,1141 @@
+{
+  "schedules": [
+    {
+      "subject": {
+        "id": "nhidong1_11",
+        "name": "Dinh dưỡng",
+        "bookingNote": "Triệu chứng: Biếng ăn, kém ăn, chậm tăng cân, suy dinh dưỡng, thừa cân, béo phì",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            },
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "03-02-2026",
+          "doctors": [
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            },
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6, 7",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            },
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6, 7",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "05-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            },
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "06-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            },
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "07-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Dinh dưỡng",
+              "subjectId": "nhidong1_11",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6, 7",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_31",
+        "name": "NGOẠI KHOA",
+        "bookingNote": "Triệu chứng: Nổi hạch dưới nách, dưới cổ 3 tháng; tật vòng thắt bẩm sinh, nghi viêm ruột thừa, lồng ruột; hướng bụng, ói dịch vàng, xanh nâu, kén, u da, u nang, hẹp bao quy đầu; té gãy xương, nghi chấn thương đầu",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_5",
+        "name": "Sốt xuất huyết - Huyết học",
+        "bookingNote": "Triệu chứng: Sốt cao liên tục trên 3 ngày; Thiếu máu, da xanh xao, bầm da, chấm xuất huyết da, chảy máu cam",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_9",
+        "name": "Thần kinh",
+        "bookingNote": "Triệu chứng: Co giật, động kinh, bại não, rối loạn giấc ngủ, chậm phát triển, đau đầu kéo dài, đau đầu cấp tính",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Thần kinh",
+              "subjectId": "nhidong1_9",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 4",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "d1e56e44e1d84759923c57b4d9a5abb8",
+              "name": "Bùi Xuân Ngọc",
+              "avatar": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "imageUrl": "https://cdn.medpro.vn/medpro-testing/nhidong1/doctors/1735195099249-z6167782789543_b7d6fced0abbb936e00fc92b632a7bb0.jpg",
+              "gender": 1,
+              "role": "Tiến sĩ",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Thần kinh",
+              "subjectId": "nhidong1_9",
+              "treatments": "",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 4",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_13",
+        "name": "Tai mũi họng",
+        "bookingNote": "Triệu chứng: Amidan to, chảy mũi kéo dài, nghẹt mũi kéo dài, đau tai, chảy mủ tai, đau đầu kéo dài, chảy máu cam; điếc, nghe kém",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Tai mũi họng",
+              "subjectId": "nhidong1_13",
+              "treatments": "555512",
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "03-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Tai mũi họng",
+              "subjectId": "nhidong1_13",
+              "treatments": "555512",
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Tai mũi họng",
+              "subjectId": "nhidong1_13",
+              "treatments": "555512",
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_32",
+        "name": "Phỏng - Bướu máu",
+        "bookingNote": "Triệu chứng: Bướu máu",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_29",
+        "name": "Nội tổng quát",
+        "bookingNote": "Triệu chứng: Biếng ăn, suy dinh dưỡng, thừa cân; thiếu máu; chảy nước miếng; đau bụng, đầu hoặc ói cấp tính; sốt, ho, sổ mũi",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_14",
+        "name": "Mắt",
+        "bookingNote": "Triệu chứng: Mắt nhìn kém, mắt đỏ, viêm tuyến lệ, chắp, lẹo, nghi bệnh lý võng mạc sơ sinh, đo khúc xạ làm mắt kính, chảy nước mắt sống",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_10",
+        "name": "Da liễu",
+        "bookingNote": "Triệu chứng: mụn mủ da, chàm, nấm da, mẩn ngứa,phát ban",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_23",
+        "name": "Chỉnh hình",
+        "bookingNote": "Triệu chứng: Bàn chân bẹt; Chân cong (vòng kiềng), thừa ngón, dính ngón tay/chân; Ngực lõm, ngực gồ, gù, vẹo cột sống, đau khớp háng, gãy xương do té, thay băng bó bột ",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_3",
+        "name": "Hô hấp- Suyễn",
+        "bookingNote": "Triệu chứng: Khò khè; Ho kéo dài, khó thở, hen suyễn, khàn tiếng",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_24",
+        "name": "Tiêm chủng",
+        "bookingNote": "Triệu chứng: Tư vấn tiêm chủng, khám trẻ em lành mạnh",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_2",
+        "name": "Tim mạch",
+        "bookingNote": "TRIỆU CHỨNG TIM MẠCH : Môi tím, đầu chi tím, đau ngực, sưng, đau khớp - HẬU COVID: Tim đập nhanh, đập mạnh.",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_30",
+        "name": "Hô hấp - Hậu COVID",
+        "bookingNote": "TRIỆU CHỨNG : Mệt mỏi, khó thở. Hậu COVID chỉ đặt vào Khám theo yêu cầu: 150.000đ",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_4",
+        "name": "Dị ứng",
+        "bookingNote": "Triệu chứng: nổi mề đay, viêm mũi dị ứng kéo dài; test tìm dị nguyên",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_46",
+        "name": "Thận - Nội Tiết",
+        "bookingNote": "Triệu chứng: Tiểu gắt, tiểu lắt nhắt, tiểu máu; phù mặt, phù chân; tái khám Hội chứng thận hư, tái khám Lupus; Lùn, dậy thì sớm, hạch ở cổ; tái khám Tiểu đường; bướu cổ",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_17",
+        "name": "Ngoại thần kinh",
+        "bookingNote": "Triệu chứng: tật đầu nhỏ, Đầu to/ đầu nước, khối u vùng thắt lưng; té có chấn thương vùng đầu",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_19",
+        "name": "Ngoại sơ sinh",
+        "bookingNote": "Triệu chứng : bệnh lý ngoại khoa cho trẻ dưới 30 ngày như thoát vị ống niệu rốn ( chảy nước ở rốn); chồi rốn; vàng da tắc mật; hở thành bụng",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_20",
+        "name": "Ngoại u bướu",
+        "bookingNote": "Triệu chứng: bướu bạch huyết cần chích xơ; các khối u bất thường",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_21",
+        "name": "Ngoại tiêu hóa -  Gan mật",
+        "bookingNote": "Triệu chứng : Táo bón kéo dài, Bệnh gan mật: sỏi túi mật, sỏi ống mật chủ,  vàng da tắc mật - Ống tiêu hóa: \bu bụng, táo bón kéo dài, hirschsprung (vô hạch hồi manh tràng); tắc mật, hẹp dạ dày tá tràng; nứt/rò hậu môn",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_12",
+        "name": "Tiêu hóa",
+        "bookingNote": "Triệu chứng: ọc sữa, nôn trớ; Ói kéo dài, ói tái đi tái lại nhiều lần; tiêu phân lỏng, tiêu chảy kéo dài, táo bón, tiêu đàm máu; chướng bụng, vàng da kéo dài; đau bụng kéo dài",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "b84e1cb2a5d44b25bdf8b93275d86e1b",
+        "name": "Răng Hàm Mặt - Điều Trị Tổng Quát",
+        "bookingNote": "TRIỆU CHỨNG: Khám răng, Đau răng, Sưng răng, Chấn thương răng, Xin nhổ răng, Răng lung lay, Chảy máu răng, Nướu sưng, Chảy máu nướu, Hôi miệng, Chảy mủ ở răng",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_42",
+        "name": "Răng Hàm Mặt - Điều Trị Tổng Quát",
+        "bookingNote": "TRIỆU CHỨNG: Xin chỉnh răng, Răng lệch lạc, Răng thưa, Răng hô, Răng móm, Khám sứt môi trẻ sơ sinh, Xin làm Khí cụ NAM",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "ad73876dff2b4870b95d43b4988b0eca",
+        "name": "Răng Hàm Mặt - Phẫu Thuật Hàm Mặt 2",
+        "bookingNote": "TRIỆU CHỨNG: Sưng ở môi, Sưng ở má, Sưng ở lưỡi, Sưng ở sàn miệng, Chậm nói, Nói ngọng, Lưỡi dính, Sơ sinh bú yếu, không bú được, Dính thắng môi, Hở 2 răng cửa giữa",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "acbfeab5c0d84afea8111756a03f8216",
+        "name": "Răng Hàm Mặt - Phẫu Thuật Hàm Mặt 1",
+        "bookingNote": "TRIỆU CHỨNG: Khám sứt môi, hở vòm, Tư vấn tiền sản dị tật, Tái khám sau phẫu thuật môi, vòm, Sưng mặt, Sưng đau vùng trước tai, dưới hàm Lở miệng, loét miệng, Sưng hạch dưới hàm, Sưng hạch dưới cằm ,Gãy xương vùng hàm mặt, Rách môi, Rách má, Rách lưỡi, Chó cắn, Răng dư, kẹt, ngầm, U trong miệng và ngoài mặt, U máu trong miệng và ngoài mặt",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_47",
+        "name": "Đo khúc xạ mắt",
+        "bookingNote": "Triệu chứng: Kiểm tra thị lực, khám chức năng thị giác hai mắt, loạn thị, cận thị",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_18",
+        "name": "NGOẠI TIẾT NIỆU",
+        "bookingNote": "Triệu chứng: Rối loạn đi tiểu, bất thường hệ niệu trên siêu âm, bìu to, dương vật bị vùi lấp (nhỏ)",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_25",
+        "name": "TÂM LÝ",
+        "bookingNote": "Áp dụng cho bé có triệu chứng: Chậm nói, tăng động, không tập trung, hành vi bất thường;",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_487",
+        "name": "Âm Ngữ Trị Liệu",
+        "bookingNote": "Triệu chứng :Khó khăn về ngôn ngữ, giao tiếp không lời và có lời, phát âm, nghe, chơi đùa, chậm phát triển vận động, thực hiện các hoạt động sinh hoạt hằng ngày khó khăn.",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_7",
+        "name": "Nội tiết",
+        "bookingNote": "Triệu chứng: Lùn, dậy thì sớm, hạch ở cổ; tái khám Tiểu đường; bướu cổ",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_subject001",
+        "name": "Khoa 001",
+        "bookingNote": "Ghi chú đặt khám khoa",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS001",
+              "name": "Bác sĩ 001",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Giáo sư",
+              "description": null,
+              "bookingNote": "Khám từ thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 001",
+              "subjectId": "nhidong1_subject001",
+              "treatments": null,
+              "price": "1.000.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "03-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS001",
+              "name": "Bác sĩ 001",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Giáo sư",
+              "description": null,
+              "bookingNote": "Khám từ thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 001",
+              "subjectId": "nhidong1_subject001",
+              "treatments": null,
+              "price": "1.000.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS001",
+              "name": "Bác sĩ 001",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Giáo sư",
+              "description": null,
+              "bookingNote": "Khám từ thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 001",
+              "subjectId": "nhidong1_subject001",
+              "treatments": null,
+              "price": "1.000.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "05-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS001",
+              "name": "Bác sĩ 001",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Giáo sư",
+              "description": null,
+              "bookingNote": "Khám từ thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 001",
+              "subjectId": "nhidong1_subject001",
+              "treatments": null,
+              "price": "1.000.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "06-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS001",
+              "name": "Bác sĩ 001",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Giáo sư",
+              "description": null,
+              "bookingNote": "Khám từ thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 001",
+              "subjectId": "nhidong1_subject001",
+              "treatments": null,
+              "price": "1.000.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_subject002",
+        "name": "Khoa 002",
+        "bookingNote": null,
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS002",
+              "name": "Bác sĩ 002",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Bác sĩ CK1",
+              "description": null,
+              "bookingNote": "Khám buổi chiều thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 002",
+              "subjectId": "nhidong1_subject002",
+              "treatments": null,
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "03-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS002",
+              "name": "Bác sĩ 002",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Bác sĩ CK1",
+              "description": null,
+              "bookingNote": "Khám buổi chiều thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 002",
+              "subjectId": "nhidong1_subject002",
+              "treatments": null,
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS002",
+              "name": "Bác sĩ 002",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Bác sĩ CK1",
+              "description": null,
+              "bookingNote": "Khám buổi chiều thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 002",
+              "subjectId": "nhidong1_subject002",
+              "treatments": null,
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "05-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS002",
+              "name": "Bác sĩ 002",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Bác sĩ CK1",
+              "description": null,
+              "bookingNote": "Khám buổi chiều thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 002",
+              "subjectId": "nhidong1_subject002",
+              "treatments": null,
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "06-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS002",
+              "name": "Bác sĩ 002",
+              "avatar": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/medpro-production/default/avatar/BSNam.png",
+              "gender": 1,
+              "role": "Bác sĩ CK1",
+              "description": null,
+              "bookingNote": "Khám buổi chiều thứ 2 đến thứ 6",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "Khoa 002",
+              "subjectId": "nhidong1_subject002",
+              "treatments": null,
+              "price": "100.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": "",
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_CLS",
+        "name": "CẬN LÂM SÀNG",
+        "bookingNote": "",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": [
+        {
+          "date": "02-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "CẬN LÂM SÀNG",
+              "subjectId": "nhidong1_CLS",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "03-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "CẬN LÂM SÀNG",
+              "subjectId": "nhidong1_CLS",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "04-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "CẬN LÂM SÀNG",
+              "subjectId": "nhidong1_CLS",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "05-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "CẬN LÂM SÀNG",
+              "subjectId": "nhidong1_CLS",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        },
+        {
+          "date": "06-02-2026",
+          "doctors": [
+            {
+              "id": "nhidong1_BS2",
+              "name": "Bác Sĩ Test",
+              "avatar": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "imageUrl": "https://cdn-pkh.longvan.net/testing-partner/de413897-f636-4c04-a5c8-c9f7efe9d5a8-frame.png",
+              "gender": 1,
+              "role": "",
+              "description": null,
+              "bookingNote": "",
+              "sectionName": null,
+              "sectionDescription": null,
+              "sectionAddress": null,
+              "roomType": null,
+              "subject": "CẬN LÂM SÀNG",
+              "subjectId": "nhidong1_CLS",
+              "treatments": "555512",
+              "price": "500.000đ",
+              "displaySchedule": "Thứ 2, 3, 4, 5, 6",
+              "displayDetail": null,
+              "maxDay": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": {
+        "id": "nhidong1_1",
+        "name": "Sơ sinh (tiếp nhận dưới 3 tháng tuổi)",
+        "bookingNote": "Triệu chứng: Trẻ nhỏ hơn hoặc bằng 30 ngày tuổi: vàng da sau sinh, khò khè, rốn rỉ dịch, ọc sữa, nôn trớ...",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    },
+    {
+      "subject": {
+        "id": "nhidong1_TLTEST",
+        "name": "Tâm Lý Test",
+        "bookingNote": "",
+        "imageUrl": null,
+        "storageUrl": null
+      },
+      "days": []
+    }
+  ]
+}

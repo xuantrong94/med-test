@@ -1,0 +1,152 @@
+{
+  "name": "umc2",
+  "features": [
+    {
+      "type": "booking.haucovid",
+      "slug": null,
+      "image": "https://bo-api-testing.medpro.com.vn/static/images/medpro/app/image/haucovid.png?t=33333333",
+      "name": "Khám hậu COVID-19"
+    },
+    {
+      "type": "booking.date",
+      "slug": null,
+      "image": "https://bo-api.medpro.com.vn:5000/static/images/medpro/app/image/dkcs.png?t=3333333333333",
+      "name": "Đặt khám tại cơ sở"
+    },
+    {
+      "type": "booking.default",
+      "slug": null,
+      "image": "https://medpro-api-v2-testing.medpro.com.vn/st/feature/dv1.svg",
+      "name": "Đặt khám"
+    },
+    {
+      "type": "booking.telemednow",
+      "slug": null,
+      "image": "https://testing-partner.s3-hcm1-r1.longvan.net/07bbc121-b802-4aeb-9f6c-b8d3515e0bc0-spotify.png",
+      "name": "booking telemednow"
+    },
+    {
+      "type": "booking.doctor",
+      "slug": null,
+      "image": "https://bo-api-testing.medpro.com.vn/static/images/medpro/app/image/datkhambs.png?t=3333",
+      "name": "Đặt khám Bác Sĩ"
+    },
+    {
+      "type": "booking.covid",
+      "slug": null,
+      "image": "https://bo-api-testing.medpro.com.vn/static/images/medpro/app/image/xetnghiemtainha.png?t=111111",
+      "name": "Đăng ký xét nghiệm"
+    },
+    {
+      "type": "booking.covidtn",
+      "slug": null,
+      "image": "https://testing-partner.s3-hcm1-r1.longvan.net/7587f209-270b-4b1f-a036-43a135679acf-taaoai_nhaa_.png",
+      "name": "Đăng Ký xét nghiệm tại nhà"
+    },
+    {
+      "type": "booking.package",
+      "slug": null,
+      "image": "https://bo-api.medpro.com.vn:5000/static/images/medpro/app/image/goi_kham.png?t=2333333",
+      "name": "Gói sức khỏe\ntoàn diện"
+    },
+    {
+      "type": "bookingDoctor.all",
+      "slug": null,
+      "image": "https://bo-api.medpro.com.vn:5000/static/images/medpro/app/image/featuremain9.png?t=111111",
+      "name": "Đặt khám Bác Sĩ V2"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "umc2_020",
+      "name": "Phòng Sanh",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_032",
+      "name": "Khoa Vật Lí Trị Liệu",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_053",
+      "name": "Khoa Gây Mê Hồi Sức",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_054",
+      "name": "Trại Hậu Sản Hậu Phẫu",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_001",
+      "name": "Khám bệnh",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_046",
+      "name": "Phòng Khám Sản",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_104",
+      "name": "Khoa Ngoại Tổng Hợp",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_033",
+      "name": "Đơn vị Chấn thương Chỉnh hình",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_051",
+      "name": "Khoa Tai Mũi Họng",
+      "bookingNote": "Trưởng Khoa : PGS.TS BS Trần Anh Tuấn\r\nPhó  trưởng khoa : BS CKII Nguyễn Thị Thư\r\nBác sĩ điều trị : \r\n\tBS CKII Âu Thị Cẩm Lệ\r\n\tThS Nguyễn Thanh Tâm\r\n\tThS Lâm Hoàng Phương\r\n\tBS CKI Võ Huy Hùng\r\n\tBS CKI Phan Quốc Bảo\r\n\r\n\r\nChức năng phòng khám:\r\n - Cấp cứu các bệnh về tai mũi họng\r\n- Khám bệnh và chẩn đoán các bệnh tai mũi họng bằng các phương tiện hiện đại: nội soi ghi hình, đo sức nghe bằng máy, đo chức năng tai giữa.\r\n- Phẫu thuật các bệnh về tai mũi họng( bệnh tai, bệnh mũi xoang, bệnh họng thanh quản), bao gồm phẫu thuật thông thường và nâng cao với trang thiết bị hiện đại.\r\n- Thực hiện các thủ thuật tai mũi họng: rửa hút mũi, khí dung…\r\n- Khám, hội chẩn, xử lí các bệnh nhân điều trị trong các khoa của bệnh viện có các bệnh tai mũi họng phối hợp.\r\n- Phối hợp đào tạo bác sĩ, điều dưỡng cho trường Đại Học Y Dược thành phố Hồ chí Minh\r\n",
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_120",
+      "name": "Phòng Điều trị trong ngày",
+      "bookingNote": null,
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_105",
+      "name": "Nội Tiêu hóa",
+      "bookingNote": "Nội Tiêu hóa",
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_103",
+      "name": "Nội Tim mạch",
+      "bookingNote": "Nội Tim mạch",
+      "imageUrl": null,
+      "storageUrl": null
+    },
+    {
+      "id": "umc2_115",
+      "name": "Mắt",
+      "bookingNote": "Mắt",
+      "imageUrl": "https://cdn.medpro.vn/medpro-testing/umc2/subjects/1716454841576-ddfe4ea4c9b3486da5f33be364d18f1d_thanh_toan_vien_phi.png",
+      "storageUrl": "https://files-testing.medpro.com.vn/image/file/umc2/subjects/1716454841576-ddfe4ea4c9b3486da5f33be364d18f1d_thanh_toan_vien_phi.png"
+    }
+  ]
+}

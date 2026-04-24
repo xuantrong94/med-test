@@ -1,0 +1,351 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: space(6);
+  margin: 0 auto;
+}
+
+.doctorCard {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid $color-gray-border;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 4%);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 15px 40px rgb(0 0 0 / 8%);
+  }
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: space(6);
+  padding: space(3);
+  background: linear-gradient(135deg, $color-blue-wash 0%, #fff 100%);
+  border-bottom: 1px solid $color-gray-border;
+  align-items: center;
+
+  @include screen(sm) {
+    flex-direction: row;
+    text-align: left;
+    padding: space(5);
+  }
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $color-blue-wash;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: $color-success;
+    border: 3px solid white;
+    border-radius: $radius-full;
+    z-index: 10;
+  }
+}
+
+.avatar {
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.details {
+  flex: 1;
+
+  @include screen(md) {
+    padding-left: space(6);
+  }
+}
+
+.nameRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: space(3);
+  margin-bottom: spacing(1.5);
+
+  @include screen(md) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.name {
+  @include heading-5;
+
+  color: $color-text;
+  margin: 0;
+  letter-spacing: -0.025em;
+
+  @include screen(md) {
+    @include heading-4;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: space(1);
+  background: $color-blue-linear; // Using a gradient as it feels more premium
+  background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $color-orange;
+  padding: space(1) space(2.5);
+  border-radius: $radius-full;
+
+  @include body-small;
+
+  font-weight: $font-bold;
+  border: 1px solid $color-gray-border;
+
+  svg {
+    font-size: 14px;
+    color: #fbbf24;
+  }
+}
+
+.role {
+  @include body-base;
+
+  color: $color-indigo;
+  font-weight: $font-semibold;
+  margin-bottom: space(3);
+  display: inline-block;
+  background: $color-blue-light;
+  padding: space(1) space(3);
+  border-radius: $radius-md;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: space(2);
+  color: $color-gray-dark;
+
+  @include body-small;
+
+  @include screen(sm) {
+    justify-content: flex-start;
+  }
+
+  .icon {
+    color: #94a3b8;
+  }
+
+  span {
+    line-height: 1.5;
+  }
+}
+
+.bookingSummary {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  padding: space(3);
+
+  @include screen(md) {
+    gap: space(6);
+    padding: space(8);
+  }
+}
+
+.partnerHeader {
+  display: flex;
+  gap: space(4);
+  align-items: flex-start;
+}
+
+.partnerIcon {
+  width: 48px;
+  height: 48px;
+  background: $color-blue-wash;
+  color: $color-blue-accent;
+  border-radius: $radius-md;
+
+  @include flex-center;
+
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.partnerContent {
+  flex: 1;
+}
+
+.partnerName {
+  @include heading-5;
+
+  color: $color-blue-deep;
+  margin: 0 0 space(1);
+}
+
+.partnerAddress {
+  @include body-small;
+
+  color: $color-gray-dark;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: spacing(1.5);
+
+  .icon {
+    font-size: 14px;
+  }
+}
+
+.summaryDivider {
+  height: 1px;
+  background: $color-gray-border;
+  width: 100%;
+}
+
+.summaryTitle {
+  @include body-small;
+
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $color-gray-light;
+  margin: 0;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: space(6);
+}
+
+.summaryItem {
+  display: flex;
+  gap: space(3);
+  align-items: center;
+  background: $color-blue-wash;
+  padding: space(4);
+  border-radius: $radius-md;
+  border: 1px solid $color-gray-border;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #f1f5f9;
+  }
+}
+
+.itemIcon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: $radius-md;
+
+  @include flex-center;
+
+  color: $color-indigo;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+}
+
+.itemContent {
+  label {
+    display: block;
+
+    @include body-small;
+
+    font-size: 0.75rem;
+    color: $color-gray-light;
+    font-weight: $font-semibold;
+    margin-bottom: spacing(0.5);
+  }
+
+  p {
+    @include body-small;
+
+    color: $color-blue-deep;
+    font-weight: $font-bold;
+    margin: 0;
+  }
+}
+
+// Steps styling (kept mostly same but refined)
+.stepsContainer {
+  @include flex-center;
+
+  gap: space(3);
+  padding: 0 space(4);
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: space(2);
+  opacity: 0.4;
+
+  &.completed,
+  &.current {
+    opacity: 1;
+  }
+
+  &.current {
+    .stepIcon {
+      background: $color-indigo;
+      color: white;
+      border-color: $color-indigo;
+      box-shadow: 0 4px 12px rgb(99 102 241 / 30%);
+    }
+
+    .stepTitle {
+      color: $color-indigo;
+      font-weight: $font-bold;
+    }
+  }
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  border: 2px solid $color-gray-border;
+
+  @include flex-center;
+  @include body-small;
+
+  font-weight: $font-bold;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  @include body-small;
+
+  font-weight: $font-semibold;
+  color: $color-gray-dark;
+  white-space: nowrap;
+}
+
+.stepLine {
+  width: 40px;
+  height: 2px;
+  background: $color-gray-border;
+  border-radius: $radius-sm;
+}

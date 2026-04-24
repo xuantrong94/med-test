@@ -1,0 +1,25 @@
+{
+  "detail": {
+    "update": "Cập Nhật:",
+    "author": "Tác giả:",
+    "authorDefault": "Medpro",
+    "noRelatedPosts": "Nội dung bài viết liên quan đang được cập nhật...",
+    "hospitalList": "Danh sách bệnh viện",
+    "relatedPosts": "Bài viết liên quan",
+    "showMore": "Xem thêm",
+    "showLess": "Thu gọn",
+    "bookNow": "Đặt chuyên khoa ngay",
+    "bookSchedule": "Đặt lịch ngay",
+    "learnMore": "Tìm hiểu thêm",
+    "bookAppointment": "Đặt khám ngay",
+    "heroTag": "Medical Excellence",
+    "heroFallbackDesc": "Hệ thống chuyên gia hàng đầu trong điều trị và chăm sóc sức khỏe. Chúng tôi kết hợp công nghệ tiên tiến với sự thấu hiểu y đức để mang lại kết quả tốt nhất cho khách hàng.",
+    "specialtyPrefix": "Chuyên khoa {name}",
+    "hospitalItemTitle": "Bệnh viện {name}",
+    "hospitalItemDesc": "Xem chi tiết các dịch vụ và bác sĩ tại {name}",
+    "heroTitle": "Chuyên khoa {name}",
+    "heroDesc": "Khám phá các dịch vụ y tế chuyên sâu tại {name} với đội ngũ bác sĩ đầu ngành.",
+    "subjects": "Danh sách chuyên khoa",
+    "noSubjects": "Dữ liệu chuyên khoa đang được cập nhật..."
+  }
+}

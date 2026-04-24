@@ -1,0 +1,392 @@
+.container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.gridTable {
+  display: grid;
+  width: 100%;
+}
+
+.gridHeader {
+  display: grid;
+  grid-template-columns: 80px 70px 280px 200px 1fr 140px;
+  gap: 16px;
+  background: #f5f5f5;
+  padding: 12px 0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+
+  .headerCell {
+    font-weight: 600;
+    color: #595959;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.dayGroup {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: stretch;
+
+  &.daySeparator {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 4px;
+    padding-bottom: 4px; /* Added spacing to lift the content off the border */
+  }
+
+  &.noSeparator {
+    border-bottom: none;
+  }
+}
+
+.roomsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: 70px 280px 200px 1fr 140px;
+  gap: 16px;
+  align-items: flex-start;
+
+  &:empty {
+    display: none;
+  }
+
+  &.roomSeparator {
+    border-bottom: 1px dashed #e8e8e8;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.cell {
+  font-size: 14px;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  &.dayOfWeek {
+    font-weight: 700;
+    color: #00b5f1;
+    font-size: 16px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.desktopOnly {
+  display: block !important;
+
+  @media (width <= 1100px) {
+    display: none !important;
+  }
+}
+
+.mobileOnly {
+  display: none !important;
+
+  @media (width <= 1100px) {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.mobileDayGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileDayHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  border-left: 4px solid #00b5f1;
+}
+
+.dayLabel {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.dateLabel {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.mobileCardsWrapper {
+  width: 100%;
+
+  .cellContentWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+
+    @media (width >= 720px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (width >= 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.mobileDayGroup:has(.mobileCardsWrapper:empty) {
+  display: none;
+}
+
+// Mobile Card UI
+.mobileScheduleCard {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (width >= 720px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fafafa;
+  padding-bottom: 8px;
+}
+
+.shiftBadge {
+  background: #e6f7ff;
+  color: #00b5f1;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.timeLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.serviceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.serviceName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  flex: 1;
+}
+
+.servicePrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: #00b5f1;
+  white-space: nowrap;
+}
+
+.roomRow {
+  font-size: 13px;
+  color: #595959;
+}
+
+.cardFooter {
+  margin-top: 4px;
+}
+
+// Global Button Styles
+.bookButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #00b5f1;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+
+  &:hover {
+    background: #0098cc;
+    color: #fff;
+  }
+
+  &.disabled {
+    background: #d9d9d9;
+    color: #8c8c8c;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+// Interactive Time Chips
+.timeSlotPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  padding: 8px 0;
+  width: 100%;
+
+  @media (width <= 640px) {
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+  }
+}
+
+.timeChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1.5px solid #f0f0f0;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  color: #595959;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 56px;
+
+  @media (width <= 640px) {
+    flex: 0 0 calc(25% - 8px);
+    min-width: 65px;
+    padding: 6px 4px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  @media (width <= 400px) {
+    flex: 0 0 calc(33.33% - 7px);
+  }
+
+  &:hover {
+    border-color: #00b5f1;
+    color: #00b5f1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(0 181 241 / 15%);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, #00b5f1 0%, #0098cc 100%);
+    border-color: #00b5f1;
+    color: #fff;
+    box-shadow: 0 6px 16px rgb(0 181 241 / 35%);
+    transform: scale(1.08);
+    z-index: 1;
+  }
+
+  &.disabled {
+    background: #fafafa;
+    border-color: #f0f0f0;
+    color: #bfbfbf;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    opacity: 0.6;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.bookingActionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+
+  .hintText {
+    display: none;
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.cellContentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  // When multiple services are stacked in one room cell
+  & > div:not(:last-child) {
+    border-bottom: 1px dashed #f0f0f0;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+// Removed broken stacking media query to favor Card Layout via mobileOnly

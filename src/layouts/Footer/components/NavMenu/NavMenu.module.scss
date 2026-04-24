@@ -1,0 +1,36 @@
+.navMenu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: space(2);
+  box-shadow: 0 -2px 8px rgb(0 0 0 / 10%);
+}
+
+.navMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2px;
+  cursor: pointer;
+
+  span {
+    font-size: 10px;
+
+    @include screen(sm) {
+      font-size: 12px;
+    }
+
+    @include screen(md) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    span {
+      color: $color-blue;
+    }
+  }
+}

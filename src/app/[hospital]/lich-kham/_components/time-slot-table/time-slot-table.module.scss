@@ -1,0 +1,20 @@
+.timeSlotTable {
+  flex: 1;
+}
+
+.timeOfDay {
+  padding: space(2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-blue-light;
+  color: $color-primary;
+  border-radius: space(2);
+  text-transform: uppercase;
+  font-weight: $font-bold;
+
+  @include screen(xl) {
+    padding: space(4);
+    border-radius: space(4);
+  }
+}

@@ -1,0 +1,48 @@
+.wrapper {
+  background: $color-white;
+  border-radius: space(4);
+  border: 1px solid $color-blue-light;
+  padding: space(2);
+  display: flex;
+  gap: space(2);
+
+  @include screen(xl) {
+    padding: space(4);
+  }
+}
+
+.cardWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: space(4);
+
+  &.inputDate {
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  &.today {
+    background: $color-blue;
+  }
+
+  @include screen(xl) {
+  }
+
+  .dateOfWeek {
+    text-transform: uppercase;
+
+    @include screen(xl) {
+    }
+  }
+
+  .theDate {
+    font-weight: $font-bold;
+
+    @include screen(xl) {
+      font-size: $text-2xl;
+    }
+  }
+}

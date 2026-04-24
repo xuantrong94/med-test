@@ -1,0 +1,1192 @@
+@use "sass:color";
+
+// --- Main Detail Page (Prefix: det_) ---
+.det_specialtyPage {
+  min-height: 100vh;
+  font-family: $font-primary;
+  background-color: $color-white;
+}
+
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $color-blue-accent;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+.det_sectionWrapper {
+  width: 100%;
+}
+
+.det_section {
+  @include container;
+
+  padding: space(6) space(4);
+  max-width: 1288px;
+
+  @include screen(lg) {
+    padding: space(10) space(4);
+  }
+}
+
+.det_detailLayout {
+  display: block;
+}
+
+.det_mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: space(6);
+}
+
+.det_contentHeader {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  margin-bottom: space(2);
+}
+
+.det_pageTitle {
+  @include heading-3;
+
+  color: $color-blue-deep;
+  margin: 0;
+  font-weight: 700;
+
+  @include screen(lg) {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
+
+.det_metadata {
+  display: flex;
+  align-items: center;
+  gap: space(3);
+  color: $color-gray-dark;
+  font-size: 13px;
+  opacity: 0.8;
+
+  @include screen(lg) {
+    font-size: 14px;
+  }
+
+  .det_separator {
+    color: $color-gray-light;
+  }
+}
+
+.det_contentBlock {
+  background: $color-white;
+  border-radius: 12px;
+  border: 1px solid $color-gray-border;
+  padding: space(6);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 3%);
+
+  @include screen(lg) {
+    padding: space(10);
+  }
+}
+
+.det_hospitalListWrapper {
+  margin-top: 0;
+}
+
+.det_hospitalListGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: space(4);
+
+  @include screen(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: space(6);
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.det_postList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: space(6);
+
+  @include screen(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.det_postItem {
+  display: flex;
+  height: 100%;
+}
+
+.det_emptyState {
+  padding: space(4) 0;
+  text-align: center;
+  color: $color-gray-dark;
+  opacity: 0.7;
+}
+
+.det_paginationContainer {
+  margin-top: space(10);
+  display: flex;
+  justify-content: center;
+}
+
+// --- Content Renderer (Prefix: cont_) ---
+.cont_contentRenderer {
+  line-height: 1.6;
+  color: #333;
+  font-family: $font-primary;
+}
+
+.cont_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_container {
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+
+  @include screen(lg) {
+    font-size: 16px;
+  }
+
+  &.cont_isExpanded {
+    max-height: 5000px !important;
+  }
+}
+
+.cont_fadeOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #fff);
+  pointer-events: none;
+  z-index: 1;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+
+  &.cont_fadeOut {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.cont_expandButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: space(1);
+  margin: space(4) auto 0;
+  padding: 8px 20px;
+  background: #fff;
+  border: 1px solid $color-gray-border;
+  border-radius: 8px;
+  color: $color-gray-dark;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    background: $color-blue-wash;
+    border-color: $color-blue-accent;
+    color: $color-blue-accent;
+    box-shadow: $shadow-sm;
+  }
+
+  .cont_icon {
+    transition: transform 0.3s ease;
+  }
+
+  .cont_iconRotate {
+    transform: rotate(180deg);
+  }
+}
+
+.cont_paragraph {
+  margin-bottom: 1.25rem;
+  font-size: inherit;
+  line-height: 1.6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cont_heading {
+  font-family: $font-primary;
+  color: $color-blue-deep;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  &:where(h2) {
+    font-size: 20px;
+
+    @include screen(lg) {
+      font-size: 24px;
+    }
+  }
+
+  &:where(h3) {
+    font-size: 18px;
+
+    @include screen(lg) {
+      font-size: 20px;
+    }
+  }
+}
+
+.cont_list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.cont_listItem {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  position: relative;
+  list-style: disc;
+  padding-left: 0.5rem;
+
+  &::marker {
+    color: $color-blue-accent;
+  }
+}
+
+.cont_imageWrapper {
+  margin: 1.5rem 0;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+  }
+}
+
+// --- Hospital Card (Prefix: card_) ---
+.card_hospitalCard {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: $radius-lg;
+  border: 1px solid $color-gray-border;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 4%);
+  padding: 12px;
+  gap: 16px;
+  font-family: $font-primary;
+
+  @include screen(lg) {
+    padding: 16px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 20px 40px -10px rgba($color-blue-accent, 0.15);
+      border-color: rgba($color-blue-accent, 0.3);
+
+      .card_name {
+        color: $color-blue-accent;
+      }
+    }
+  }
+}
+
+.card_mainContent {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.card_logoWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-lg;
+  background: $color-white;
+  padding: 4px;
+  border: 1px solid $color-gray-lighter;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
+
+  @include screen(lg) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card_infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-grow: 1;
+}
+
+.card_name {
+  font-size: 14px;
+  font-weight: $font-bold;
+  color: $color-blue-deep;
+  line-height: 1.2;
+  transition: color 0.3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  letter-spacing: -0.3px;
+
+  @include screen(lg) {
+    font-size: 16px;
+  }
+}
+
+.card_infoLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: $color-gray-dark;
+  font-size: 12px;
+  line-height: 1.4;
+
+  @include screen(lg) {
+    font-size: 14px;
+  }
+
+  p {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  img {
+    margin-top: 2px;
+    flex-shrink: 0;
+    opacity: 0.8;
+  }
+}
+
+.card_footer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.card_detailButton,
+.card_bookButton {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: $radius-md;
+  font-size: 14px;
+  font-weight: $font-bold;
+  letter-spacing: -0.15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.card_detailButton {
+  background: rgba($color-blue-accent, 0.06);
+  color: $color-blue-accent;
+  border: 1px solid rgba($color-blue-accent, 0.1);
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba($color-blue-accent, 0.12);
+      border-color: rgba($color-blue-accent, 0.2);
+    }
+  }
+}
+
+.card_bookButton {
+  background: $color-blue-linear;
+  color: #fff !important;
+  box-shadow: $shadow-sm;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
+  }
+}
+
+// --- Hospital Section (Prefix: sect_) ---
+.sect_hospitalSection {
+  display: flex;
+  flex-direction: column;
+  gap: space(8);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.sect_sectionTitle {
+  @include heading-4;
+
+  color: $color-blue-deep;
+  font-weight: 700;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.sect_header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: space(4);
+
+  @include screen(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: space(6);
+  }
+}
+
+.sect_titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+}
+
+.sect_sectionSubtitle {
+  @include body-base;
+
+  color: $color-gray-dark;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+.sect_filterWrapper {
+  display: flex;
+  align-items: center;
+
+  @include screen(sm) {
+    min-width: 240px;
+  }
+}
+
+.sect_listWrapper {
+  animation: sect_fadeIn 0.5s ease-out;
+}
+
+@keyframes sect_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// --- Tabbed Interface (Prefix: tab_) ---
+.tab_tabsContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--tabs-count, 2), 1fr);
+  background: $color-white;
+  padding: 4px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: $shadow-sm;
+  margin-bottom: space(4);
+
+  @include screen(lg) {
+    min-width: 480px;
+    margin-bottom: space(10);
+  }
+}
+
+.tab_activeIndicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% / var(--tabs-count, 2) - 4px);
+  background: $color-blue-accent;
+  border-radius: 6px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  transform: translateX(calc(100% * var(--active-index, 0)));
+}
+
+.tab_tabButton {
+  position: relative;
+  z-index: 2;
+  min-height: 48px;
+  height: auto;
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: $color-gray-dark;
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: $font-medium;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: normal;
+  text-wrap: balance;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.tab_isActive {
+    color: $color-white;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.tab_isActive) {
+      color: $color-blue-accent;
+    }
+  }
+
+  @include screen(lg) {
+    padding: 12px 24px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+// --- Post Card (Prefix: post_) ---
+.post_card {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 5%);
+  border: 1px solid #f1f5f9;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
+  }
+}
+
+.post_thumbWrapper {
+  position: relative;
+  width: 100%;
+  height: 192px;
+}
+
+.post_thumb {
+  object-fit: cover;
+}
+
+.post_content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post_title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.15px;
+  color: #111827;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post_description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #4b5563;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.post_subjectChip {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  margin-top: auto;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.post_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  gap: 8px;
+}
+
+.post_footerItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6b7280;
+
+  .post_icon {
+    flex-shrink: 0;
+  }
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+}
+
+// --- Skeleton Loading (Prefix: skel_) ---
+@keyframes skel_skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skel_skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e6e6e6 37%, #f0f0f0 63%);
+  background-size: 400px 100%;
+  animation: skel_skeleton-loading 1.4s ease-in-out infinite;
+}
+
+.skel_hospitalList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: space(4);
+
+  @include screen(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: space(6);
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skel_hospitalItemSkeleton {
+  background: $color-white;
+  border-radius: $radius-lg;
+  border: 1px solid $color-gray-border;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 16px;
+  min-height: 130px;
+
+  @include screen(lg) {
+    padding: 16px;
+    min-height: 150px;
+  }
+}
+
+.skel_hospitalMainContentSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skel_hospitalImageSkeleton {
+  @extend .skel_skeleton;
+
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-lg;
+  flex-shrink: 0;
+
+  @include screen(lg) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.skel_hospitalInfoWrapperSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.skel_hospitalTitleSkeleton {
+  @extend .skel_skeleton;
+
+  height: 18px;
+  width: 90%;
+  border-radius: 4px;
+}
+
+.skel_hospitalDescSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skel_hospitalIconSkeleton {
+  @extend .skel_skeleton;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.skel_hospitalTextSkeleton {
+  @extend .skel_skeleton;
+
+  height: 14px;
+  width: 70%;
+  border-radius: 4px;
+}
+
+.skel_hospitalFooterSkeleton {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.skel_detailButtonSkeleton,
+.skel_bookButtonSkeleton {
+  @extend .skel_skeleton;
+
+  flex: 1;
+  height: 36px;
+  border-radius: $radius-md;
+
+  @include screen(lg) {
+    height: 40px;
+  }
+}
+
+// Hero Section
+.det_hero {
+  background: linear-gradient(135deg, $color-blue-deep 0%, #1a3a5a 100%);
+  padding: space(10) 0;
+  color: $color-white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba($color-primary, 0.15) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.det_heroContent {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: space(10);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @include screen(lg) {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.det_heroText {
+  display: flex;
+  flex-direction: column;
+  gap: space(6);
+}
+
+.det_heroTag {
+  display: inline-flex;
+  padding: space(2) space(4);
+  background: rgba($color-primary, 0.2);
+  border: 1px solid rgba($color-primary, 0.3);
+  border-radius: $radius-full;
+  color: $color-primary-light;
+  font-size: $text-sm;
+  font-weight: $font-bold;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.det_heroTitle {
+  @include heading-2;
+
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 800;
+
+  @include screen(lg) {
+    font-size: 48px;
+  }
+}
+
+.det_heroDescription {
+  font-size: $text-lg;
+  line-height: 1.6;
+  color: rgba($color-white, 0.9);
+  max-width: 600px;
+  margin: 0;
+}
+
+.det_heroActions {
+  display: flex;
+  gap: space(4);
+  margin-top: space(4);
+
+  @include screen(sm) {
+    flex-direction: row;
+  }
+
+  flex-direction: column;
+}
+
+.det_btnPrimary {
+  @include button-base;
+
+  background: $color-primary;
+  color: $color-white;
+  padding: space(4) space(8);
+  font-weight: $font-bold;
+  font-size: $text-base;
+  border-radius: $radius-md;
+  box-shadow: 0 4px 14px rgba($color-primary, 0.4);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($color-primary, 0.5);
+    background: color.adjust($color-primary, $lightness: -5%);
+  }
+}
+
+.det_btnSecondary {
+  @include button-base;
+
+  background: rgba($color-white, 0.1);
+  color: $color-white;
+  padding: space(4) space(8);
+  font-weight: $font-bold;
+  font-size: $text-base;
+  border-radius: $radius-md;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($color-white, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($color-white, 0.2);
+    border-color: rgba($color-white, 0.4);
+  }
+}
+
+.det_heroImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    width: 80%;
+    height: 40px;
+    background: radial-gradient(
+      ellipse at center,
+      rgb(0 0 0 / 30%) 0%,
+      transparent 70%
+    );
+    filter: blur(10px);
+    z-index: -1;
+  }
+}
+
+.det_image {
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 30%);
+  border: 4px solid rgba($color-white, 0.1);
+}
+
+// Specialty Card Section
+.spec_specialtyCard {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: $radius-lg;
+  border: 1px solid $color-gray-border;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  text-decoration: none;
+  box-shadow: $shadow-sm;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-lg;
+      border-color: rgba($color-primary, 0.2);
+
+      .spec_specialtyTitle {
+        color: $color-primary;
+      }
+
+      .spec_bookButton {
+        background: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.spec_header {
+  padding: space(3);
+  display: flex;
+  align-items: center;
+  gap: space(4);
+  background: white;
+  border-bottom: 1px dashed $color-gray-border;
+
+  @include screen(lg) {
+    padding: space(5);
+  }
+}
+
+.spec_logoWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-md;
+  background: $color-white;
+  padding: 4px;
+  border: 1px solid $color-gray-lighter;
+  flex-shrink: 0;
+}
+
+.spec_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.spec_specialtyTitle {
+  font-size: $text-lg;
+  font-weight: $font-bold;
+  color: $color-blue-deep;
+  line-height: 1.3;
+  transition: color 0.2s;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.spec_body {
+  padding: space(3);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+
+  @include screen(lg) {
+    padding: space(5);
+  }
+}
+
+.spec_atHospital {
+  display: flex;
+  align-items: center;
+  gap: space(2);
+  color: $color-gray-dark;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+
+  img {
+    opacity: 0.7;
+  }
+}
+
+.spec_footer {
+  padding: space(3);
+  padding-top: 0;
+
+  @include screen(lg) {
+    padding: space(5);
+    padding-top: 0;
+  }
+}
+
+.spec_bookButton {
+  width: 100%;
+  padding: space(3);
+  border-radius: $radius-md;
+  background: $color-blue-wash;
+  color: $color-primary;
+  font-size: $text-sm;
+  font-weight: $font-bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+// --- Empty State (Prefix: empty_) ---
+.empty_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: space(12) space(4);
+  background: $color-white;
+  border-radius: 16px;
+  border: 1px dashed $color-gray-lighter;
+  width: 100%;
+}
+
+.empty_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(4);
+  text-align: center;
+  max-width: 320px;
+}
+
+.empty_iconWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-blue-wash;
+  color: $color-blue-accent;
+  border-radius: 50%;
+  margin-bottom: space(2);
+}
+
+.empty_icon {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.empty_title {
+  @include heading-5;
+
+  color: $color-blue-deep;
+  margin: 0;
+  font-weight: 600;
+}
+
+.empty_resetButton {
+  @include button-base;
+
+  margin-top: space(2);
+  padding: 8px 20px;
+  background: $color-white;
+  color: $color-blue-accent;
+  border: 1px solid $color-blue-accent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $color-blue-wash;
+    transform: translateY(-1px);
+  }
+}

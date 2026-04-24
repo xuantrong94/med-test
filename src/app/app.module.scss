@@ -1,0 +1,40 @@
+.container {
+  max-width: 1200px;
+  margin: 72px auto;
+  padding: 0 var(--spacing-md);
+
+  @include screen(lg) {
+    margin: 100px auto;
+  }
+
+  @include screen(xl) {
+    margin: 160px auto;
+  }
+}
+
+.specialtyList {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.specialtyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: clamp(150px, 16.6667%, 200px);
+  max-width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}

@@ -1,0 +1,90 @@
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-md;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 60%),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.loading {
+  filter: blur(5px);
+  opacity: 0.3;
+}
+
+.loaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+    background-size: 200% 100%;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 10%),
+      transparent
+    );
+  }
+}

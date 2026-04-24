@@ -1,0 +1,11 @@
+{
+  "bookAppointment": "Book Appointment",
+  "doctorList": "Doctor List",
+  "unknown": "Unknown",
+  "emptyState": "No schedule available for service «{name}»",
+  "category": "Category",
+  "doctorCount": "{count} doctors",
+  "dayLabels": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+  "dat-kham-chuyen-khoa": "Specialty Appointment",
+  "dat-kham-theo-bac-si": "Doctor Appointment"
+}

@@ -1,0 +1,197 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.banner {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 10%);
+  overflow: hidden;
+  transform: scale(0.8) translateY(20px);
+  transition: transform 0.3s ease-out;
+
+  &.show {
+    transform: scale(1) translateY(0);
+  }
+
+  @include screen(md) {
+  }
+
+  @include screen(sm) {
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgb(255 255 255 / 90%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgb(255 255 255 / 100%);
+    color: #333;
+    transform: scale(1.1);
+  }
+
+  @include screen(sm) {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @include screen(md) {
+  }
+
+  @include screen(sm) {
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  .content:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.textContent {
+  padding: 24px;
+
+  @include screen(sm) {
+    padding: 16px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+  line-height: 1.2;
+
+  @include screen(md) {
+    font-size: 20px;
+  }
+
+  @include screen(sm) {
+    font-size: 18px;
+  }
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 16px;
+  line-height: 1.4;
+
+  @include screen(sm) {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
+
+.ctaText {
+  display: inline-block;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: color 0.2s ease;
+
+  .content:hover & {
+    filter: brightness(0.9);
+  }
+
+  @include screen(sm) {
+    font-size: 13px;
+  }
+}
+
+// Animation keyframes
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .banner,
+  .closeButton,
+  .image {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .banner {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "bookAppointment": "Đặt lịch khám",
+  "doctorList": "Danh sách bác sĩ",
+  "unknown": "Không xác định",
+  "emptyState": "Không có lịch khám cho dịch vụ «{name}»",
+  "category": "Phân loại",
+  "doctorCount": "{count} bác sĩ",
+  "dayLabels": "CN,T2,T3,T4,T5,T6,T7",
+  "dat-kham-chuyen-khoa": "Đặt khám chuyên khoa",
+  "dat-kham-theo-bac-si": "Đặt khám theo bác sĩ"
+}

@@ -1,0 +1,54 @@
+.navItem {
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: $font-semibold;
+  color: #2c3e50;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.collapse {
+  background: transparent;
+  border: none;
+
+  .ant-collapse-item {
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.collapseLabel {
+  font-size: 16px;
+  font-weight: $font-semibold;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.collapseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subItem {
+  font-size: 14px;
+  color: $color-dark;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  font-weight: $font-semibold;
+
+  &:hover {
+    color: #2c3e50;
+  }
+}

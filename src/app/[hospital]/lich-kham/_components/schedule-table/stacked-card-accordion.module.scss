@@ -1,0 +1,110 @@
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(4);
+  width: 100%;
+}
+
+.accordionSection {
+  border-radius: $radius-lg;
+  background-color: $color-white;
+  border: 1px solid $color-gray-border;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+
+  /* Needed so the sticky header constraint applies */
+  position: relative;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &.isOpen {
+    border-color: $color-blue-light;
+    box-shadow: 0 spacing(1) spacing(3) rgba($color-primary, 0.1);
+
+    .accordionHeader {
+      border-bottom: 1px solid $color-gray-border;
+      background: $color-white;
+    }
+
+    .accordionBodyWrapper {
+      grid-template-rows: 1fr;
+    }
+
+    .chevron {
+      transform: rotate(180deg);
+      color: $color-primary;
+    }
+  }
+}
+
+.accordionHeader {
+  /* Sticky constraints */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: spacing(4);
+  background: $color-gray-lighter;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+
+  /* Use a modern gradient similar to the schedule-table existing design */
+  &:hover {
+    background: $color-gray-lightest;
+  }
+}
+
+.headerContent {
+  font-weight: $font-bold;
+  font-size: $text-base;
+  color: $color-text;
+  flex: 1;
+}
+
+.headerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: spacing(6);
+  height: spacing(6);
+  color: $color-secondary;
+  margin-left: spacing(3);
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: spacing(5);
+  height: spacing(5);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 
+  Smooth expand/collapse using CSS Grid
+  Support: Excellent in modern browsers
+*/
+.accordionBodyWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordionBodyInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.accordionContent {
+  padding: spacing(4);
+  display: flex;
+  flex-direction: column;
+  gap: spacing(4);
+}

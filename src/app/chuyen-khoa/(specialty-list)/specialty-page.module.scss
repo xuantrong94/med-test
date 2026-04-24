@@ -1,0 +1,203 @@
+@use "@/assets/styles/abstracts/variables" as *;
+@use "@/assets/styles/abstracts/mixins" as *;
+
+// List Section Prefix: list_
+.list_specialtyListWrapper {
+  padding: space(4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: space(8);
+
+  @include screen(md) {
+    padding: space(5) 0;
+    gap: space(12);
+  }
+
+  @include screen(lg) {
+    gap: space(16);
+  }
+}
+
+.list_specialtyList {
+  display: grid;
+  padding: 0 space(1);
+  gap: space(2);
+  grid-template-columns: repeat(3, 1fr);
+
+  @include screen(sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include screen(md) {
+    gap: space(6);
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include screen(xl) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.list_specialtyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 48px;
+    height: 48px;
+
+    @include screen(md) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  p {
+    font-size: $text-sm;
+    color: #111827;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @include screen(md) {
+      font-size: $text-lg;
+    }
+  }
+}
+
+.list_noResultsContainer {
+  padding: space(10) 0;
+  text-align: center;
+}
+
+.list_noResults {
+  color: $color-gray;
+  font-size: $text-base;
+}
+
+// Skeleton Section Prefix: skel_
+@keyframes skel_shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skel_skeletonBase {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e6e6e6 37%, #f0f0f0 63%);
+  background-size: 400px 100%;
+  animation: skel_shimmer 1.4s ease-in-out infinite;
+}
+
+.skel_skeletonWrapper {
+  padding: space(4) 0 space(10);
+  display: flex;
+  flex-direction: column;
+  gap: space(8);
+  background: #f8fbff;
+  min-height: 100vh;
+
+  @include screen(md) {
+    padding: space(5) 0;
+    gap: space(12);
+  }
+
+  @include screen(lg) {
+    gap: space(16);
+  }
+}
+
+.skel_searchbarStatic {
+  width: clamp(320px, 80%, 656px);
+  height: 48px;
+  background: white;
+  margin: 0 auto;
+  border-radius: $radius-lg;
+  box-shadow: 10px 10px 30px rgb(0 0 0 / 15%);
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+
+  &::before {
+    content: "🔍";
+    opacity: 0.3;
+    margin-right: 8px;
+  }
+
+  &::after {
+    content: "Tìm chuyên khoa...";
+    font-size: 14px;
+    color: #bfbfbf;
+  }
+}
+
+.skel_specialtyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: space(4);
+  padding: space(4) 0;
+
+  @include screen(sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include screen(md) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: space(6);
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include screen(xl) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.skel_specialtyItemSkeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(3);
+  padding: space(2);
+}
+
+.skel_iconSkeleton {
+  @extend .skel_skeletonBase;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  @include screen(md) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.skel_textSkeleton {
+  @extend .skel_skeletonBase;
+
+  height: 16px;
+  width: 80%;
+  max-width: 120px;
+  border-radius: 4px;
+}

@@ -1,0 +1,39 @@
+.wrapper {
+  width: 100%;
+}
+
+.desktopFilter {
+  display: none; // Ẩn mặc định trên mobile
+
+  @include screen(lg) {
+    display: block; // Hiển thị trên desktop (lg)
+  }
+}
+
+.mobileFilterBtn {
+  display: block; // Hiện trên mobile
+
+  @include screen(lg) {
+    display: none; // Ẩn trên desktop
+  }
+
+  .filterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+}
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: spacing(4);
+
+  // Reset inner flex-direction if needed in context of Drawer
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(4);
+  }
+}

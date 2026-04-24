@@ -1,0 +1,49 @@
+.searchbar {
+  width: clamp(320px, 80%, 656px);
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 4px 15px 0 #b1c4da40;
+  border-radius: $radius-lg;
+
+  & > span {
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    height: 100%;
+  }
+
+  @include screen(md) {
+    input {
+      height: space(10);
+    }
+  }
+}
+
+// SSR Placeholder – khớp chính xác kích thước với AntD Input size="large"
+// Measured: wrapper 56px, padding 7px 11px, border 1px solid #d9d9d9
+.placeholder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px; // Exact match: AntD .ant-input-affix-wrapper-lg rendered height
+  padding: 7px 11px; // Exact match: AntD computed padding
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: $radius-md;
+  box-sizing: border-box;
+}
+
+.placeholderIcon {
+  opacity: 0.3;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.placeholderText {
+  font-size: 16px;
+  color: #bfbfbf;
+  user-select: none;
+}

@@ -1,0 +1,141 @@
+"use client";
+
+import React, { useState, useCallback } from "react";
+import styles from "@/layouts/Header/Header.module.scss";
+import { getUrlByKey } from "@/shared/constants/urls";
+import CaretDownOutlined from "@ant-design/icons/lib/icons/CaretDownOutlined";
+import { useTranslations } from "next-intl";
+
+type MenuItem = {
+  key: string;
+  label: string;
+  url: string;
+  children?: string[];
+};
+
+type NavItemProps = {
+  item: MenuItem;
+};
+
+// Map URL keys to translation dictionary keys
+const urlKeyToTranslationKey: Record<string, string> = {
+  home: "home",
+  "co-so-y-te": "facility",
+  "benh-vien-cong": "publicHospital",
+  "benh-vien-tu": "privateHospital",
+  "phong-kham": "clinic",
+  "phong-mach": "doctorsOffice",
+  "xet-nghiem": "laboratory",
+  "tiem-chung": "vaccination",
+  "dich-vu-y-te": "medicalService",
+  "dat-kham-tai-co-so": "datKhamTaiCoSo",
+  "dat-kham-chuyen-khoa": "specialtyAppointment",
+  "goi-video-voi-bac-si": "videoConsultation",
+  "dat-lich-xet-nghiem": "labAppointment",
+  "mua-thuoc-tai-an-khang": "pharmacyAnKhang",
+  "giup-viec-ca-nhan": "personalAssistant",
+  "kham-doanh-nghiep": "corporateCheckup",
+  "dat-kham-theo-bac-si": "doctorAppointment",
+  "dat-lich-chup-phim-noi-soi": "imagingEndoscopy",
+  "thanh-toan-vien-phi": "hospitalFeePayment",
+  "goi-kham-suc-khoe": "healthCheckupPackage",
+  "y-te-tai-nha": "homeHealthcare",
+  "dat-lich-tiem-chung": "datLichTiemChung",
+  "dat-kham-ngoai-gio": "afterHoursAppointment",
+  "kham-suc-khoe-thong-tu": "circularHealthCheckup",
+  "bai-kiem-tra-tram-cam": "depressionTest",
+  "kham-suc-khoe-doanh-nghiep": "corporateHealthCheckup",
+  "tin-tuc": "news",
+  "tin-dich-vu": "serviceNews",
+  "tin-y-te": "medicalNews",
+  "y-hoc-thuong-thuc": "generalMedicine",
+  "huong-dan": "guide",
+  "cai-dat-ung-dung": "installApp",
+  "dat-lich-kham": "bookingGuide",
+  "tu-van-kham-benh-qua-video": "videoConsultationGuide",
+  "quy-trinh-hoan-phi": "refundProcess",
+  "cau-hoi-thuong-gap": "faq",
+  "quy-trinh-di-kham": "examinationProcess",
+  "cong-dong-hoi-dap-kham-chua-benh": "qnaCommunity",
+  "lien-he-hop-tac": "contact",
+  "co-so-y-te-hop-tac": "facilityContact",
+  "phong-mach-hop-tac": "doctorOfficeContact",
+  "quang-cao": "advertising",
+  "tuyen-dung": "recruitment",
+  "ve-medpro": "about",
+  "dieu-khoan-dich-vu": "terms",
+  "chinh-sach-bao-mat": "privacy",
+  "quy-dinh-su-dung": "rules",
+};
+
+const NavItem: React.FC<NavItemProps> = ({ item }) => {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const t = useTranslations("navigation");
+
+  const handleMouseEnter = useCallback(() => {
+    setActiveDropdown(item.key);
+  }, [item.key]);
+
+  const handleMouseLeave = useCallback(() => {
+    setActiveDropdown(null);
+  }, []);
+
+  const getTranslation = (key: string, fallback: string) => {
+    const translationKey = urlKeyToTranslationKey[key] as Parameters<
+      typeof t
+    >[0];
+    if (translationKey) {
+      try {
+        const translated = t(translationKey);
+        return translated || fallback;
+      } catch {
+        return fallback;
+      }
+    }
+    return fallback;
+  };
+
+  return (
+    <button
+      className={styles.navItemWrapper}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <a
+        href={item.url}
+        className={`${styles.navItem} ${
+          activeDropdown === item.key ? styles.active : ""
+        }`}
+      >
+        {getTranslation(item.key, item.label)}
+        {item.children && item.children.length > 0 && (
+          <CaretDownOutlined className={styles.dropdownIcon} />
+        )}
+      </a>
+      {item.children && item.children.length > 0 && (
+        <div
+          className={`${styles.dropdown} ${
+            activeDropdown === item.key ? styles.show : ""
+          }`}
+        >
+          <div className={styles.dropdownContent}>
+            {item.children.map(childKey => {
+              const childItem = getUrlByKey(childKey);
+              return childItem ? (
+                <a
+                  key={childItem.key}
+                  href={childItem.url}
+                  className={styles.dropdownItem}
+                >
+                  {getTranslation(childItem.key, childItem.label)}
+                </a>
+              ) : null;
+            })}
+          </div>
+        </div>
+      )}
+    </button>
+  );
+};
+
+export default NavItem;

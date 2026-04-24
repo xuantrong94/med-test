@@ -1,0 +1,148 @@
+.doctorScheduleList {
+  width: 100%;
+}
+
+.doctorInfo {
+  display: flex;
+  align-items: center;
+  gap: space(4);
+
+  .avatar {
+    flex-shrink: 0;
+    width: space(10);
+    height: space(10);
+    border-radius: 9999px;
+    border: 1px solid $color-primary;
+
+    @include screen(md) {
+      width: space(12);
+      height: space(12);
+    }
+  }
+
+  .doctorName {
+    font-weight: $font-semibold;
+    text-transform: uppercase;
+
+    @include screen(lg) {
+      font-size: $text-lg;
+    }
+  }
+}
+
+.tableBtnGroup {
+  display: flex;
+  gap: space(2);
+  justify-content: flex-end;
+
+  button {
+    padding: 0 space(4);
+    height: space(10);
+    border-radius: space(2);
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include screen(md) {
+      padding: 0 space(6);
+      font-size: $text-sm;
+    }
+  }
+
+  .tableSeeDetail {
+    border: 1px solid $color-primary;
+    background: transparent;
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
+  }
+
+  .tableBookNow {
+    background: $color-blue-linear;
+    color: $color-white;
+    border: none;
+
+    &:hover {
+      background: $color-blue;
+    }
+  }
+}
+
+.doctorScheduleCard {
+  margin-top: space(2);
+  padding: space(2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(2);
+  border: 1px solid $color-primary;
+  border-radius: space(2);
+
+  .textContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: space(2);
+
+    .avatar {
+      flex-shrink: 0;
+      width: space(10);
+      height: space(10);
+      border-radius: 9999px;
+      border: 1px solid $color-primary;
+
+      @include screen(md) {
+        width: space(12);
+        height: space(12);
+      }
+    }
+
+    .name {
+      font-weight: $font-semibold;
+      text-transform: uppercase;
+
+      @include screen(lg) {
+        font-size: $text-lg;
+      }
+    }
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: space(2);
+
+    button {
+      height: space(8);
+      border-radius: space(2);
+      padding: 0 space(1);
+      font-size: $text-xs;
+      font-weight: $font-medium;
+      white-space: nowrap;
+      transition: color 300ms ease-in-out;
+
+      @include screen(md) {
+        padding: 0 space(2);
+        font-size: $text-sm;
+        height: space(10);
+      }
+    }
+
+    .seeDetail {
+      border: 1px solid $color-primary;
+    }
+
+    .bookNow {
+      background: $color-blue-linear;
+      color: $color-white;
+
+      &:hover {
+        background: $color-blue;
+      }
+    }
+  }
+}

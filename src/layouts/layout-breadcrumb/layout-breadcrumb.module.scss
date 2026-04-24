@@ -1,0 +1,93 @@
+.layoutBreadcrumb {
+  background-color: $color-gray-lighter;
+
+  // Base (mobile/tablet) header altitude
+  padding-top: 80px;
+  padding-bottom: space(5);
+
+  @media (width >= 1024px) {
+    // Standard Desktop header height (includes 1125px case)
+    padding-top: 132px;
+  }
+
+  @media (width >= 1200px) {
+    // Tall Desktop header height
+    padding-top: 160px;
+  }
+
+  @include screen(lg) {
+    padding-bottom: space(8);
+  }
+}
+
+.breadcrumbWrapper {
+  display: block;
+  padding-bottom: space(4);
+  min-height: 48px; // Reserved space
+}
+
+.skeletonBreadcrumbList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skeletonItem {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f7f7f7 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.breadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569; // Darker for better contrast
+
+  a {
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #0369a1; // Darker blue
+      text-decoration: underline;
+    }
+  }
+
+  // Last item is always colored
+  &:last-of-type {
+    color: #0369a1;
+  }
+}
+
+.separator {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}

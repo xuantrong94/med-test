@@ -1,0 +1,275 @@
+.footer {
+  font-family: $font-primary;
+  background-color: #fcfcfc;
+  padding: space(5) 0 space(14);
+  border-top: 1px solid $color-secondary;
+
+  @include screen(lg) {
+    padding: space(10) 0 space(5);
+    border-top: 1px solid #e5e7eb;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  @include screen(lg) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: space(10);
+  }
+}
+
+.desktopOnly {
+  display: none;
+
+  @include screen(lg) {
+    display: block;
+  }
+}
+
+.mobileOnly {
+  display: block;
+  position: relative;
+  z-index: 10000;
+
+  @include screen(lg) {
+    display: none;
+  }
+}
+
+.spacer {
+  margin: 12px 0;
+  height: 1px;
+  width: 100%;
+  background: #a0a0a0;
+
+  @include screen(lg) {
+    display: none;
+  }
+}
+
+.linksBox {
+  display: none;
+
+  @include screen(lg) {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: repeat(3, 1fr);
+    gap: space(10);
+  }
+
+  .linkSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-weight: 500;
+    margin-bottom: space(2);
+    color: #003553;
+  }
+
+  .linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin-bottom: space(1);
+    color: #003553;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  a {
+    color: #003553;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.infoBox {
+  img {
+    height: 60px;
+    width: auto;
+    margin-bottom: space(4);
+
+    @include screen(lg) {
+      height: 80px;
+    }
+  }
+
+  p,
+  a {
+    font-size: 14px;
+    color: #003553;
+    line-height: 1.6;
+  }
+}
+
+.dcmaBox {
+  font-family: $font-primary;
+  background: linear-gradient(82.98deg, #00b5f1 33.22%, #00e0ff 135.46%);
+  text-align: center;
+  padding: 16px;
+  color: $color-white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 4px;
+  transform: translateY(-52px);
+  z-index: 9999;
+
+  @include screen(md) {
+    flex-direction: row;
+    column-gap: 8px;
+    font-size: 14px;
+  }
+
+  @include screen(lg) {
+    transform: none;
+  }
+}
+
+.navMenu {
+  font-family: $font-primary;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: space(2);
+  box-shadow: 0 -2px 8px rgb(0 0 0 / 10%);
+  list-style: none;
+  margin: 0;
+  z-index: 10000;
+}
+
+.navMenuLi {
+  list-style: none;
+}
+
+.navMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2px;
+  cursor: pointer;
+  color: $color-text;
+
+  span {
+    font-size: 10px;
+
+    @include screen(sm) {
+      font-size: 12px;
+    }
+
+    @include screen(md) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    span {
+      color: $color-blue;
+    }
+  }
+}
+
+.navItem {
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: $font-semibold;
+  color: #2c3e50;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.collapse {
+  background: transparent;
+  border: none;
+
+  .ant-collapse-item {
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.collapseLabel {
+  font-size: 16px;
+  font-weight: $font-semibold;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.collapseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subItem {
+  font-size: 14px;
+  color: $color-dark;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  font-weight: $font-semibold;
+
+  &:hover {
+    color: #2c3e50;
+  }
+}
+
+.appBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px 16px 16px;
+
+  @include screen(md) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: space(4) 0;
+  }
+
+  @include screen(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+}
+
+.link {
+  display: grid;
+  place-content: center;
+
+  img {
+    width: 160px;
+    height: auto;
+  }
+}

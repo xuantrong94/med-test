@@ -1,0 +1,36 @@
+{
+  "id": "bvndgiadinh_1",
+  "type": "subject",
+  "subType": null,
+  "days": [
+    {
+      "shifts": [
+        {
+          "id": "1",
+          "shiftName": "Buổi sáng",
+          "shiftCode": "953_1",
+          "startTime": "07:30",
+          "endTime": "11:30",
+          "roomShift": "Phòng 109",
+          "price": 150000,
+          "serviceId": "bvndgiadinh_1",
+          "serviceName": "Khám Thường"
+        },
+        {
+          "id": "2",
+          "shiftName": "Buổi chiều",
+          "shiftCode": "953_2",
+          "startTime": "13:30",
+          "endTime": "16:30",
+          "roomShift": "Phòng 100",
+          "price": 150000,
+          "serviceId": "bvndgiadinh_1",
+          "serviceName": "Khám Thường"
+        }
+      ],
+      "date": 1774544400000,
+      "timeSlots": [],
+      "timemiliseconds": 1774544400000
+    }
+  ]
+}

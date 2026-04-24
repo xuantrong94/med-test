@@ -1,0 +1,24 @@
+export type Hospital = {
+  _id: string;
+  name: string;
+  slug: string;
+  address?: string;
+  image?: string;
+  rating: number;
+  showPartnerInfo: boolean;
+  listingPackagePaid?: boolean;
+  sortOrderListing?: number | undefined | null;
+  deliveryStatus: number;
+  deliveryMessage?: string;
+  layout: string;
+  sponsored: boolean;
+  isContractSigned: boolean;
+  partnerId: string;
+  city_id: string;
+  hotlinePartner?: string;
+  isCashBack?: boolean;
+  packageImgDefault: string | null;
+  newHospitalType: number;
+  newHospitalTypes: number[];
+  message: string | null;
+};

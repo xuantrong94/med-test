@@ -1,0 +1,43 @@
+// loading.module.scss
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 60px;
+
+  @include screen(lg) {
+    margin-top: 100px;
+  }
+
+  @include screen(xl) {
+    margin-top: 140px;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e6e6eb 37%, #f0f0f0 63%);
+  background-size: 400px 100%;
+  animation: skeleton-loading 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,30 @@
+import { useState, useEffect } from "react";
+
+/**
+ * Custom hook for debouncing a value.
+ * Useful for limiting the frequency of API calls during user input.
+ *
+ * @param value The value to debounce
+ * @param delay The delay in milliseconds
+ * @returns The debounced value
+ */
+export function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    // Set debouncedValue to value after the specified delay
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    // Return a cleanup function that will be called every time useEffect is re-executed.
+    // This will cancel the previous timeout if value or delay changes.
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export default useDebounce;

@@ -1,0 +1,10 @@
+export { default as IconHeaderLogo } from "./header_logo.svg";
+export { default as IconHotline } from "./hotline.svg";
+export { default as IconEmail } from "./email.svg";
+export { default as IconContact } from "./contacts.svg";
+export { default as IconInstructions } from "./instructions.svg";
+export { default as IconMedicalFacilities } from "./medical-facilities.svg";
+export { default as IconMedicalServices } from "./medical-services.svg";
+export { default as IconMedproCommunity } from "./medpro-community.svg";
+export { default as IconNews } from "./news.svg";
+export { default as IconApp } from "./app.svg";

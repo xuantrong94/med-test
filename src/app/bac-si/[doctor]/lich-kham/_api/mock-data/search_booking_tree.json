@@ -1,0 +1,37 @@
+{
+  "child": [
+    {
+      "child": [
+        {
+          "id": "bvndgiadinh_157",
+          "detail": {
+            "name": "Khám Chuyên Khoa",
+            "price": 500000,
+            "id": "bvndgiadinh_157"
+          }
+        },
+        {
+          "id": "bvndgiadinh_102",
+          "detail": {
+            "name": "Khám Dịch Vụ",
+            "price": 300000,
+            "id": "bvndgiadinh_102"
+          }
+        },
+        {
+          "id": "bvndgiadinh_1",
+          "detail": {
+            "name": "Khám Thường",
+            "price": 150000,
+            "id": "bvndgiadinh_1"
+          }
+        }
+      ]
+    }
+  ],
+  "detail": [
+    {
+      "popupContent": "Thông tin quan trọng từ bệnh viện Gia Định"
+    }
+  ]
+}

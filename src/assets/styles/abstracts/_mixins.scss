@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "./variables" as variables;
+@forward "./variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@mixin screen($size) {
+  $width: map.get(variables.$breakpoints, $size);
+
+  @if $width {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint #{$size} không tồn tại!";
+  }
+}
+
+// @function color($key) {
+//	@return map.get($colors, $key);
+// }
+
+@function space($key) {
+  @return map.get(variables.$spacing, "#{$key}");
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+}

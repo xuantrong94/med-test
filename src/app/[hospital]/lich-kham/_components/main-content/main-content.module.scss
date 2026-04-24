@@ -1,0 +1,36 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+
+  @include screen(md) {
+    gap: space(6);
+  }
+}
+
+.row1,
+.row2 {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(2);
+
+  & > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @include screen(lg) {
+    flex-direction: row;
+    gap: spacing(4);
+
+    & > div[class*="clearFiltersContainer"] {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.doctorFilterContainer {
+  position: sticky;
+  top: 60px; // Approximate header height offset
+  z-index: 10; // Keep above content but below main header
+}

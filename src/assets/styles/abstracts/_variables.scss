@@ -1,0 +1,102 @@
+@use "sass:map";
+
+// colors
+$color-background: #e8f2f7;
+$color-foreground: #171717;
+$color-blue: #1da1f2;
+$color-indigo: #6610f2;
+$color-purple: #6f42c1;
+$color-pink: #e83e8c;
+$color-red: #dc3545;
+$color-orange: #fd7e14;
+$color-yellow: #ffc107;
+$color-green: #28a745;
+$color-teal: #20c997;
+$color-cyan: #17a2b8;
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #cecfd0;
+$color-gray-light: #9ca3af;
+$color-gray-dark: #343a40;
+$color-gray-border: #e5e7eb;
+$color-gray-lightest: #e9e9ea;
+$color-gray-lighter: #f9fafb;
+$color-primary-lighter: #e6f0ff;
+$color-blue-soft: #e0f2fe;
+$color-blue-wash: #f0f9ff;
+$color-blue-accent: #0284c7;
+$color-blue-deep: #1e3a5f;
+$color-blue-800: #1e40af;
+$color-blue-100: #dbeafe;
+$color-green-800: #065f46;
+$color-green-100: #d1fae5;
+$color-blue-light: #d0eaff;
+$color-blue-lighter: #eff6ff;
+$color-blue-linear: linear-gradient(98.96deg, #00b5f1 40.75%, #00e0ff 129.57%);
+$color-primary: #1da1f2;
+$color-primary-light: #d0eaff;
+$color-primary-dark: #1588ce;
+$color-secondary: #6c757d;
+$color-success: #28a745;
+$color-info: #17a2b8;
+$color-warning: #ffc107;
+$color-danger: #dc3545;
+$color-light: #f8f9fa;
+$color-dark: #343a40;
+$color-text: #1f2937;
+
+// border radius
+$radius-sm: 0.125rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+$radius-full: 9999px;
+
+// shadows
+
+$shadow-sm: 0 4px 6px -1px rgb(78 61 61 / 10%);
+$shadow-lg:
+  0 10px 15px -3px rgb(0 0 0 / 10%),
+  0 4px 6px -2px rgb(0 0 0 / 5%);
+$color-blue-gradient: linear-gradient(40deg, #00b5f1 0, #00e0ff 100%);
+$breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+);
+
+// Hàm tạo spacing value từ số
+@function spacing($value) {
+  @return $value * 0.25rem;
+}
+
+// Hàm tạo spacing map tự động
+@function generate-spacing($max: 40, $step: 1) {
+  $spacing-map: ();
+
+  @for $i from 1 through $max {
+    @if $i <= 6 or $i % 2 == 0 or $i == 11 or $i == 15 {
+      $spacing-map: map.merge(
+        $spacing-map,
+        (
+          "#{$i}": spacing($i),
+        )
+      );
+    }
+  }
+
+  // Thêm các giá trị đặc biệt
+  $spacing-map: map.merge(
+    $spacing-map,
+    (
+      "2.5": 0.625rem,
+    )
+  );
+
+  @return $spacing-map;
+}
+
+// Sử dụng hàm generate spacing
+$spacing: generate-spacing();

@@ -1,0 +1,11 @@
+export { default as IconFooterLogo } from "./footer_logo.svg";
+export { default as IconBell } from "./Bell.svg";
+export { default as IconBellActive } from "./BellActive.svg";
+export { default as IconBooking } from "./Booking.svg";
+export { default as IconBookingActive } from "./BookingActive.svg";
+export { default as IconGuide } from "./Guide.svg";
+export { default as IconGuideActive } from "./GuideActive.svg";
+export { default as IconHome } from "./Home.svg";
+export { default as IconHomeActive } from "./HomeActive.svg";
+export { default as IconUser } from "./User.svg";
+export { default as IconUserActive } from "./UserActive.svg";
