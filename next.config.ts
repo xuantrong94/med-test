@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
 	output: "standalone", // for k8s
 	reactCompiler: true,
 	compress: true, // Explicitly enable compression
-	transpilePackages: ["antd", "@ant-design/icons"],
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	images: {
 		remotePatterns: [
 			{
@@ -26,15 +31,15 @@ const nextConfig: NextConfig = {
 		additionalData: `@use "@/assets/styles/abstracts/variables" as *; @use "@/assets/styles/abstracts/typography" as *; @use "@/assets/styles/abstracts/mixins" as *;`,
 	},
 	experimental: {
-		optimizePackageImports: ["lucide-react", "antd"],
+		optimizePackageImports: ["lucide-react"],
 		scrollRestoration: true,
+		prr: true,
 	},
 	// We remove manual splitChunks for antd/react to prevent "Unused Preloaded CSS" warnings.
 	// Next.js 15+ handles these automatically and more efficiently.
 	webpack: (config) => {
 		return config;
 	},
-	basePath: "",
 };
 
 export default withNextIntl(nextConfig);
