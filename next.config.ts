@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
 	experimental: {
 		optimizePackageImports: ["lucide-react"],
 		scrollRestoration: true,
-		prr: true,
+		cacheComponents: true,
 	},
 	// We remove manual splitChunks for antd/react to prevent "Unused Preloaded CSS" warnings.
 	// Next.js 15+ handles these automatically and more efficiently.
