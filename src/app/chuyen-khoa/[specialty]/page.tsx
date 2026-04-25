@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import HospitalListSkeleton from "./_components/hospital-list-skeleton";
 import SpecialtyHeaderMetadata from "./_components/specialty-header-metadata";
 import SpecialtyDynamicContent from "./_components/specialty-dynamic-content";
+import specialties from "@/shared/constants/specialties";
 
 type SpecialtyProps = {
 	params: Promise<{ specialty: string }>;
