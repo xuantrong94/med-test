@@ -7,9 +7,7 @@ const nextConfig: NextConfig = {
 	output: "standalone", // for k8s
 	reactCompiler: true,
 	compress: true, // Explicitly enable compression
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
+	
 	typescript: {
 		ignoreBuildErrors: true,
 	},
