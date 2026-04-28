@@ -4,6 +4,7 @@ import HospitalSection from "./hospital-section";
 import SubjectSection from "./subject-section";
 import RelatedPostsSection from "./related-posts-section";
 import HospitalListSkeleton from "./hospital-list-skeleton";
+import CitySelectSkeleton from "./city-select-skeleton";
 import { getSearchKeys } from "@/shared/constants/specialties";
 import styles from "../specialty-detail.module.scss";
 
